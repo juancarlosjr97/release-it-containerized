@@ -4,8 +4,6 @@ on:
   push:
     branches: ["develop"]
 
-permissions: write-all
-
 jobs:
   beta:
     runs-on: ubuntu-latest
@@ -32,7 +30,7 @@ jobs:
           ghcr.io/${{ github.repository	}}:${{ github.sha }} \
           release-it --ci --preRelease=beta
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.BRANCHES_GITHUB_TOKEN }}
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
           GIT_USERNAME: ${{ vars.GIT_USERNAME }}
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
