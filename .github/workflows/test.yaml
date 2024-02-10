@@ -15,4 +15,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Build the Image
-        run: docker build . --tag ${{ github.repository	}}:${{ github.sha }}
+        run: docker build . --tag ghcr.io/${{ github.repository	}}:${{ github.sha }}
