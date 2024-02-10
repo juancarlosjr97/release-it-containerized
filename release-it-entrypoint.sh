@@ -12,9 +12,6 @@ RELEASE_IT_PLUGINS=${RELEASE_IT_PLUGINS:-}
 SSH_PASSPHRASE="${SSH_PASSPHRASE:-}"
 SSH_PRIVATE_KEY_FILE="${SSH_PRIVATE_KEY_FILE:-}"
 
-# Giving the current user ownership of the directory
-chown -R "$(id -u):$(id -g)" "${PWD}" || true
-
 if [[ -n "${GIT_DIRECTORY}" ]]; then
     # Add safe directory to git global configuration
     git config --global --add safe.directory "${GIT_DIRECTORY}"
