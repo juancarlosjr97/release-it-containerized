@@ -1,10 +1,9 @@
 ---
   name: Test Containerized release-it
-  
   on:
     push:
       branches:
-  
+
   jobs:
     test:
       runs-on: ubuntu-latest
@@ -70,3 +69,4 @@
             GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
             GPG_PRIVATE_KEY_ID: ${{ secrets.GPG_PRIVATE_KEY_ID }}
             SSH_PRIVATE_KEY_FILE: ${{ secrets.SSH_PRIVATE_KEY_FILE }}
+  
