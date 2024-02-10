@@ -25,6 +25,7 @@ jobs:
           -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
           -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest" \
           -e SSH_PRIVATE_KEY_FILE="${SSH_PRIVATE_KEY_FILE}" \
+          -u root \
           -v $PWD:/app \
           ghcr.io/${{ github.repository	}}:${{ github.sha }} \
           release-it --ci --preRelease=beta
