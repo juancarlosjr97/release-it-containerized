@@ -15,13 +15,13 @@
             fetch-depth: 0
         - name: Build the Image
           run: docker build --tag ghcr.io/${{ github.repository	}}:${{ github.sha }} .
-        - name: Running release-it on dry-run
+        - name: Running release-it on dry-run without SSH or GPG
           run: |
             docker run \
+            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
             -e GIT_DIRECTORY="/app" \
             -e GIT_EMAIL=${GIT_EMAIL} \
             -e GIT_USERNAME="${GIT_USERNAME}" \
-            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
             -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest" \
             -v $PWD:/app \
             ghcr.io/${{ github.repository	}}:${{ github.sha }} \
@@ -30,4 +30,22 @@
             GIT_EMAIL: ${{ vars.GIT_EMAIL }}
             GIT_USERNAME: ${{ vars.GIT_USERNAME }}
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+        - name: Running release-it on dry-run with GPG and without SSH
+          run: |
+            docker run \
+            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+            -e GIT_DIRECTORY="/app" \
+            -e GIT_EMAIL=${GIT_EMAIL} \
+            -e GIT_USERNAME="${GIT_USERNAME}" \
+            -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
+            -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest" \
+            -v $PWD:/app \
+            ghcr.io/${{ github.repository	}}:${{ github.sha }} \
+            release-it --dry-run
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            GIT_EMAIL: ${{ vars.GIT_EMAIL }}
+            GIT_USERNAME: ${{ vars.GIT_USERNAME }}
+            GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+            GPG_PRIVATE_KEY_ID: ${{ secrets.GPG_PRIVATE_KEY_ID }}
