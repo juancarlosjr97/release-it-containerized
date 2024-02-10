@@ -5,7 +5,7 @@ on:
     branches: ["develop"]
 
 jobs:
-  test:
+  beta:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,7 +17,7 @@ jobs:
       - name: Running beta release
         run: |
           docker run \
-          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+          -e GITHUB_TOKEN="${GITHUB_TOKEN}" \
           -e GIT_DIRECTORY="/app" \
           -e GIT_EMAIL=${GIT_EMAIL} \
           -e GIT_USERNAME="${GIT_USERNAME}" \
