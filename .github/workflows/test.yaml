@@ -11,6 +11,8 @@
       steps:
         - name: Checkout repository
           uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
         - name: Build the Image
           run: docker build --tag ghcr.io/${{ github.repository	}}:${{ github.sha }} .
         - name: Running release-it on dry-run
