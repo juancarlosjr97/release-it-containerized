@@ -77,7 +77,7 @@ if [[ -n "${SSH_PRIVATE_KEY_FILE}" ]]; then
         exit 1
     fi
 else
-    echo "SSH_PRIVATE_KEY_FILE is not set. Skipping SSH setup."
+    echo "SSH_PRIVATE_KEY_FILE or GPG_PRIVATE_KEY are not provided. SSH setup skipped"
 fi
 
 # Set RELEASE_IT_VERSION default value if not provided
