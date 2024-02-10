@@ -4,10 +4,11 @@ on:
   push:
     branches: ["develop"]
 
+permissions: write-all
+
 jobs:
   beta:
     runs-on: ubuntu-latest
-    permissions: write-all
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
