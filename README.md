@@ -69,7 +69,7 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 | command            | Command to execute release-it                             | false    | --ci                                         |
 | git_email          | Git email to run release-it                               | false    | ${{ github.actor }}                          |
 | git_username       | Git username to run release-it                            | false    | ${{ github.actor }}@users.noreply.github.com |
-| github_token       | Github Token to run release-it                            | true     | ${{ github.token }}                          |
+| github_token       | Github Token to run release-it                            | false    | `${{ github.token }}`                          |
 | gpg_private_key    | GPG Private Key                                           | false    | ""                                           |
 | gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                           |
 | image_tag          | Image tag used to pass specific version of the action     | false    | latest                                       |

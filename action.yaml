@@ -24,7 +24,7 @@ inputs:
   github_token:
     default: ${{ github.token }}
     description: Github Token to run release-it
-    required: true
+    required: false
 
   gpg_private_key:
     default: ""
