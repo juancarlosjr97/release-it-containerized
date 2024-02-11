@@ -3,6 +3,18 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.2.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.2.1...0.2.2) (2024-02-11)
+
+
+### Chores
+
+* sorting a-z variables and inputs ([025ccfd](https://github.com/juancarlosjr97/release-it-containerized/commit/025ccfddfd28b1f90095484ca5c317b9ff2a98ce))
+
+
+### Documentation
+
+* adding usage and example to run with GitHub Actions ([fd48974](https://github.com/juancarlosjr97/release-it-containerized/commit/fd48974c2c5ef2e6f7d781eb2d2f2bbc7b595b09)), closes [#7](https://github.com/juancarlosjr97/release-it-containerized/issues/7)
+
 ## [0.2.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.2.0...0.2.1) (2024-02-11)
 
 
