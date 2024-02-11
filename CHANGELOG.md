@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.1.0-beta.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0-beta.1...0.1.0-beta.2) (2024-02-11)
+
+
+### Documentation
+
+* adding license  ([1a86863](https://github.com/juancarlosjr97/release-it-containerized/commit/1a86863d8af4a8c59c95d2083df86ab977d5b2b8)), closes [#11](https://github.com/juancarlosjr97/release-it-containerized/issues/11)
+
 ## [0.1.0-beta.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0-beta.0...0.1.0-beta.1) (2024-02-11)
 
 
