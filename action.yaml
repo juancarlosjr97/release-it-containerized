@@ -63,7 +63,7 @@ runs:
         -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
         -u root \
         -v $PWD:/app \
-        ghcr.io/juancarlosjr97/release-it-containerized-test:${{ inputs.image_tag }} \
+        ghcr.io/juancarlosjr97/release-it-containerized:${{ inputs.image_tag }} \
         release-it ${{ inputs.command }}
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
