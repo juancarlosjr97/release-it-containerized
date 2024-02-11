@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.1.0-beta.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0-beta.2...0.1.0-beta.3) (2024-02-11)
+
+
+### Documentation
+
+* adding code owners file ([80c3d22](https://github.com/juancarlosjr97/release-it-containerized/commit/80c3d224641bf05a1663916fed1ad6e0d21aa2f9)), closes [#13](https://github.com/juancarlosjr97/release-it-containerized/issues/13)
+
 ## [0.1.0-beta.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0-beta.1...0.1.0-beta.2) (2024-02-11)
 
 
