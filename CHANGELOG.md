@@ -3,6 +3,29 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.2.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0...0.2.0) (2024-02-11)
+
+
+### Bug Fixes
+
+* fixing incorrect image repository to the action ([740424d](https://github.com/juancarlosjr97/release-it-containerized/commit/740424dde35a8f57118bf315be56338c5959c2b8)), closes [#7](https://github.com/juancarlosjr97/release-it-containerized/issues/7)
+
+
+### Code Refactoring
+
+* adding back silent to npm install to container entry point script ([ec9c67d](https://github.com/juancarlosjr97/release-it-containerized/commit/ec9c67d76965bd653d1d2f77cc46b3d57cf4636c))
+* replacing SSH_PRIVATE_KEY_FILE to SSH_PRIVATE_KEY ([277c000](https://github.com/juancarlosjr97/release-it-containerized/commit/277c00088427d35155527ed7f7fda98cd010d8a1))
+
+
+### Continuous Integration
+
+* improving release flow to run when test workflow has passed ([e16c20f](https://github.com/juancarlosjr97/release-it-containerized/commit/e16c20fc637e04eb8ba3070287899569b1ada0a6))
+
+
+### Features
+
+* adding template for github action ([c6dd699](https://github.com/juancarlosjr97/release-it-containerized/commit/c6dd699f7fc5f72bdba078c3754ef3c1ae24e666)), closes [#7](https://github.com/juancarlosjr97/release-it-containerized/issues/7)
+
 ## [0.1.1-beta.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0...0.1.1-beta.0) (2024-02-11)
 
 
