@@ -42,7 +42,7 @@ jobs:
           -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
           -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
           -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-          -e SSH_PRIVATE_KEY_FILE="${SSH_PRIVATE_KEY_FILE}" \
+          -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
           -u root \
           -v $PWD:/app \
           ghcr.io/${{ github.repository	}}:${{ github.sha }} \
@@ -53,4 +53,4 @@ jobs:
           GIT_USERNAME: ${{ vars.GIT_USERNAME }}
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           GPG_PRIVATE_KEY_ID: ${{ secrets.GPG_PRIVATE_KEY_ID }}
-          SSH_PRIVATE_KEY_FILE: ${{ secrets.SSH_PRIVATE_KEY_FILE }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}

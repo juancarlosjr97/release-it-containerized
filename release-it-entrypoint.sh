@@ -10,7 +10,7 @@ GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID:-}"
 GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY:-}"
 RELEASE_IT_PLUGINS=${RELEASE_IT_PLUGINS:-}
 SSH_PASSPHRASE="${SSH_PASSPHRASE:-}"
-SSH_PRIVATE_KEY_FILE="${SSH_PRIVATE_KEY_FILE:-}"
+SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY:-}"
 
 if [[ -n "${GIT_DIRECTORY}" ]]; then
     # Add safe directory to git global configuration
@@ -47,7 +47,7 @@ else
     echo "GPG_PRIVATE_KEY_ID or GPG_PRIVATE_KEY are not provided. GPG setup skipped."
 fi
 
-if [[ -n "${SSH_PRIVATE_KEY_FILE}" ]]; then
+if [[ -n "${SSH_PRIVATE_KEY}" ]]; then
     # Create SSH directory and set permissions
     mkdir -p ~/.ssh 
     chmod 700 ~/.ssh 
@@ -56,7 +56,7 @@ if [[ -n "${SSH_PRIVATE_KEY_FILE}" ]]; then
     echo -e "Host *\n\tStrictHostKeyChecking no\n\n" >> ~/.ssh/config
 
     # Write the private key to the id_rsa file
-    echo "${SSH_PRIVATE_KEY_FILE}" > ~/.ssh/id_rsa
+    echo "${SSH_PRIVATE_KEY}" > ~/.ssh/id_rsa
 
     # Set permissions for the private key
     chmod 600 ~/.ssh/id_rsa
@@ -77,7 +77,7 @@ if [[ -n "${SSH_PRIVATE_KEY_FILE}" ]]; then
         exit 1
     fi
 else
-    echo "SSH_PRIVATE_KEY_FILE is not provided. SSH setup skipped"
+    echo "SSH_PRIVATE_KEY is not provided. SSH setup skipped"
 fi
 
 # Set RELEASE_IT_VERSION default value if not provided
