@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.3.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.2.2...0.3.0) (2024-02-11)
+
+
+### Features
+
+* adding renovate to automated dependency management and releases ([4ae2dbf](https://github.com/juancarlosjr97/release-it-containerized/commit/4ae2dbf8d1463e61f5ffb4d3680323ad11806029)), closes [#9](https://github.com/juancarlosjr97/release-it-containerized/issues/9)
+
 ## [0.2.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.2.1...0.2.2) (2024-02-11)
 
 
