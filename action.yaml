@@ -1,0 +1,76 @@
+---
+name: Github Action - Release-it Containerized
+description: Github Action to run Release-It
+author: Juan Carlos Blanco Delgado
+branding:
+  icon: zap
+  color: red
+inputs:
+  command:
+    description: Command to execute release-it
+    required: false
+    default: "--ci"
+
+  git_email:
+    description: Git email to run release-it
+    required: false
+    default: ${{ github.actor }}
+
+  git_username:
+    description: Git username to run release-it
+    required: false
+    default: "${{ github.actor }}@users.noreply.github.com"
+
+  github_token:
+    description: Github Token to run release-it
+    required: true
+    default: ${{ github.token }}
+
+  gpg_private_key:
+    description: GPG Private Key
+    required: false
+
+  gpg_private_key_id:
+    description: GPG Private Key ID
+    required: false
+
+  image_tag:
+    description: Image tag used to pass specific version of the action
+    required: false
+    default: "latest"
+
+  plugins_list:
+    description: List of Plugins to run with release-it as comma separated
+    required: false
+    default: ""
+
+  ssh_private_key:
+    description: SSH Private Key
+    required: false
+
+runs:
+  using: composite
+  steps:
+    - run: |
+        docker run \
+        -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+        -e GIT_DIRECTORY="/app" \
+        -e GIT_EMAIL=${GIT_EMAIL} \
+        -e GIT_USERNAME="${GIT_USERNAME}" \
+        -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
+        -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+        -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
+        -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
+        -u root \
+        -v $PWD:/app \
+        ghcr.io/juancarlosjr97/release-it-containerized-test:${{ inputs.image_tag }} \
+        release-it ${{ inputs.command }}
+      env:
+        GITHUB_TOKEN: ${{ inputs.github_token }}
+        GIT_EMAIL: ${{ inputs.git_email }}
+        GIT_USERNAME: ${{ inputs.git_username }}
+        GPG_PRIVATE_KEY: ${{ inputs.gpg_private_key }}
+        GPG_PRIVATE_KEY_ID: ${{ inputs.gpg_private_key_id }}
+        RELEASE_IT_PLUGINS: ${{ inputs.plugins_list }}
+        SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
+      shell: bash
