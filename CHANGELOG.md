@@ -3,6 +3,21 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.1.0-beta.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0-beta.0...0.1.0-beta.1) (2024-02-11)
+
+
+### Chores
+
+* adding VERSION file to keep track of version on the project ([b658d39](https://github.com/juancarlosjr97/release-it-containerized/commit/b658d39928e6860dd2d2458f78c516ebfe54a7f0))
+* replacing release it with JS file to handle preRelease configuration ([14e31db](https://github.com/juancarlosjr97/release-it-containerized/commit/14e31db6421214ab8d9652f0cc33918ad40eced4))
+
+
+### Features
+
+* adding handling of multiple plugins in a list ([72d041a](https://github.com/juancarlosjr97/release-it-containerized/commit/72d041ab79d80997c0732fd5ae7b8f22ecf12561)), closes [#4](https://github.com/juancarlosjr97/release-it-containerized/issues/4)
+* adding release on main and develop branches for release-it containerized ([49ae0cf](https://github.com/juancarlosjr97/release-it-containerized/commit/49ae0cfd51703b40941443f931766cfd8c0ffa96)), closes [#5](https://github.com/juancarlosjr97/release-it-containerized/issues/5)
+* removing beta workflow release in favor of package release to handle on published new release on GitHub ([fe9a588](https://github.com/juancarlosjr97/release-it-containerized/commit/fe9a588bfac4e3c15134ba1224a8540a3e926833)), closes [#6](https://github.com/juancarlosjr97/release-it-containerized/issues/6)
+
 ## 0.1.0-beta.0 (2024-02-10)
 
 
