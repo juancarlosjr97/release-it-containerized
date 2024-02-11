@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.2.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.2.0...0.2.1) (2024-02-11)
+
+
+### Chores
+
+* change sorting for type of changes for priority structure ([2d5748f](https://github.com/juancarlosjr97/release-it-containerized/commit/2d5748fd25325227cd11c2cc781993cb3c7562fa))
+
 ## [0.2.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0...0.2.0) (2024-02-11)
 
 
