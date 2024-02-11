@@ -21,16 +21,28 @@ module.exports = {
         name: "conventionalcommits",
         types: [
           {
+            section: "Features",
+            type: "feat",
+          },
+          {
             section: "Bug Fixes",
             type: "fix",
           },
           {
-            section: "Build Changes",
-            type: "build",
+            section: "Tests",
+            type: "test",
           },
           {
             section: "Chores",
             type: "chore",
+          },
+          {
+            section: "Documentation",
+            type: "docs",
+          },
+          {
+            section: "Performance Improvements",
+            type: "perf",
           },
           {
             section: "Code Refactoring",
@@ -41,28 +53,16 @@ module.exports = {
             type: "style",
           },
           {
+            section: "Build Changes",
+            type: "build",
+          },
+          {
             section: "Continuous Integration",
             type: "ci",
           },
           {
-            section: "Documentation",
-            type: "docs",
-          },
-          {
-            section: "Features",
-            type: "feat",
-          },
-          {
-            section: "Performance Improvements",
-            type: "perf",
-          },
-          {
             section: "Reverts",
             type: "revert",
-          },
-          {
-            section: "Tests",
-            type: "test",
           },
         ],
       },
