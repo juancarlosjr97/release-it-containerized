@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.1.1-beta.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0...0.1.1-beta.0) (2024-02-11)
+
+
+### Code Refactoring
+
+* replacing SSH_PRIVATE_KEY_FILE to SSH_PRIVATE_KEY ([277c000](https://github.com/juancarlosjr97/release-it-containerized/commit/277c00088427d35155527ed7f7fda98cd010d8a1))
+
 ## [0.1.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.1.0-beta.3...0.1.0) (2024-02-11)
 
 
