@@ -1,11 +1,23 @@
-FROM node:20.11.0-alpine3.19
+FROM node:20.11.0-alpine3.19@sha256:9b61ed13fef9ca689326f40c0c0b4da70e37a18712f200b4c66d3b44fd59d98e
+
+# renovate: datasource=repology depName=alpine_3_19/bash versioning=loose
+ENV BASH_VERSION="5.2.21-r0"
+
+# renovate: datasource=repology depName=alpine_3_19/git versioning=loose
+ENV GIT_VERSION="2.43.0-r0"
+
+# renovate: datasource=repology depName=alpine_3_19/gnupg versioning=loose
+ENV GNUPG_VERSION="2.4.4-r0"
+
+# renovate: datasource=repology depName=alpine_3_19/openssh versioning=loose
+ENV OPENSSH_VERSION="9.6_p1-r0"
 
 RUN apk update && \
     apk add --no-cache \
-    bash=5.2.21-r0 \
-    git=2.43.0-r0 \
-    gnupg=2.4.4-r0 \
-    openssh=9.6_p1-r0
+    bash="${BASH_VERSION}" \
+    git="${GIT_VERSION}" \
+    gnupg="${GNUPG_VERSION}" \
+    openssh="${OPENSSH_VERSION}"
 
 WORKDIR /app
 
