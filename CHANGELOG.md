@@ -3,6 +3,18 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.4.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.3.0...0.4.0) (2024-02-11)
+
+
+### Features
+
+* updating gh action to make the gh token as optional ([f83f7a3](https://github.com/juancarlosjr97/release-it-containerized/commit/f83f7a3a3f4e6f1efc284166b06bd2584f646f44))
+
+
+### Documentation
+
+* improvements to the documentation for the input variables to run the tool ([da6ba47](https://github.com/juancarlosjr97/release-it-containerized/commit/da6ba479f8afebaafa82e1096c9f788b9014202c))
+
 ## [0.3.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.2.2...0.3.0) (2024-02-11)
 
 
