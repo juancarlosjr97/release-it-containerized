@@ -7,44 +7,47 @@ branding:
   color: red
 inputs:
   command:
+    default: "--ci"
     description: Command to execute release-it
     required: false
-    default: "--ci"
 
   git_email:
+    default: ${{ github.actor }}
     description: Git email to run release-it
     required: false
-    default: ${{ github.actor }}
 
   git_username:
+    default: "${{ github.actor }}@users.noreply.github.com"
     description: Git username to run release-it
     required: false
-    default: "${{ github.actor }}@users.noreply.github.com"
 
   github_token:
+    default: ${{ github.token }}
     description: Github Token to run release-it
     required: true
-    default: ${{ github.token }}
 
   gpg_private_key:
+    default: ""
     description: GPG Private Key
     required: false
 
   gpg_private_key_id:
+    default: ""
     description: GPG Private Key ID
     required: false
 
   image_tag:
+    default: "latest"
     description: Image tag used to pass specific version of the action
     required: false
-    default: "latest"
 
   plugins_list:
+    default: ""
     description: List of Plugins to run with release-it as comma separated
     required: false
-    default: ""
 
   ssh_private_key:
+    default: ""
     description: SSH Private Key
     required: false
 
