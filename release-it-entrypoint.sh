@@ -92,8 +92,13 @@ mkdir -p "${NPM_GLOBAL_DIR}"
 npm config set prefix "${NPM_GLOBAL_DIR}"
 npm config set update-notifier false -g
 
-# Install release-it globally
-npm install --silent -g release-it@"${RELEASE_IT_VERSION}" "${RELEASE_IT_PLUGINS}"
+# Split the plugin list into an installable command 
+IFS=',' read -ra RELEASE_IT_PLUGINS_LIST <<< "${RELEASE_IT_PLUGINS}"
+RELEASE_IT_PLUGINS_SEPARATED="${RELEASE_IT_PLUGINS_LIST[*]}"
+
+# To streamline the installation process, globally install release-it along with any required plugins.
+# shellcheck disable=SC2086 # The variable RELEASE_IT_PLUGINS_SEPARATED is appropriately split to facilitate the installation of plugins.
+npm install -g release-it@"${RELEASE_IT_VERSION}" ${RELEASE_IT_PLUGINS_SEPARATED}
 
 # Execute the provided command
 exec "$@"
