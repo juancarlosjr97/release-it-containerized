@@ -23,15 +23,15 @@ The containerized tool accepts the following inputs.
 
 | Environmental Variable | Description                                                          | Required |
 | ---------------------- | -------------------------------------------------------------------- | -------- |
-| GIT_DIRECTORY          | Directory path to make it safe to run git changes                    | No       |
-| GIT_EMAIL              | The Git email that will be identified when running release-it        | No       |
-| GIT_REPOSITORY         | The Git repository of the project to run release-it                  | No       |
-| GIT_USERNAME           | The Git username that will be identified when running release-it     | No       |
-| GPG_PRIVATE_KEY        | The GPG Private Key                                                  | No       |
-| GPG_PRIVATE_KEY_ID     | The GPG Private Key ID                                               | No       |
-| RELEASE_IT_PLUGINS     | List of comma separated release plugins to run                       | No       |
-| SSH_PASSPHRASE         | SSH Passphrase associated to the SSH Private Key                     | No       |
-| SSH_PRIVATE_KEY        | The SSH Private key associated to the GIT account running release-it | No       |
+| GIT_DIRECTORY          | Directory path to make it safe to run git changes                    | false    |
+| GIT_EMAIL              | The Git email that will be identified when running release-it        | false    |
+| GIT_REPOSITORY         | The Git repository of the project to run release-it                  | false    |
+| GIT_USERNAME           | The Git username that will be identified when running release-it     | false    |
+| GPG_PRIVATE_KEY        | The GPG Private Key                                                  | false    |
+| GPG_PRIVATE_KEY_ID     | The GPG Private Key ID                                               | false    |
+| RELEASE_IT_PLUGINS     | List of comma separated release plugins to run                       | false    |
+| SSH_PASSPHRASE         | SSH Passphrase associated to the SSH Private Key                     | false    |
+| SSH_PRIVATE_KEY        | The SSH Private key associated to the GIT account running release-it | false    |
 
 As the tool runs release-it, you can also pass additional environmental variables, such as `GITHUB_TOKEN` and `GITLAB_TOKEN`, for GitHub and GitLab, respectively.
 
@@ -64,17 +64,17 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 
 #### Input Variables
 
-| Field              | Description                                               | Required | Default                                      |
-| ------------------ | --------------------------------------------------------- | -------- | -------------------------------------------- |
-| command            | Command to execute release-it                             | false    | --ci                                         |
-| git_email          | Git email to run release-it                               | false    | ${{ github.actor }}                          |
-| git_username       | Git username to run release-it                            | false    | ${{ github.actor }}@users.noreply.github.com |
+| Field              | Description                                               | Required | Default                                        |
+| ------------------ | --------------------------------------------------------- | -------- | ---------------------------------------------- |
+| command            | Command to execute release-it                             | false    | --ci                                           |
+| git_email          | Git email to run release-it                               | false    | `${{ github.actor }}`                          |
+| git_username       | Git username to run release-it                            | false    | `${{ github.actor }}@users.noreply.github.com` |
 | github_token       | Github Token to run release-it                            | false    | `${{ github.token }}`                          |
-| gpg_private_key    | GPG Private Key                                           | false    | ""                                           |
-| gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                           |
-| image_tag          | Image tag used to pass specific version of the action     | false    | latest                                       |
-| plugins_list       | List of Plugins to run with release-it as comma separated | false    | ""                                           |
-| ssh_private_key    | SSH Private Key                                           | false    | ""                                           |
+| gpg_private_key    | GPG Private Key                                           | false    | ""                                             |
+| gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                             |
+| image_tag          | Image tag used to pass specific version of the action     | false    | `latest`                                       |
+| plugins_list       | List of Plugins to run with release-it as comma separated | false    | ""                                             |
+| ssh_private_key    | SSH Private Key                                           | false    | ""                                             |
 
 #### Workflow
 
