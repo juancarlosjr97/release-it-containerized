@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.4.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.0...0.4.1) (2024-02-13)
+
+
+### Documentation
+
+* adding code of conduct [skip ci] ([d120723](https://github.com/juancarlosjr97/release-it-containerized/commit/d120723fa0a3f00ddf052b551e5e18b3028c6eec)), closes [#14](https://github.com/juancarlosjr97/release-it-containerized/issues/14)
+
 ## [0.4.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.3.0...0.4.0) (2024-02-11)
 
 
