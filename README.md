@@ -53,7 +53,7 @@ docker run \
     -e SSH_PRIVATE_KEY="$(cat ssh_private_key.sh)" \
     -v $(pwd):/app \
     ghcr.io/juancarlosjr97/release-it-containerized \
-    release-it --ci
+    release-it
 ```
 
 The last line accepts any value, and will be accept any value from release-it CLI configuration. For example, it can execute `--dry-run`.
@@ -66,7 +66,7 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 
 | Field              | Description                                               | Required | Default                                        |
 | ------------------ | --------------------------------------------------------- | -------- | ---------------------------------------------- |
-| command            | Command to execute release-it                             | false    | --ci                                           |
+| command            | Command to execute release-it                             | false    | ""                                             |
 | git_email          | Git email to run release-it                               | false    | `${{ github.actor }}`                          |
 | git_username       | Git username to run release-it                            | false    | `${{ github.actor }}@users.noreply.github.com` |
 | github_token       | Github Token to run release-it                            | false    | `${{ github.token }}`                          |
@@ -84,7 +84,6 @@ Add this step in your workflow file
 - name: Running release-it using GitHub Action
     uses: juancarlosjr97/release-it-containerized:0.2.0
     with:
-        command: "--ci"
         git_email: ${{ vars.GIT_EMAIL }}
         git_username: ${{ vars.GIT_USERNAME }}
         github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
@@ -114,7 +113,6 @@ jobs:
 - name: Running release-it using GitHub Action
     uses: juancarlosjr97/release-it-containerized:0.2.0
     with:
-        command: "--ci"
         git_email: ${{ vars.GIT_EMAIL }}
         git_username: ${{ vars.GIT_USERNAME }}
         github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
