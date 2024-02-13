@@ -53,7 +53,7 @@ jobs:
           -u root \
           -v $PWD:/app \
           ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it ${{needs.release_options.outputs.release_options}}
+          release-it --ci ${{needs.release_options.outputs.release_options}}
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}

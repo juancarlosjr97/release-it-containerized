@@ -7,7 +7,7 @@ branding:
   color: red
 inputs:
   command:
-    default: ""
+    default: "--ci"
     description: Command to execute release-it
     required: false
 
