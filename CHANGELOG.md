@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.4.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.2...0.4.3) (2024-02-16)
+
+
+### Code Refactoring
+
+* updating context to release-it-containerized ([f49cca8](https://github.com/juancarlosjr97/release-it-containerized/commit/f49cca8f05b3415c113733ac4ac99a954c0d3630))
+
 ## [0.4.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.1...0.4.2) (2024-02-16)
 
 
