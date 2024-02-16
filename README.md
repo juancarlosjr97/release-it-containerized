@@ -1,5 +1,6 @@
 # Release It - Containerized
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/87c7a4621311406e90d831cb0979e133)](https://app.codacy.com/gh/juancarlosjr97/release-it-containerized?utm_source=github.com&utm_medium=referral&utm_content=juancarlosjr97/release-it-containerized&utm_campaign=Badge_Grade)
 [![test](https://github.com/juancarlosjr97/release-it-containerized/actions/workflows/test.yaml/badge.svg)](https://github.com/juancarlosjr97/release-it-containerized/actions/workflows/test.yaml)
 ![GitHub Release](https://img.shields.io/github/v/release/juancarlosjr97/release-it-containerized)
 [![MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/juancarlosjr97/release-it-containerized/blob/main/LICENSE)
