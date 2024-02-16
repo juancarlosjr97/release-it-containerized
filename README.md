@@ -44,7 +44,7 @@ For example running locally.
 ```docker
 docker run \
     -e GIT_EMAIL="juancarlosjr97@gmail.com" \
-    -e GIT_REPOSITORY="git@github.com:juancarlosjr97/release-it-dockerised.git" \
+    -e GIT_REPOSITORY="git@github.com:juancarlosjr97/release-it-containerized.git" \
     -e GIT_USERNAME="Juan Carlos Blanco Delgado" \
     -e GITHUB_TOKEN="***" \
     -e GPG_PRIVATE_KEY_ID="***" \

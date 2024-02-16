@@ -23,8 +23,8 @@ WORKDIR /app
 
 USER node
 
-COPY --chown=node release-it-entrypoint.sh /usr/local/bin/release-it-dockerised
+COPY --chown=node release-it-entrypoint.sh /usr/local/bin/release-it-containerized
 
-ENTRYPOINT ["release-it-dockerised"]
+ENTRYPOINT ["release-it-containerized"]
 
 CMD ["sh"]
