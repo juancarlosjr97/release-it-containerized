@@ -1,8 +1,9 @@
 # Release It - Containerized
 
 [![test](https://github.com/juancarlosjr97/release-it-containerized/actions/workflows/test.yaml/badge.svg)](https://github.com/juancarlosjr97/release-it-containerized/actions/workflows/test.yaml)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/0c589ca66383469ea408bcc00308022e)](https://app.codacy.com/gh/juancarlosjr97/release-it-containerized/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 ![GitHub Release](https://img.shields.io/github/v/release/juancarlosjr97/release-it-containerized)
-[![MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/juancarlosjr97/release-it-containerized/blob/main/LICENSE)
+[![MIT](https://img.shields.io/badge/icense-MIT-brightgreen.svg)](https://github.com/juancarlosjr97/release-it-containerized/blob/main/LICENSE)
 
 This project is a containerized version of [release-it](https://github.com/release-it/release-it). The purpose of this project is to enable release-it to run in any environment as a standardized container without the need for a Node environment.
 
