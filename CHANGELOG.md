@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.4.4](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.3...0.4.4) (2024-02-17)
+
+
+### Chores
+
+* adding to readme codacy for project and code quality ([06adbd8](https://github.com/juancarlosjr97/release-it-containerized/commit/06adbd8a7a1056c9eff67f7dd38528d54c357684))
+
 ## [0.4.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.2...0.4.3) (2024-02-16)
 
 
