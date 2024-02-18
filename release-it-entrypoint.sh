@@ -89,8 +89,8 @@ NPM_GLOBAL_DIR=/home/node/.npm-global
 PATH=${NPM_GLOBAL_DIR}/bin:${PATH}
 
 mkdir -p "${NPM_GLOBAL_DIR}"
-npm config set prefix "${NPM_GLOBAL_DIR}"
-npm config set update-notifier false -g
+export NPM_CONFIG_PREFIX="${NPM_GLOBAL_DIR}"
+export NPM_CONFIG_UPDATE_NOTIFIER=false
 
 # Split the plugin list into an installable command 
 IFS=',' read -ra RELEASE_IT_PLUGINS_LIST <<< "${RELEASE_IT_PLUGINS}"
