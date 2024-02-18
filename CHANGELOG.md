@@ -3,6 +3,24 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.5.0-beta.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.4...0.5.0-beta.0) (2024-02-18)
+
+
+### Features
+
+* updating npm configuration to environmental variables to avoid error executing on a npm workspace ([2609baf](https://github.com/juancarlosjr97/release-it-containerized/commit/2609bafae4dbe5b0a625c196c8061fa8901be1ea))
+
+
+### Documentation
+
+* updating CHANGELOG license badge ([6699ed1](https://github.com/juancarlosjr97/release-it-containerized/commit/6699ed17b862445c787baa440cb15c8935d17d82))
+* updating CHANGELOG license badge [skip ci] ([6679d4f](https://github.com/juancarlosjr97/release-it-containerized/commit/6679d4ff3628506f516e0c7a50862200dcc93c8d))
+
+
+### Code Style Changes
+
+* adding missing start of the yaml document [skip ci] ([413ffd1](https://github.com/juancarlosjr97/release-it-containerized/commit/413ffd1ea2763ea96a318452d8c15b32315257be))
+
 ## [0.4.4](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.3...0.4.4) (2024-02-17)
 
 
