@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.5.0-beta.4](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.3...0.5.0-beta.4) (2024-02-18)
+
+
+### Continuous Integration
+
+* removing setting the RELEASE_IT_VERSION as specific one to let latest to be executed ([0cdf486](https://github.com/juancarlosjr97/release-it-containerized/commit/0cdf486de7b5a096b81e7f3ac5d9431faf8ab589))
+
 ## [0.5.0-beta.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.2...0.5.0-beta.3) (2024-02-18)
 
 
