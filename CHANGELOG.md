@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.5.0-beta.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.2...0.5.0-beta.3) (2024-02-18)
+
+
+### Bug Fixes
+
+* installing specific release-it version on container execution ([365f1e8](https://github.com/juancarlosjr97/release-it-containerized/commit/365f1e8c0ca595d5aada237e94a8701c47ab2703)), closes [#23](https://github.com/juancarlosjr97/release-it-containerized/issues/23)
+
 ## [0.5.0-beta.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.1...0.5.0-beta.2) (2024-02-18)
 
 
