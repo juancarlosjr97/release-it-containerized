@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.5.0-beta.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.1...0.5.0-beta.2) (2024-02-18)
+
+
+### Continuous Integration
+
+* updating release-it version to use 17.0.5 of release-it ([65cdf6a](https://github.com/juancarlosjr97/release-it-containerized/commit/65cdf6acecf954eb1db0a6165d6db32fe35f7931))
+
 ## [0.5.0-beta.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.0...0.5.0-beta.1) (2024-02-18)
 
 
