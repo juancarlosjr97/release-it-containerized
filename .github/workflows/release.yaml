@@ -49,6 +49,7 @@ jobs:
           -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
           -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
           -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+          -e RELEASE_IT_VERSION="17.0.5" \
           -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
           -u root \
           -v $PWD:/app \
