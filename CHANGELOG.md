@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.5.0-beta.6](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.5...0.5.0-beta.6) (2024-02-19)
+
+
+### Code Refactoring
+
+* updating entry point script with minor tweaks to commands for more clarity ([2e348ca](https://github.com/juancarlosjr97/release-it-containerized/commit/2e348ca3dabb118cf0868a0e68ad154824cc300d))
+
 ## [0.5.0-beta.5](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.4...0.5.0-beta.5) (2024-02-19)
 
 
