@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.5.0-beta.5](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.4...0.5.0-beta.5) (2024-02-19)
+
+
+### Features
+
+* adding outputting information of the current execution script ([4ae0555](https://github.com/juancarlosjr97/release-it-containerized/commit/4ae055579c0f9b863154e494c465824469177be7))
+
 ## [0.5.0-beta.4](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.3...0.5.0-beta.4) (2024-02-18)
 
 
