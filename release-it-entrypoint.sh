@@ -96,9 +96,11 @@ export NPM_CONFIG_UPDATE_NOTIFIER=false
 IFS=',' read -ra RELEASE_IT_PLUGINS_LIST <<< "${RELEASE_IT_PLUGINS}"
 RELEASE_IT_PLUGINS_SEPARATED="${RELEASE_IT_PLUGINS_LIST[*]}"
 
+echo "Installing release-it..."
 # To streamline the installation process, globally install release-it along with any required plugins.
 # shellcheck disable=SC2086 # The variable RELEASE_IT_PLUGINS_SEPARATED is appropriately split to facilitate the installation of plugins.
 npm install --silent -g release-it@${RELEASE_IT_VERSION} ${RELEASE_IT_PLUGINS_SEPARATED}
 
 # Execute the provided command
+echo "Executing release-it..."
 exec "$@"
