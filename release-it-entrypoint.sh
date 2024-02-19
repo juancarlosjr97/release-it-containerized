@@ -90,6 +90,7 @@ PATH=${NPM_GLOBAL_DIR}/bin:${PATH}
 
 mkdir -p "${NPM_GLOBAL_DIR}"
 export NPM_CONFIG_PREFIX="${NPM_GLOBAL_DIR}"
+export NPM_CONFIG_PROGRESS=false
 export NPM_CONFIG_UPDATE_NOTIFIER=false
 
 # Split the plugin list into an installable command 
@@ -99,8 +100,8 @@ RELEASE_IT_PLUGINS_SEPARATED="${RELEASE_IT_PLUGINS_LIST[*]}"
 echo "Installing release-it..."
 # To streamline the installation process, globally install release-it along with any required plugins.
 # shellcheck disable=SC2086 # The variable RELEASE_IT_PLUGINS_SEPARATED is appropriately split to facilitate the installation of plugins.
-npm install --silent -g release-it@${RELEASE_IT_VERSION} ${RELEASE_IT_PLUGINS_SEPARATED}
+npm install --silent --global release-it@${RELEASE_IT_VERSION} ${RELEASE_IT_PLUGINS_SEPARATED}
 
-# Execute the provided command
+# Execute the provided command to release-it
 echo "Executing release-it..."
 exec "$@"
