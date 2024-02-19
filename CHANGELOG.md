@@ -3,6 +3,42 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.5.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.4...0.5.0) (2024-02-19)
+
+
+### Features
+
+* adding outputting information of the current execution script ([4ae0555](https://github.com/juancarlosjr97/release-it-containerized/commit/4ae055579c0f9b863154e494c465824469177be7))
+* updating npm configuration to environmental variables to avoid error executing on a npm workspace ([2609baf](https://github.com/juancarlosjr97/release-it-containerized/commit/2609bafae4dbe5b0a625c196c8061fa8901be1ea))
+
+
+### Bug Fixes
+
+* installing specific release-it version on container execution ([365f1e8](https://github.com/juancarlosjr97/release-it-containerized/commit/365f1e8c0ca595d5aada237e94a8701c47ab2703)), closes [#23](https://github.com/juancarlosjr97/release-it-containerized/issues/23)
+
+
+### Documentation
+
+* updating CHANGELOG license badge ([6699ed1](https://github.com/juancarlosjr97/release-it-containerized/commit/6699ed17b862445c787baa440cb15c8935d17d82))
+* updating CHANGELOG license badge [skip ci] ([6679d4f](https://github.com/juancarlosjr97/release-it-containerized/commit/6679d4ff3628506f516e0c7a50862200dcc93c8d))
+
+
+### Code Refactoring
+
+* updating entry point script with minor tweaks to commands for more clarity ([2e348ca](https://github.com/juancarlosjr97/release-it-containerized/commit/2e348ca3dabb118cf0868a0e68ad154824cc300d))
+
+
+### Code Style Changes
+
+* adding missing start of the yaml document [skip ci] ([413ffd1](https://github.com/juancarlosjr97/release-it-containerized/commit/413ffd1ea2763ea96a318452d8c15b32315257be))
+
+
+### Continuous Integration
+
+* removing setting the RELEASE_IT_VERSION as specific one to let latest to be executed ([0cdf486](https://github.com/juancarlosjr97/release-it-containerized/commit/0cdf486de7b5a096b81e7f3ac5d9431faf8ab589))
+* updating release-it version to use 17.0.5 of release-it ([65cdf6a](https://github.com/juancarlosjr97/release-it-containerized/commit/65cdf6acecf954eb1db0a6165d6db32fe35f7931))
+* updating release-it version to use v17.0.5 ([787223c](https://github.com/juancarlosjr97/release-it-containerized/commit/787223ce787685f83ca043ec90070f295399c27c))
+
 ## [0.5.0-beta.6](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0-beta.5...0.5.0-beta.6) (2024-02-19)
 
 
