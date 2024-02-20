@@ -6,9 +6,10 @@ GIT_DIRECTORY="${GIT_DIRECTORY:-}"
 GIT_EMAIL="${GIT_EMAIL:-}"
 GIT_REPOSITORY="${GIT_REPOSITORY:-}"
 GIT_USERNAME="${GIT_USERNAME:-}"
-GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID:-}"
 GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY:-}"
+GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID:-}"
 RELEASE_IT_PLUGINS=${RELEASE_IT_PLUGINS:-}
+RELEASE_IT_VERSION=${RELEASE_IT_VERSION:-latest}
 SSH_PASSPHRASE="${SSH_PASSPHRASE:-}"
 SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY:-}"
 
@@ -79,9 +80,6 @@ if [[ -n "${SSH_PRIVATE_KEY}" ]]; then
 else
     echo "SSH_PRIVATE_KEY is not provided. SSH setup skipped"
 fi
-
-# Set RELEASE_IT_VERSION default value if not provided
-RELEASE_IT_VERSION=${RELEASE_IT_VERSION:-latest}
 
 # Configure NPM global settings
 # Adjust the global directory for NPM to a location with full permissions for the node user, set during the image build
