@@ -1,6 +1,6 @@
 ---
-name: Github Action - Release-it Containerized
-description: Github Action to run Release-It
+name: Github Action - Release It Containerized
+description: Github Action to run Release It
 author: Juan Carlos Blanco Delgado
 branding:
   icon: zap
@@ -13,17 +13,17 @@ inputs:
 
   git_email:
     default: ${{ github.actor }}
-    description: Git email to run release-it
+    description: Git email to run Release It
     required: false
 
   git_username:
     default: "${{ github.actor }}@users.noreply.github.com"
-    description: Git username to run release-it
+    description: Git username to run Release It
     required: false
 
   github_token:
     default: ${{ github.token }}
-    description: Github Token to run release-it
+    description: Github Token to run Release It
     required: false
 
   gpg_private_key:
@@ -43,7 +43,12 @@ inputs:
 
   plugins_list:
     default: ""
-    description: List of Plugins to run with release-it as comma separated
+    description: List of Plugins to run with Release It as comma separated
+    required: false
+
+  ssh_passphrase:
+    default: ""
+    description: SSH Passphrase
     required: false
 
   ssh_private_key:
@@ -69,6 +74,7 @@ runs:
         -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
         -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
         -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}"
+        -e SSH_PASSPHRASE="${SSH_PASSPHRASE}" \
         -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
         -u root \
         -v $PWD:/app \
@@ -82,5 +88,6 @@ runs:
         GPG_PRIVATE_KEY_ID: ${{ inputs.gpg_private_key_id }}
         RELEASE_IT_PLUGINS: ${{ inputs.plugins_list }}
         RELEASE_IT_VERSION: ${{ inputs.version }}
+        SSH_PASSPHRASE: ${{ inputs.ssh_passphrase }}
         SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
       shell: bash

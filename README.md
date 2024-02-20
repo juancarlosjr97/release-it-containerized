@@ -44,14 +44,15 @@ For example running locally.
 
 ```docker
 docker run \
+    -e GITHUB_TOKEN="***" \
     -e GIT_EMAIL="juancarlosjr97@gmail.com" \
     -e GIT_REPOSITORY="git@github.com:juancarlosjr97/release-it-containerized.git" \
     -e GIT_USERNAME="Juan Carlos Blanco Delgado" \
-    -e GITHUB_TOKEN="***" \
-    -e GPG_PRIVATE_KEY_ID="***" \
     -e GPG_PRIVATE_KEY="$(cat gpg_private_key.pgp)" \
+    -e GPG_PRIVATE_KEY_ID="***" \
     -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-    -e SSH_PRIVATE_KEY="$(cat ssh_private_key.sh)" \
+    -e SSH_PASSPHRASE="***" \
+    -e SSH_PRIVATE_KEY="$(cat ssh_private_key)" \
     -v $(pwd):/app \
     ghcr.io/juancarlosjr97/release-it-containerized \
     release-it --ci
@@ -75,6 +76,7 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 | gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                             |
 | image_tag          | Image tag used to pass specific version of the action     | false    | `latest`                                       |
 | plugins_list       | List of Plugins to run with release-it as comma separated | false    | ""                                             |
+| ssh_passphrase     | SSH Passphrase                                            | false    | ""                                             |
 | ssh_private_key    | SSH Private Key                                           | false    | ""                                             |
 | version            | Release It version                                        | false    | `latest`                                       |
 
@@ -88,13 +90,13 @@ Add this step in your workflow file
 - name: Running release-it using GitHub Action
     uses: juancarlosjr97/release-it-containerized:0.2.0
     with:
-        command: "--ci"
         git_email: ${{ vars.GIT_EMAIL }}
         git_username: ${{ vars.GIT_USERNAME }}
         github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
         gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
         gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
         plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
+        ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
 
@@ -118,13 +120,13 @@ jobs:
 - name: Running release-it using GitHub Action
     uses: juancarlosjr97/release-it-containerized:0.2.0
     with:
-        command: "--ci"
         git_email: ${{ vars.GIT_EMAIL }}
         git_username: ${{ vars.GIT_USERNAME }}
         github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
         gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
         gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
         plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
+        ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
 
