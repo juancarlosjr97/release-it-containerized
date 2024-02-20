@@ -3,6 +3,15 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.0...0.6.1) (2024-02-20)
+
+
+### Tests
+
+* fixing test adding line break ([c6b8422](https://github.com/juancarlosjr97/release-it-containerized/commit/c6b8422cc2c946981daa59261d461695d6f666d3))
+* updating tests to only execute when workflow event is a success ([98a62c0](https://github.com/juancarlosjr97/release-it-containerized/commit/98a62c06e81fdf4beb6493ccbcc2ac3f59c51756))
+* updating tests to pass only needed command ([7b3c9b4](https://github.com/juancarlosjr97/release-it-containerized/commit/7b3c9b4a2be110e9f9adf9b68a167aef9b210cf7))
+
 ## [0.6.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0...0.6.0) (2024-02-20)
 
 
