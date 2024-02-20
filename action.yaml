@@ -73,7 +73,7 @@ runs:
         -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
         -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
         -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
-        -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}"
+        -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}" \
         -e SSH_PASSPHRASE="${SSH_PASSPHRASE}" \
         -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
         -u root \
