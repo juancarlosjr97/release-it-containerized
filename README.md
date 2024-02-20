@@ -67,7 +67,7 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 
 | Field              | Description                                               | Required | Default                                        |
 | ------------------ | --------------------------------------------------------- | -------- | ---------------------------------------------- |
-| command            | Command to execute release-it                             | false    | --ci                                           |
+| command            | Command to execute release-it                             | false    | ""                                             |
 | git_email          | Git email to run release-it                               | false    | `${{ github.actor }}`                          |
 | git_username       | Git username to run release-it                            | false    | `${{ github.actor }}@users.noreply.github.com` |
 | github_token       | Github Token to run release-it                            | false    | `${{ github.token }}`                          |
@@ -77,6 +77,8 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 | plugins_list       | List of Plugins to run with release-it as comma separated | false    | ""                                             |
 | ssh_private_key    | SSH Private Key                                           | false    | ""                                             |
 | version            | Release It version                                        | false    | `latest`                                       |
+
+The GitHub Action exclusively operates within a CI environment, utilizing the `--ci` option, ensuring a fully automated process devoid of prompts in a non-interactive mode.
 
 #### Workflow
 

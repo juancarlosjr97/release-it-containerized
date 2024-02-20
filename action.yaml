@@ -7,8 +7,8 @@ branding:
   color: red
 inputs:
   command:
-    default: "--ci"
-    description: Command to execute release-it
+    default: ""
+    description: Command to execute Release It
     required: false
 
   git_email:
@@ -73,7 +73,7 @@ runs:
         -u root \
         -v $PWD:/app \
         ghcr.io/juancarlosjr97/release-it-containerized:${{ inputs.image_tag }} \
-        release-it ${{ inputs.command }}
+        release-it --ci ${{ inputs.command }}
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
         GIT_EMAIL: ${{ inputs.git_email }}
