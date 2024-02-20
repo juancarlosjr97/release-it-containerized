@@ -3,6 +3,20 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.0-beta.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.5.0...0.6.0-beta.0) (2024-02-20)
+
+
+### Features
+
+* adding release-it version to github action template ([42f2774](https://github.com/juancarlosjr97/release-it-containerized/commit/42f2774d02830cf9cb03921b6df0b5a615060b53)), closes [#24](https://github.com/juancarlosjr97/release-it-containerized/issues/24)
+* adding to github action to pass SSH Passphrase ([96fdb57](https://github.com/juancarlosjr97/release-it-containerized/commit/96fdb578e7627ce3515b8c7c20e21c0578978896)), closes [#25](https://github.com/juancarlosjr97/release-it-containerized/issues/25)
+* removing default command with --ci as it runs always on GH ([73416f7](https://github.com/juancarlosjr97/release-it-containerized/commit/73416f703274e2d59dc602598d116d1c64bf457e)), closes [#17](https://github.com/juancarlosjr97/release-it-containerized/issues/17)
+
+
+### Code Refactoring
+
+* moving input variables to top level for definition ([06915b1](https://github.com/juancarlosjr97/release-it-containerized/commit/06915b19b75366b4fbc0221be01c25df6bca2288))
+
 ## [0.5.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.4.4...0.5.0) (2024-02-19)
 
 
