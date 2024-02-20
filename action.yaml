@@ -51,6 +51,11 @@ inputs:
     description: SSH Private Key
     required: false
 
+  version:
+    default: "latest"
+    description: Release It version
+    required: false
+
 runs:
   using: composite
   steps:
@@ -63,6 +68,7 @@ runs:
         -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
         -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
         -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
+        -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}"
         -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
         -u root \
         -v $PWD:/app \
@@ -75,5 +81,6 @@ runs:
         GPG_PRIVATE_KEY: ${{ inputs.gpg_private_key }}
         GPG_PRIVATE_KEY_ID: ${{ inputs.gpg_private_key_id }}
         RELEASE_IT_PLUGINS: ${{ inputs.plugins_list }}
+        RELEASE_IT_VERSION: ${{ inputs.version }}
         SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
       shell: bash

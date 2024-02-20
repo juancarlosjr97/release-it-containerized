@@ -76,6 +76,7 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 | image_tag          | Image tag used to pass specific version of the action     | false    | `latest`                                       |
 | plugins_list       | List of Plugins to run with release-it as comma separated | false    | ""                                             |
 | ssh_private_key    | SSH Private Key                                           | false    | ""                                             |
+| version            | Release It version                                        | false    | `latest`                                       |
 
 #### Workflow
 
