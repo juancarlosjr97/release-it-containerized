@@ -5,5 +5,16 @@
         "regexManagers:dockerfileVersions",
         "group:all"
     ],
-    "automerge": true
+    "packageRules": [
+        {
+            "matchDatasources": [
+                "docker"
+            ],
+            "dependencyDashboardApproval": true,
+            "groupName": "Node LTS",
+            "matchUpdateTypes": [
+                "major"
+            ]
+        }
+    ]
 }
