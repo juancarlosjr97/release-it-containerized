@@ -13,7 +13,6 @@
             "matchPackageNames": [
                 "node"
             ],
-            "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-.*)?$",
             "versioning": "node",
             "matchUpdateTypes": [
                 "patch",
