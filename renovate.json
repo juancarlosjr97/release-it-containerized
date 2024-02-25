@@ -15,7 +15,11 @@
             ],
             "depNameTemplate": "node",
             "datasourceTemplate": "node",
-            "versioningTemplate": "node"
+            "versioningTemplate": "node",
+            "updateTypes": [
+                "minor",
+                "patch"
+            ]
         }
     ],
     "packageRules": [
