@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.1...0.6.2) (2024-02-25)
+
+
+### Chores
+
+* adding to Dockerfile the origin of the image ([e33bc8f](https://github.com/juancarlosjr97/release-it-containerized/commit/e33bc8ff22ed90e0eb0b13eb37195f7e662648c1))
+
 ## [0.6.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.0...0.6.1) (2024-02-20)
 
 
