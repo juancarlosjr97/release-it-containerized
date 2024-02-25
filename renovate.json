@@ -11,7 +11,7 @@
                 "^Dockerfile$"
             ],
             "matchStrings": [
-                "FROM node:(?<currentValue>.*?)-alpine*"
+                "FROM node:(?<currentValue>.*?)-alpine\\n"
             ],
             "depNameTemplate": "node",
             "datasourceTemplate": "node",
