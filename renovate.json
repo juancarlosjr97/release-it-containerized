@@ -14,7 +14,11 @@
                 "node"
             ],
             "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-.*)?$",
-            "versioning": "node"
+            "versioning": "node",
+            "matchUpdateTypes": [
+                "patch",
+                "minor"
+            ]
         }
     ]
 }
