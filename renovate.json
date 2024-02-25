@@ -13,7 +13,6 @@
             "matchPackageNames": [
                 "node"
             ],
-            "versioning": "node",
             "matchUpdateTypes": [
                 "patch",
                 "minor"
