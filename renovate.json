@@ -5,29 +5,16 @@
         "regexManagers:dockerfileVersions",
         "group:all"
     ],
-    "regexManagers": [
-        {
-            "fileMatch": [
-                "^Dockerfile$"
-            ],
-            "matchStrings": [
-                "FROM node:(?<currentValue>.*?)-alpine\\n"
-            ],
-            "depNameTemplate": "node",
-            "datasourceTemplate": "node",
-            "versioningTemplate": "node"
-        }
-    ],
     "packageRules": [
         {
+            "matchDatasources": [
+                "docker"
+            ],
             "matchPackageNames": [
                 "node"
             ],
-            "dependencyDashboardApproval": true,
-            "groupName": "Node LTS",
-            "matchUpdateTypes": [
-                "major"
-            ]
+            "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-.*)?$",
+            "versioning": "node"
         }
     ]
 }
