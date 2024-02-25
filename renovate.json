@@ -13,10 +13,8 @@
             "matchPackageNames": [
                 "node"
             ],
-            "matchUpdateTypes": [
-                "patch",
-                "minor"
-            ]
+            "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-.*)?$",
+            "versioning": "node"
         }
     ]
 }
