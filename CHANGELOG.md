@@ -3,6 +3,28 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.2...0.6.3) (2024-03-08)
+
+
+### Bug Fixes
+
+* updating renovate configuration to fix updating to only node lts versions ([00d4d06](https://github.com/juancarlosjr97/release-it-containerized/commit/00d4d06549e6decfe047617f708c737068d82430)), closes [#33](https://github.com/juancarlosjr97/release-it-containerized/issues/33)
+
+
+### Chores
+
+* adding constraint to Docker major upgrade using Renovate [skip ci] ([b9e9b55](https://github.com/juancarlosjr97/release-it-containerized/commit/b9e9b554d5252dad42df81724a197f1c4daf1258))
+* **deps:** update all dependencies ([50ddc49](https://github.com/juancarlosjr97/release-it-containerized/commit/50ddc49eb2b28394763c1369698b17ebd1025953))
+* removing versionCompatibility from renovate configuration [skip ci] ([8962a4b](https://github.com/juancarlosjr97/release-it-containerized/commit/8962a4b8829be85edb0f54a749945f9cde1a3b35))
+* removing versioning from renovate configuration due to conflict [skip ci] ([1975f0f](https://github.com/juancarlosjr97/release-it-containerized/commit/1975f0f41f16d95771055a84a64d1ec9c21fbbbe))
+* updating renovate and node base image to pick up using LTS [skip ci] ([3cdce26](https://github.com/juancarlosjr97/release-it-containerized/commit/3cdce26505d710a274500c2991f23e7ef13aa2bc))
+* updating renovate based on package rules for node with alpine suffix for docker node image [skip ci] ([bc4da3b](https://github.com/juancarlosjr97/release-it-containerized/commit/bc4da3b3a890cbde3f2635050d04848496ddab72))
+* updating renovate configuration for node LTS [skip ci] ([f1ea2d1](https://github.com/juancarlosjr97/release-it-containerized/commit/f1ea2d159fd9709a67162f3b322eb438ce7d6cfc))
+* updating renovate to allow only updateTypes of minor and patch [skip ci] ([f9c111a](https://github.com/juancarlosjr97/release-it-containerized/commit/f9c111aefb1454ff8be38ef87bd70c1a03e1f709))
+* updating renovate to only raise MR for non major [skip ci] ([ddd555b](https://github.com/juancarlosjr97/release-it-containerized/commit/ddd555bc823abced7c8f3b01182f76fc7f5d5e8b))
+* updating renovate to only update to patch and minor [skip ci] ([f0fbbdf](https://github.com/juancarlosjr97/release-it-containerized/commit/f0fbbdfeebc4553f772de334f782b004ebf048fe))
+* updating renovate to use match with versionCompatibility for node LTS [skip ci] ([5e2a1e1](https://github.com/juancarlosjr97/release-it-containerized/commit/5e2a1e13fd0ee364f50311a1882c9f19e533b6b7))
+
 ## [0.6.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.1...0.6.2) (2024-02-25)
 
 
