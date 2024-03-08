@@ -11,7 +11,7 @@
                 "docker"
             ],
             "matchPackageNames": [
-                "node"
+                "docker.io/library/node"
             ],
             "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-.*)?$",
             "versioning": "node"
