@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.4](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.3...0.6.4) (2024-03-12)
+
+
+### Reverts
+
+* using node 20 as latest LTS with alpine 3.19 ([124c820](https://github.com/juancarlosjr97/release-it-containerized/commit/124c82004644fd981c229abaedb6b6cb9a400a97)), closes [#35](https://github.com/juancarlosjr97/release-it-containerized/issues/35)
+
 ## [0.6.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.2...0.6.3) (2024-03-08)
 
 
