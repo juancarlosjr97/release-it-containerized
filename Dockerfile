@@ -1,4 +1,4 @@
-FROM docker.io/library/node:21.7.0-alpine@sha256:ef24450637e0957b1631f7a650de3ebff266281f89094266e3b285474932204f
+FROM docker.io/library/node:20.11.1-alpine3.19@sha256:f4c96a28c0b2d8981664e03f461c2677152cd9a756012ffa8e2c6727427c2bda
 
 # renovate: datasource=repology depName=alpine_3_19/bash versioning=loose
 ENV BASH_VERSION="5.2.21-r0"
