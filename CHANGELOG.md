@@ -3,6 +3,18 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.6](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.5...0.6.6) (2024-03-26)
+
+
+### Chores
+
+* updating image with fix for CVE-2024-25629 ([5039d7a](https://github.com/juancarlosjr97/release-it-containerized/commit/5039d7a68609e18176387599f0865c1b377606f0)), closes [#37](https://github.com/juancarlosjr97/release-it-containerized/issues/37)
+
+
+### Continuous Integration
+
+* **renovate:** updating renovate to fetch node alpine3.19 [skip ci] ([9ce75c2](https://github.com/juancarlosjr97/release-it-containerized/commit/9ce75c20238f4790f665797cd5a2fe8c4e2cbde5)), closes [#33](https://github.com/juancarlosjr97/release-it-containerized/issues/33)
+
 ## [0.6.5](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.4...0.6.5) (2024-03-16)
 
 
