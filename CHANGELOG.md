@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.7](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.6...0.6.7) (2024-03-27)
+
+
+### Chores
+
+* **deps:** update node.js to v20.12.0 ([52309c9](https://github.com/juancarlosjr97/release-it-containerized/commit/52309c90f389db94c9fceeb7dc3979e8faa1a675))
+
 ## [0.6.6](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.5...0.6.6) (2024-03-26)
 
 
