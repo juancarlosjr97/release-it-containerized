@@ -12,6 +12,12 @@ ENV GIT_VERSION="2.43.0-r0"
 # renovate: datasource=repology depName=alpine_3_19/gnupg versioning=loose
 ENV GNUPG_VERSION="2.4.4-r0"
 
+# renovate: datasource=repology depName=alpine_3_19/libcrypto3 versioning=loose
+ENV LIBCRYPTO3_VERSION="3.1.4-r6"
+
+# renovate: datasource=repology depName=alpine_3_19/libssl3 versioning=loose
+ENV LIBSSL3_VERSION="3.1.4-r6"
+
 # renovate: datasource=repology depName=alpine_3_19/openssh versioning=loose
 ENV OPENSSH_VERSION="9.6_p1-r0"
 
@@ -21,6 +27,8 @@ RUN apk update && \
     c-ares="${C_ARES_VERSION}" \
     git="${GIT_VERSION}" \
     gnupg="${GNUPG_VERSION}" \
+    libcrypto3="${LIBCRYPTO3_VERSION}" \
+    libssl3="${LIBSSL3_VERSION}" \
     openssh="${OPENSSH_VERSION}"
 
 WORKDIR /app
