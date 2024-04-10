@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.9](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.8...0.6.9) (2024-04-10)
+
+
+### Chores
+
+* security fix for CVE-2024-2511 ([cf3cd64](https://github.com/juancarlosjr97/release-it-containerized/commit/cf3cd64f0d9a5be8316ca3153fc2443997719252)), closes [#41](https://github.com/juancarlosjr97/release-it-containerized/issues/41)
+
 ## [0.6.8](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.7...0.6.8) (2024-04-04)
 
 
