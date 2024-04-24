@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.11](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.10...0.6.11) (2024-04-24)
+
+
+### Chores
+
+* **deps:** update node.js to e18f74f ([eac8e5a](https://github.com/juancarlosjr97/release-it-containerized/commit/eac8e5a469c1df4a2e1eebf10d10e4f9e6fbea61))
+
 ## [0.6.10](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.9...0.6.10) (2024-04-11)
 
 
