@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.14](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.13...0.6.14) (2024-05-16)
+
+
+### Chores
+
+* **deps:** update dependency alpine_3_19/git to v2.43.4-r0 ([fdeecfb](https://github.com/juancarlosjr97/release-it-containerized/commit/fdeecfbcfc7c281cb7604a56e9451b6df43459d7))
+
 ## [0.6.13](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.12...0.6.13) (2024-05-10)
 
 
