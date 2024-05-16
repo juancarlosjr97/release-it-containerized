@@ -7,7 +7,7 @@ ENV BASH_VERSION="5.2.21-r0"
 ENV C_ARES_VERSION="1.27.0-r0"
 
 # renovate: datasource=repology depName=alpine_3_19/git versioning=loose
-ENV GIT_VERSION="2.43.0-r0"
+ENV GIT_VERSION="2.43.4-r0"
 
 # renovate: datasource=repology depName=alpine_3_19/gnupg versioning=loose
 ENV GNUPG_VERSION="2.4.4-r0"
