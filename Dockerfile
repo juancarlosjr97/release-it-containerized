@@ -4,7 +4,7 @@ FROM docker.io/library/node:20.13.1-alpine3.19@sha256:291e84d956f1aff38454bbd3da
 ENV BASH_VERSION="5.2.21-r0"
 
 # renovate: datasource=repology depName=alpine_3_19/busybox versioning=loose
-ENV BUSYBOX_VERSION="1.36.1-r16"
+ENV BUSYBOX_VERSION="1.36.1-r17"
 
 # renovate: datasource=repology depName=alpine_3_19/c-ares versioning=loose
 ENV C_ARES_VERSION="1.27.0-r0"
@@ -16,10 +16,10 @@ ENV GIT_VERSION="2.43.4-r0"
 ENV GNUPG_VERSION="2.4.4-r0"
 
 # renovate: datasource=repology depName=alpine_3_19/libcrypto3 versioning=loose
-ENV LIBCRYPTO3_VERSION="3.1.4-r6"
+ENV LIBCRYPTO3_VERSION="3.1.5-r0"
 
 # renovate: datasource=repology depName=alpine_3_19/libssl3 versioning=loose
-ENV LIBSSL3_VERSION="3.1.4-r6"
+ENV LIBSSL3_VERSION="3.1.5-r0"
 
 # renovate: datasource=repology depName=alpine_3_19/openssh versioning=loose
 ENV OPENSSH_VERSION="9.6_p1-r0"
