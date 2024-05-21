@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.17](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.16...0.6.17) (2024-05-21)
+
+
+### Chores
+
+* **deps:** update dependency alpine_3_19/busybox to v1.36.1-r18 ([a41101f](https://github.com/juancarlosjr97/release-it-containerized/commit/a41101f8366d52fa2936666ef0015bafce98045c))
+
 ## [0.6.16](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.15...0.6.16) (2024-05-20)
 
 
