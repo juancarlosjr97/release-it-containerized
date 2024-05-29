@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.20](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.19...0.6.20) (2024-05-29)
+
+
+### Chores
+
+* **deps:** update node.js to 2d0ce60 ([227c7b5](https://github.com/juancarlosjr97/release-it-containerized/commit/227c7b50e3c4895b5351068455b0c1c864e5979f))
+
 ## [0.6.19](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.18...0.6.19) (2024-05-29)
 
 
