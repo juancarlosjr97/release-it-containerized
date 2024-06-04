@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.21](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.20...0.6.21) (2024-06-04)
+
+
+### Chores
+
+* **deps:** update node.js to db6fa52 ([003746b](https://github.com/juancarlosjr97/release-it-containerized/commit/003746b09b96759bbe3a525f9bf5bd79c51b37b1))
+
 ## [0.6.20](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.19...0.6.20) (2024-05-29)
 
 
