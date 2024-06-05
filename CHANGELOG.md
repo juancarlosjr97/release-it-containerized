@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.23](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.22...0.6.23) (2024-06-05)
+
+
+### Chores
+
+* **deps:** update node.js to eb17a08 ([7b9642f](https://github.com/juancarlosjr97/release-it-containerized/commit/7b9642f82beace367ed3acdb9fab1554b3d4d515))
+
 ## [0.6.22](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.21...0.6.22) (2024-06-04)
 
 
