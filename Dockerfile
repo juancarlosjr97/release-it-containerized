@@ -4,7 +4,7 @@ FROM docker.io/library/node:20.14.0-alpine3.19@sha256:eb17a0816c6475000def8bf0dd
 ENV BASH_VERSION="5.2.21-r0"
 
 # renovate: datasource=repology depName=alpine_3_19/busybox versioning=loose
-ENV BUSYBOX_VERSION="1.36.1-r18"
+ENV BUSYBOX_VERSION="1.36.1-r19"
 
 # renovate: datasource=repology depName=alpine_3_19/c-ares versioning=loose
 ENV C_ARES_VERSION="1.27.0-r0"
