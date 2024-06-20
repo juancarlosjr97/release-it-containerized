@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.29](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.28...0.6.29) (2024-06-20)
+
+
+### Chores
+
+* **deps:** update node.js to b99be42 ([416766b](https://github.com/juancarlosjr97/release-it-containerized/commit/416766bee56f94e9f9a6d690401e05b30dc81323))
+
 ## [0.6.28](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.27...0.6.28) (2024-06-20)
 
 
