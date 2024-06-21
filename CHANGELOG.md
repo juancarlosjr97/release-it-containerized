@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.30](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.29...0.6.30) (2024-06-21)
+
+
+### Chores
+
+* **deps:** update node.js to 22f9417 ([87936c3](https://github.com/juancarlosjr97/release-it-containerized/commit/87936c37073cbd992993f8f96b3752af6cee4548))
+
 ## [0.6.29](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.28...0.6.29) (2024-06-20)
 
 
