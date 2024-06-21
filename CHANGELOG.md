@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.33](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.32...0.6.33) (2024-06-21)
+
+
+### Chores
+
+* **deps:** update node.js to acedb9b ([80af139](https://github.com/juancarlosjr97/release-it-containerized/commit/80af139bc4ac73301984b2c9dc92293342fd98e0))
+
 ## [0.6.32](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.31...0.6.32) (2024-06-21)
 
 
