@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.31](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.30...0.6.31) (2024-06-21)
+
+
+### Chores
+
+* **deps:** update node.js to 3c2ff49 ([b6e0b04](https://github.com/juancarlosjr97/release-it-containerized/commit/b6e0b04e7865cb355a1ab8e21c3c4fe39d4667ac))
+
 ## [0.6.30](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.29...0.6.30) (2024-06-21)
 
 
