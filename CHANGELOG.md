@@ -3,6 +3,14 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.6.34](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.33...0.6.34) (2024-06-25)
+
+
+### Chores
+
+* **deps:** update node.js to c39be8a ([20c9e3f](https://github.com/juancarlosjr97/release-it-containerized/commit/20c9e3f34bd5c56e4c7ffb658929e0102c2ebc09))
+* **deps:** update node.js to v20.15.0 ([d92c076](https://github.com/juancarlosjr97/release-it-containerized/commit/d92c07679f998026a1e40122482694caba0774ab))
+
 ## [0.6.33](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.32...0.6.33) (2024-06-21)
 
 
