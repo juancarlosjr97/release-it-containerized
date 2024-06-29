@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.37...0.7.0) (2024-06-29)
+
+
+### Features
+
+* upgrade to alpine 3.20 ([4ed17e5](https://github.com/juancarlosjr97/release-it-containerized/commit/4ed17e5478331ff6ff1d4fb21ce273ce7051af65)), closes [#66](https://github.com/juancarlosjr97/release-it-containerized/issues/66)
+
 ## [0.6.37](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.36...0.6.37) (2024-06-29)
 
 
