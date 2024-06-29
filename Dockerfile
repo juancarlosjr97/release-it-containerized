@@ -1,28 +1,28 @@
-FROM docker.io/library/node:20.15.0-alpine3.19@sha256:1bdec9c67503d33348be6e73a8e5e94aad679b32da15e4fd3956e5e48f87f623
+FROM docker.io/library/node:20.15.0-alpine3.20@sha256:df01469346db2bf1cfc1f7261aeab86b2960efa840fe2bd46d83ff339f463665
 
-# renovate: datasource=repology depName=alpine_3_19/bash versioning=loose
-ENV BASH_VERSION="5.2.21-r0"
+# renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
+ENV BASH_VERSION="5.2.26-r0"
 
-# renovate: datasource=repology depName=alpine_3_19/busybox versioning=loose
-ENV BUSYBOX_VERSION="1.36.1-r19"
+# renovate: datasource=repology depName=alpine_3_20/busybox versioning=loose
+ENV BUSYBOX_VERSION="1.36.1-r29"
 
-# renovate: datasource=repology depName=alpine_3_19/c-ares versioning=loose
-ENV C_ARES_VERSION="1.27.0-r0"
+# renovate: datasource=repology depName=alpine_3_20/c-ares versioning=loose
+ENV C_ARES_VERSION="1.28.1-r0"
 
-# renovate: datasource=repology depName=alpine_3_19/git versioning=loose
-ENV GIT_VERSION="2.43.4-r0"
+# renovate: datasource=repology depName=alpine_3_20/git versioning=loose
+ENV GIT_VERSION="2.45.2-r0"
 
-# renovate: datasource=repology depName=alpine_3_19/gnupg versioning=loose
-ENV GNUPG_VERSION="2.4.4-r0"
+# renovate: datasource=repology depName=alpine_3_20/gnupg versioning=loose
+ENV GNUPG_VERSION="2.4.5-r0"
 
-# renovate: datasource=repology depName=alpine_3_19/libcrypto3 versioning=loose
-ENV LIBCRYPTO3_VERSION="3.1.6-r0"
+# renovate: datasource=repology depName=alpine_3_20/libcrypto3 versioning=loose
+ENV LIBCRYPTO3_VERSION="3.3.1-r1"
 
-# renovate: datasource=repology depName=alpine_3_19/libssl3 versioning=loose
-ENV LIBSSL3_VERSION="3.1.6-r0"
+# renovate: datasource=repology depName=alpine_3_20/libssl3 versioning=loose
+ENV LIBSSL3_VERSION="3.3.1-r1"
 
-# renovate: datasource=repology depName=alpine_3_19/openssh versioning=loose
-ENV OPENSSH_VERSION="9.6_p1-r0"
+# renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
+ENV OPENSSH_VERSION="9.7_p1-r3"
 
 RUN apk update && \
     apk add --no-cache \
