@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.0...0.7.1) (2024-07-02)
+
+
+### Chores
+
+* **deps:** update dependency alpine_3_20/openssh to v9.7_p1-r4 ([c8a0048](https://github.com/juancarlosjr97/release-it-containerized/commit/c8a00488fc200095563f4c11fba490d0d6c7e9a6))
+
 ## [0.7.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.6.37...0.7.0) (2024-06-29)
 
 
