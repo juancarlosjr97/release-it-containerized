@@ -16,10 +16,10 @@ ENV GIT_VERSION="2.45.2-r0"
 ENV GNUPG_VERSION="2.4.5-r0"
 
 # renovate: datasource=repology depName=alpine_3_20/libcrypto3 versioning=loose
-ENV LIBCRYPTO3_VERSION="3.3.1-r1"
+ENV LIBCRYPTO3_VERSION="3.3.1-r3"
 
 # renovate: datasource=repology depName=alpine_3_20/libssl3 versioning=loose
-ENV LIBSSL3_VERSION="3.3.1-r1"
+ENV LIBSSL3_VERSION="3.3.1-r3"
 
 # renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
 ENV OPENSSH_VERSION="9.7_p1-r4"
