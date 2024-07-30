@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.9](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.8...0.7.9) (2024-07-30)
+
+
+### Chores
+
+* **deps:** update node.js to eb8101c ([3f78ab9](https://github.com/juancarlosjr97/release-it-containerized/commit/3f78ab91851e54232ab8219c6740bb0024f92fc6))
+
 ## [0.7.8](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.7...0.7.8) (2024-07-25)
 
 
