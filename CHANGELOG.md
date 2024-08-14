@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.11](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.10...0.7.11) (2024-08-14)
+
+
+### Chores
+
+* **deps:** update docker/build-push-action action to v6.7.0 ([63ef8f2](https://github.com/juancarlosjr97/release-it-containerized/commit/63ef8f236998237da73bba25b68f402819225507))
+
 ## [0.7.10](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.9...0.7.10) (2024-08-10)
 
 
