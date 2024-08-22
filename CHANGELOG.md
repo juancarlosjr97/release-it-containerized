@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.12](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.11...0.7.12) (2024-08-22)
+
+
+### Chores
+
+* **deps:** update docker.io/library/node docker tag to v20.17.0 ([af77395](https://github.com/juancarlosjr97/release-it-containerized/commit/af773954a9cd0fb8dec73de6f8adee98e061c1cb))
+
 ## [0.7.11](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.10...0.7.11) (2024-08-14)
 
 
