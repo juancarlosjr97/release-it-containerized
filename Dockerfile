@@ -9,6 +9,9 @@ ENV BUSYBOX_VERSION="1.36.1-r29"
 # renovate: datasource=repology depName=alpine_3_20/c-ares versioning=loose
 ENV C_ARES_VERSION="1.28.1-r0"
 
+# renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
+ENV CURL_VERSION="8.9.1-r0"
+
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
 ENV GIT_VERSION="2.45.2-r0"
 
@@ -29,6 +32,7 @@ RUN apk update && \
     bash="${BASH_VERSION}" \
     busybox="${BUSYBOX_VERSION}" \
     c-ares="${C_ARES_VERSION}" \
+    curl="${CURL_VERSION}" \
     git="${GIT_VERSION}" \
     gnupg="${GNUPG_VERSION}" \
     libcrypto3="${LIBCRYPTO3_VERSION}" \
