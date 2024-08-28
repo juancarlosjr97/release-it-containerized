@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.13](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.12...0.7.13) (2024-08-28)
+
+
+### Chores
+
+* updating image with fix for SNYK-ALPINE320-CURL-7838598 ([7d00ea1](https://github.com/juancarlosjr97/release-it-containerized/commit/7d00ea19c6617e18d066e8bd1250d6189f0b0639)), closes [#87](https://github.com/juancarlosjr97/release-it-containerized/issues/87)
+
 ## [0.7.12](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.11...0.7.12) (2024-08-22)
 
 
