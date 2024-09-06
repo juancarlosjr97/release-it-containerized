@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.16](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.15...0.7.16) (2024-09-06)
+
+
+### Chores
+
+* update image with fix for SNYK-ALPINE320-EXPAT-7908298 ([5643708](https://github.com/juancarlosjr97/release-it-containerized/commit/564370877682bc80cbac63f59eb1dc15e1b678f5)), closes [#91](https://github.com/juancarlosjr97/release-it-containerized/issues/91)
+
 ## [0.7.15](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.14...0.7.15) (2024-09-04)
 
 
