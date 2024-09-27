@@ -7,7 +7,7 @@ ENV BASH_VERSION="5.2.26-r0"
 ENV BUSYBOX_VERSION="1.36.1-r29"
 
 # renovate: datasource=repology depName=alpine_3_20/c-ares versioning=loose
-ENV C_ARES_VERSION="1.28.1-r0"
+ENV C_ARES_VERSION="1.33.1-r0"
 
 # renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
 ENV CURL_VERSION="8.10.0-r0"
