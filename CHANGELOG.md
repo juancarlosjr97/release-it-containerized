@@ -3,6 +3,14 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.19](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.18...0.7.19) (2024-09-28)
+
+
+### Chores
+
+* **deps:** update all dependencies ([ef6e874](https://github.com/juancarlosjr97/release-it-containerized/commit/ef6e874f759a8df91f8380e41bf8e0ace0230684))
+* downgrading curl@8.9.1-r2 ([a45da2a](https://github.com/juancarlosjr97/release-it-containerized/commit/a45da2a688a5e322f8f137970f8000df3ee50d5f))
+
 ## [0.7.18](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.17...0.7.18) (2024-09-11)
 
 
