@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.22](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.21...0.7.22) (2024-10-05)
+
+
+### Chores
+
+* **deps:** update node.js to v20.18.0 ([793433e](https://github.com/juancarlosjr97/release-it-containerized/commit/793433e0523d06745bcf3c15df21eb005bac56ec))
+
 ## [0.7.21](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.20...0.7.21) (2024-09-30)
 
 
