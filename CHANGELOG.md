@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.27](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.26...0.7.27) (2024-11-07)
+
+### Chores
+
+* **deps:** update dependency alpine_3_20/curl to v8.11.0-r1 ([598f77a](https://github.com/juancarlosjr97/release-it-containerized/commit/598f77a6b912ca0c5b2c29a34c4aae466034c18f))
+
 ## [0.7.26](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.25...0.7.26) (2024-11-07)
 
 ### Chores
