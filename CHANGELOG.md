@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.28](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.27...0.7.28) (2024-11-08)
+
+### Chores
+
+* **deps:** update dependency alpine_3_20/expat to v2.6.4-r0 ([51b6672](https://github.com/juancarlosjr97/release-it-containerized/commit/51b66720209da9fffe951235e6d395cf4f469d92))
+
 ## [0.7.27](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.26...0.7.27) (2024-11-07)
 
 ### Chores
