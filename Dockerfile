@@ -13,7 +13,7 @@ ENV C_ARES_VERSION="1.33.1-r0"
 ENV CURL_VERSION="8.11.0-r1"
 
 # renovate: datasource=repology depName=alpine_3_20/expat versioning=loose
-ENV EXPACT_VERSION="2.6.3-r0"
+ENV EXPACT_VERSION="2.6.4-r0"
 
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
 ENV GIT_VERSION="2.45.2-r0"
