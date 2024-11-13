@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.30](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.29...0.7.30) (2024-11-13)
+
+### Chores
+
+* **deps:** update node.js to b64ced2 ([8c7fb55](https://github.com/juancarlosjr97/release-it-containerized/commit/8c7fb553928501830c7f9b53b2a12fb3725a3757))
+
 ## [0.7.29](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.28...0.7.29) (2024-11-12)
 
 ### Chores
