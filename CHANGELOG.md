@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.31](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.30...0.7.31) (2024-11-21)
+
+### Chores
+
+* **deps:** update docker/metadata-action action to v5.6.1 ([b6c4521](https://github.com/juancarlosjr97/release-it-containerized/commit/b6c4521e6d73c88c9c156f5c268cd85a3ecf6113))
+
 ## [0.7.30](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.29...0.7.30) (2024-11-13)
 
 ### Chores
