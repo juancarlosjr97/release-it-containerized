@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.34](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.33...0.7.34) (2024-12-07)
+
+### Chores
+
+* **deps:** update node.js to 96cc832 ([e3361b9](https://github.com/juancarlosjr97/release-it-containerized/commit/e3361b927dca7e59e02b6057e514c2c9d167f648))
+
 ## [0.7.33](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.32...0.7.33) (2024-12-04)
 
 ### Chores
