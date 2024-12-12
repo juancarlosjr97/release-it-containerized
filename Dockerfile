@@ -10,7 +10,7 @@ ENV BUSYBOX_VERSION="1.36.1-r29"
 ENV C_ARES_VERSION="1.33.1-r0"
 
 # renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
-ENV CURL_VERSION="8.11.0-r2"
+ENV CURL_VERSION="8.11.1-r0"
 
 # renovate: datasource=repology depName=alpine_3_20/expat versioning=loose
 ENV EXPACT_VERSION="2.6.4-r0"
