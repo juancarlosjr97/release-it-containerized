@@ -26,7 +26,7 @@ jobs:
           -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
           -v $PWD:/app \
           ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run
+          release-it --dry-run --ci
         env:
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
           GIT_USERNAME: ${{ vars.GIT_USERNAME }}
@@ -44,7 +44,7 @@ jobs:
           -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
           -v $PWD:/app \
           ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run
+          release-it --dry-run --ci
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
@@ -65,7 +65,7 @@ jobs:
           -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
           -v $PWD:/app \
           ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run
+          release-it --dry-run --ci
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
