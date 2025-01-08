@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.36](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.35...0.7.36) (2025-01-08)
+
+### Continuous Integration
+
+* update tests on gh to use ci flag ([fb0c17f](https://github.com/juancarlosjr97/release-it-containerized/commit/fb0c17fd405739556c980a5d7e9e7a2fdb9f4542)), closes [#114](https://github.com/juancarlosjr97/release-it-containerized/issues/114)
+
 ## [0.7.35](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.34...0.7.35) (2024-12-12)
 
 ### Chores
