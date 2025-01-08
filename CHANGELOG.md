@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.38](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.37...0.7.38) (2025-01-08)
+
+### Chores
+
+* **config:** migrate config renovate.json ([33da64d](https://github.com/juancarlosjr97/release-it-containerized/commit/33da64dac252522178452f8119e32e61c7691523))
+
 ## [0.7.37](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.36...0.7.37) (2025-01-08)
 
 ### Chores
