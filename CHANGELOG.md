@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.40](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.39...0.7.40) (2025-01-09)
+
+### Chores
+
+* **deps:** update node.js to db8dcb9 ([8cf89ad](https://github.com/juancarlosjr97/release-it-containerized/commit/8cf89add884b713faea0f2d8b290f10fd6fd4409))
+
 ## [0.7.39](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.38...0.7.39) (2025-01-09)
 
 ### Chores
