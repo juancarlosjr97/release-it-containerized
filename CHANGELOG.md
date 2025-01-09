@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.39](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.38...0.7.39) (2025-01-09)
+
+### Chores
+
+* **deps:** update node.js to 2e89783 ([4862908](https://github.com/juancarlosjr97/release-it-containerized/commit/4862908117e35469fbf00cf9000c14da9cf26bbf))
+
 ## [0.7.38](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.37...0.7.38) (2025-01-08)
 
 ### Chores
