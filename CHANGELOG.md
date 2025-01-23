@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.43](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.42...0.7.43) (2025-01-23)
+
+### Chores
+
+* **deps:** update node.js to c52e208 ([9fe0144](https://github.com/juancarlosjr97/release-it-containerized/commit/9fe0144d43dc5239a895919f810be5b704a03286))
+
 ## [0.7.42](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.41...0.7.42) (2025-01-22)
 
 ### Chores
