@@ -3,6 +3,13 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.46](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.45...0.7.46) (2025-02-09)
+
+### Chores
+
+* **docker:** update Node.js and Alpine package versions in Dockerfile ([fe7139d](https://github.com/juancarlosjr97/release-it-containerized/commit/fe7139d2bf2c55a1b3dfca15b59831d693ede28b)), closes [#123](https://github.com/juancarlosjr97/release-it-containerized/issues/123)
+* **renovate:** update Node.js Alpine version compatibility to 3.21 ([b0b6c63](https://github.com/juancarlosjr97/release-it-containerized/commit/b0b6c6328f3da3a7ff46c14a82d478dd144c73ce)), closes [#123](https://github.com/juancarlosjr97/release-it-containerized/issues/123)
+
 ## [0.7.45](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.44...0.7.45) (2025-02-07)
 
 ### Chores
