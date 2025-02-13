@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.48](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.47...0.7.48) (2025-02-13)
+
+### Chores
+
+* **deps:** update all dependencies ([19d7656](https://github.com/juancarlosjr97/release-it-containerized/commit/19d7656aa3cabc3c75431a9f9f491e50b4d4c324))
+
 ## [0.7.47](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.46...0.7.47) (2025-02-13)
 
 ### Chores
