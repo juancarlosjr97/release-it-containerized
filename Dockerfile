@@ -1,10 +1,10 @@
-FROM docker.io/library/node:22.13.1-alpine3.21@sha256:e2b39f7b64281324929257d0f8004fb6cb4bf0fdfb9aa8cedb235a766aec31da
+FROM docker.io/library/node:22.14.0-alpine3.21@sha256:f93d93d31e202006196d5d22babb9bec7615b9a101744717df815d3d87e275f8
 
 # renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
 ENV BASH_VERSION="5.2.37-r0"
 
 # renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
-ENV CURL_VERSION="8.11.1-r1"
+ENV CURL_VERSION="8.12.1-r0"
 
 # renovate: datasource=repology depName=alpine_3_20/git versioning=loose
 ENV GIT_VERSION="2.47.2-r0"
