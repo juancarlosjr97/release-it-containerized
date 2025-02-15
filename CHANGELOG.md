@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.49](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.48...0.7.49) (2025-02-15)
+
+### Chores
+
+* **deps:** update node.js to 9bef0ef ([3eaa0b4](https://github.com/juancarlosjr97/release-it-containerized/commit/3eaa0b4fdcc612282bc2b053889e390fd048b573))
+
 ## [0.7.48](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.47...0.7.48) (2025-02-13)
 
 ### Chores
