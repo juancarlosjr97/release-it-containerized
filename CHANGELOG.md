@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.50](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.49...0.7.50) (2025-02-15)
+
+### Chores
+
+* update Renovate configuration to use custom manager and remove recommended config ([c955c82](https://github.com/juancarlosjr97/release-it-containerized/commit/c955c82c118e39eba1d1cc97424d10d76216e12b)), closes [#128](https://github.com/juancarlosjr97/release-it-containerized/issues/128)
+
 ## [0.7.49](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.48...0.7.49) (2025-02-15)
 
 ### Chores
