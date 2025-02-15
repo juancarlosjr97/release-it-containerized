@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.51](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.50...0.7.51) (2025-02-15)
+
+### Chores
+
+* **deps:** pin dependencies ([f251bbe](https://github.com/juancarlosjr97/release-it-containerized/commit/f251bbe90754e40248dbcc96b20d0acb109fea3f))
+
 ## [0.7.50](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.49...0.7.50) (2025-02-15)
 
 ### Chores
