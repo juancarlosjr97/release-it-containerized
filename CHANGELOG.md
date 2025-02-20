@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.53](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.52...0.7.53) (2025-02-20)
+
+### Chores
+
+* **deps:** update docker/build-push-action action to v6.14.0 ([#131](https://github.com/juancarlosjr97/release-it-containerized/issues/131)) ([3d8d138](https://github.com/juancarlosjr97/release-it-containerized/commit/3d8d138c6aed04a860496851cb06d7523138cd85))
+
 ## [0.7.52](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.51...0.7.52) (2025-02-20)
 
 ### Bug Fixes
