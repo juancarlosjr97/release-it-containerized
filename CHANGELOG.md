@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.52](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.51...0.7.52) (2025-02-20)
+
+### Bug Fixes
+
+* update openssh to v9.9_p2-r0 ([f4b9160](https://github.com/juancarlosjr97/release-it-containerized/commit/f4b91606ee38bed673582156f06cc24c96d2dedb)), closes [#132](https://github.com/juancarlosjr97/release-it-containerized/issues/132)
+
 ## [0.7.51](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.50...0.7.51) (2025-02-15)
 
 ### Chores
