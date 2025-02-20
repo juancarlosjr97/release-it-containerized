@@ -16,7 +16,7 @@ ENV GNUPG_VERSION="2.4.7-r0"
 ENV LIBSSL3_VERSION="3.3.3-r0"
 
 # renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
-ENV OPENSSH_VERSION="9.9_p1-r2"
+ENV OPENSSH_VERSION="9.9_p2-r0"
 
 RUN apk update && \
     apk add --no-cache \
