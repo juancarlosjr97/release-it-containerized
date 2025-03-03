@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.55](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.54...0.7.55) (2025-03-03)
+
+### Bug Fixes
+
+* update renovate configuration comments in the `Dockerfile` to use 3.21 rather than 3.20 ([b3fc1b6](https://github.com/juancarlosjr97/release-it-containerized/commit/b3fc1b6780566efbd9ffbd3a66df32de29fa5f50)), closes [#136](https://github.com/juancarlosjr97/release-it-containerized/issues/136)
+
 ## [0.7.54](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.53...0.7.54) (2025-02-26)
 
 ### Chores
