@@ -1,21 +1,21 @@
 FROM docker.io/library/node:22.14.0-alpine3.21@sha256:9bef0ef1e268f60627da9ba7d7605e8831d5b56ad07487d24d1aa386336d1944
 
-# renovate: datasource=repology depName=alpine_3_20/bash versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/bash versioning=loose
 ENV BASH_VERSION="5.2.37-r0"
 
-# renovate: datasource=repology depName=alpine_3_20/curl versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/curl versioning=loose
 ENV CURL_VERSION="8.12.1-r0"
 
-# renovate: datasource=repology depName=alpine_3_20/git versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/git versioning=loose
 ENV GIT_VERSION="2.47.2-r0"
 
-# renovate: datasource=repology depName=alpine_3_20/gnupg versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/gnupg versioning=loose
 ENV GNUPG_VERSION="2.4.7-r0"
 
-# renovate: datasource=repology depName=alpine_3_20/libssl3 versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/libssl3 versioning=loose
 ENV LIBSSL3_VERSION="3.3.3-r0"
 
-# renovate: datasource=repology depName=alpine_3_20/openssh versioning=loose
+# renovate: datasource=repology depName=alpine_3_21/openssh versioning=loose
 ENV OPENSSH_VERSION="9.9_p2-r0"
 
 RUN apk update && \
