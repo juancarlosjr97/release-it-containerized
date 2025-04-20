@@ -16,6 +16,11 @@ jobs:
       - name: Build the Image
         run: docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
 
+      - name: Security Scan
+        uses: aquasecurity/trivy-action@0.30.0
+        with:
+          image-ref: ghcr.io/${{ github.repository }}:${{ github.sha }}
+
   security:
     needs: build
     uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@a7af670705b29ab1c891d04671250341240a6ed6
