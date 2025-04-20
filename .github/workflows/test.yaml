@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      image_reference: ${{ steps.build.outputs.image_reference }}
+      image_tar_artifact_name: ${{ steps.save.outputs.image_tar_artifact_name }}
+      image_tar_file_path: ${{ steps.save.outputs.image_tar_file_path }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -14,10 +18,17 @@ jobs:
           fetch-depth: 0
 
       - name: Build the Image
-        run: docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
+        id: build
+        run: |
+          docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
+          echo "image_reference=ghcr.io/${{ github.repository }}:${{ github.sha }}" >> $GITHUB_OUTPUT
 
       - name: Save Docker image to tarball
-        run: docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
+        id: save
+        run: |
+          docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
+          echo "image_tar_artifact_name=docker-image-${{ github.sha }}" >> $GITHUB_OUTPUT
+          echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
 
       - name: Upload image tarball as artifact
         uses: actions/upload-artifact@v4
@@ -29,9 +40,9 @@ jobs:
     needs: build
     uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@4050a248a71d675feef6287cd0a018563b198d9e
     with:
-      IMAGE_REFERENCE: ghcr.io/${{ github.repository }}:${{ github.sha }}
-      IMAGE_TAR_ARTIFACT_NAME: docker-image-${{ github.sha }}
-      IMAGE_TAR_FILE_PATH: ${{ github.sha }}.tar
+      IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
+      IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
+      IMAGE_TAR_FILE_PATH: ${{ needs.build.outputs.image_tar_file_path }}
 
   tests:
     needs: security
