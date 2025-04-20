@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.60](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.59...0.7.60) (2025-04-20)
+
+### Chores
+
+* add scan for image with scheduled job ([2459ff5](https://github.com/juancarlosjr97/release-it-containerized/commit/2459ff55c3d980f7877ac54532e26072cc8a1bf6)), closes [#144](https://github.com/juancarlosjr97/release-it-containerized/issues/144)
+
 ## [0.7.59](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.58...0.7.59) (2025-04-20)
 
 ### Bug Fixes
