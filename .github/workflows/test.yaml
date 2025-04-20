@@ -18,7 +18,7 @@ jobs:
 
   security:
     needs: build
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@ec50b4b94d832bee6e60cf5e969e2b9616840f66
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@da0aa266054b652c855be9bf75626a05c22e460f
     with:
       IMAGE_REFERENCE: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
