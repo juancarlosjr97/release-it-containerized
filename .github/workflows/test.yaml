@@ -16,14 +16,21 @@ jobs:
       - name: Build the Image
         run: docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
 
+      - name: Save Docker image to tarball
+        run: docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o image.tar
+
+      - name: Upload image tarball as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-image
+          path: image.tar
+
   security:
     needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Security Scan
-        uses: aquasecurity/trivy-action@0.30.0
-        with:
-          image-ref: ghcr.io/${{ github.repository }}:${{ github.sha }}
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@a236a236011b532aa0d8ad7022d9e7f1ec0f55d9
+    with:
+      IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}
+      IMAGE_TAR_ARTIFACT_NAME: docker-image
 
   tests:
     needs: security
