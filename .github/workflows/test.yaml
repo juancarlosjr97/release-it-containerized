@@ -3,6 +3,8 @@ name: Test
 on:
   push:
     branches:
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
   build:

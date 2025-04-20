@@ -9,7 +9,7 @@ on:
 jobs:
   release_options:
     runs-on: ubuntu-latest
-    if: github.event.workflow_run.conclusion == 'success' && (github.event.workflow_run.head_branch == 'main' || github.event.workflow_run.head_branch == 'develop')
+    if: github.event.workflow_run.conclusion == 'success' && (github.event.workflow_run.head_branch == 'main' || github.event.workflow_run.head_branch == 'develop') && ${{ github.event_name != 'schedule' }}
     outputs:
       release_options: ${{ steps.release_options.outputs.release_options }}
     steps:
