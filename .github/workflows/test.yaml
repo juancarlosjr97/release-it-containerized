@@ -48,6 +48,15 @@ jobs:
     needs: security
     runs-on: ubuntu-latest
     steps:
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.image_tar_artifact_name }}
+          path: .
+
+      - name: Load Docker image from TAR
+        run: docker load -i ${{ needs.build.outputs.image_tar_file_path }}
+
       - name: Running release-it on dry-run without GPG or SSH
         run: |
           docker run \
