@@ -3,6 +3,9 @@ FROM docker.io/library/node:22.14.0-alpine3.21@sha256:9bef0ef1e268f60627da9ba7d7
 # renovate: datasource=repology depName=alpine_3_21/bash versioning=loose
 ENV BASH_VERSION="5.2.37-r0"
 
+# renovate: datasource=repology depName=alpine_3_21/c-ares versioning=loose
+ENV CARES_VERSION="1.34.5-r0"
+
 # renovate: datasource=repology depName=alpine_3_21/curl versioning=loose
 ENV CURL_VERSION="8.12.1-r1"
 
@@ -18,21 +21,18 @@ ENV LIBSSL3_VERSION="3.3.3-r0"
 # renovate: datasource=repology depName=alpine_3_21/openssh versioning=loose
 ENV OPENSSH_VERSION="9.9_p2-r0"
 
-# renovate: datasource=repology depName=alpine_3_21/c-ares versioning=loose
-ENV CARES_VERSION="1.34.5-r0"
-
 # renovate: datasource=repology depName=alpine_3_21/sqlite-libs versioning=loose
 ENV SQLITE_LIBS_VERSION="3.48.0-r1"
 
 RUN apk update && \
     apk add --no-cache \
     bash="${BASH_VERSION}" \
+    c-ares="${CARES_VERSION}" \
     curl="${CURL_VERSION}" \
     git="${GIT_VERSION}" \
     gnupg="${GNUPG_VERSION}" \
     libssl3="${LIBSSL3_VERSION}" \
     openssh="${OPENSSH_VERSION}" \
-    c-ares="${CARES_VERSION}" \
     sqlite-libs="${SQLITE_LIBS_VERSION}"
 
 WORKDIR /app
