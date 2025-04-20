@@ -5,7 +5,7 @@ on:
     branches:
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -16,11 +16,16 @@ jobs:
       - name: Build the Image
         run: docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
 
-      - name: Security
-        uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@ec50b4b94d832bee6e60cf5e969e2b9616840f66
-        with:
-          IMAGE_REFERENCE: ghcr.io/${{ github.repository }}:${{ github.sha }}
+  security:
+    needs: build
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@ec50b4b94d832bee6e60cf5e969e2b9616840f66
+    with:
+      IMAGE_REFERENCE: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
+  tests:
+    needs: security
+    runs-on: ubuntu-latest
+    steps:
       - name: Running release-it on dry-run without GPG or SSH
         run: |
           docker run \
