@@ -14,19 +14,24 @@ jobs:
           fetch-depth: 0
 
       - name: Build the Image
-        run: docker build --tag ghcr.io/${{ github.repository	}}:${{ github.sha }} .
+        run: docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
+
+      - name: Security
+        uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@ec50b4b94d832bee6e60cf5e969e2b9616840f66
+        with:
+          IMAGE_REFERENCE: ghcr.io/${{ github.repository }}:${{ github.sha }}
 
       - name: Running release-it on dry-run without GPG or SSH
         run: |
           docker run \
-          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
-          -e GIT_DIRECTORY="/app" \
-          -e GIT_EMAIL=${GIT_EMAIL} \
-          -e GIT_USERNAME="${GIT_USERNAME}" \
-          -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-          -v $PWD:/app \
-          ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run --ci
+            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+            -e GIT_DIRECTORY="/app" \
+            -e GIT_EMAIL=${GIT_EMAIL} \
+            -e GIT_USERNAME="${GIT_USERNAME}" \
+            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+            -v $PWD:/app \
+            ghcr.io/${{ github.repository }}:${{ github.sha }} \
+            release-it --dry-run --ci
         env:
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
           GIT_USERNAME: ${{ vars.GIT_USERNAME }}
@@ -35,16 +40,16 @@ jobs:
       - name: Running release-it on dry-run with GPG and without SSH
         run: |
           docker run \
-          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
-          -e GIT_DIRECTORY="/app" \
-          -e GIT_EMAIL=${GIT_EMAIL} \
-          -e GIT_USERNAME="${GIT_USERNAME}" \
-          -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
-          -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
-          -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-          -v $PWD:/app \
-          ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run --ci
+            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+            -e GIT_DIRECTORY="/app" \
+            -e GIT_EMAIL=${GIT_EMAIL} \
+            -e GIT_USERNAME="${GIT_USERNAME}" \
+            -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
+            -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+            -v $PWD:/app \
+            ghcr.io/${{ github.repository }}:${{ github.sha }} \
+            release-it --dry-run --ci
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
@@ -55,17 +60,17 @@ jobs:
       - name: Running release-it on dry-run with GPG and SSH
         run: |
           docker run \
-          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
-          -e GIT_DIRECTORY="/app" \
-          -e GIT_EMAIL=${GIT_EMAIL} \
-          -e GIT_USERNAME="${GIT_USERNAME}" \
-          -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
-          -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
-          -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-          -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
-          -v $PWD:/app \
-          ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run --ci
+            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+            -e GIT_DIRECTORY="/app" \
+            -e GIT_EMAIL=${GIT_EMAIL} \
+            -e GIT_USERNAME="${GIT_USERNAME}" \
+            -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
+            -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+            -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
+            -v $PWD:/app \
+            ghcr.io/${{ github.repository }}:${{ github.sha }} \
+            release-it --dry-run --ci
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
@@ -86,4 +91,3 @@ jobs:
           image_tag: ${{ github.sha }}
           plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-  
