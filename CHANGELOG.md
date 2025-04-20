@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.59](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.58...0.7.59) (2025-04-20)
+
+### Bug Fixes
+
+* sort docker image sorting a-z ([d91d518](https://github.com/juancarlosjr97/release-it-containerized/commit/d91d518353a9c3b470e719ce4490d1968f71e7b1)), closes [#142](https://github.com/juancarlosjr97/release-it-containerized/issues/142)
+
 ## [0.7.58](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.57...0.7.58) (2025-04-11)
 
 ## [0.7.57](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.56...0.7.57) (2025-03-17)
