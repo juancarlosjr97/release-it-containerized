@@ -3,10 +3,16 @@ name: Test
 on:
   push:
     branches:
+  schedule:
+    - cron: '0 */6 * * *'
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
+    outputs:
+      image_reference: ${{ steps.build.outputs.image_reference }}
+      image_tar_artifact_name: ${{ steps.save.outputs.image_tar_artifact_name }}
+      image_tar_file_path: ${{ steps.save.outputs.image_tar_file_path }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -14,19 +20,61 @@ jobs:
           fetch-depth: 0
 
       - name: Build the Image
-        run: docker build --tag ghcr.io/${{ github.repository	}}:${{ github.sha }} .
+        id: build
+        run: |
+          docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
+          echo "image_reference=ghcr.io/${{ github.repository }}:${{ github.sha }}" >> $GITHUB_OUTPUT
+
+      - name: Save Docker image to tarball
+        id: save
+        run: |
+          docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
+          echo "image_tar_artifact_name=docker-image-${{ github.sha }}" >> $GITHUB_OUTPUT
+          echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
+
+      - name: Upload image tarball as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-image-${{ github.sha }}
+          path: ${{ github.sha }}.tar
+
+  security:
+    needs: build
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@65a93d822ea0ed5d4291b4aae5589f748a3624fa
+    with:
+      IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
+      IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
+      IMAGE_TAR_FILE_PATH: ${{ needs.build.outputs.image_tar_file_path }}
+
+  tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          fetch-depth: 0
+
+      - name: Download Docker image artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ needs.build.outputs.image_tar_artifact_name }}
+          path: .
+
+      - name: Load Docker image from TAR
+        run: docker load -i ${{ needs.build.outputs.image_tar_file_path }}
 
       - name: Running release-it on dry-run without GPG or SSH
         run: |
           docker run \
-          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
-          -e GIT_DIRECTORY="/app" \
-          -e GIT_EMAIL=${GIT_EMAIL} \
-          -e GIT_USERNAME="${GIT_USERNAME}" \
-          -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-          -v $PWD:/app \
-          ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run --ci
+            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+            -e GIT_DIRECTORY="/app" \
+            -e GIT_EMAIL=${GIT_EMAIL} \
+            -e GIT_USERNAME="${GIT_USERNAME}" \
+            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+            -v $PWD:/app \
+            ghcr.io/${{ github.repository }}:${{ github.sha }} \
+            release-it --dry-run --ci
         env:
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
           GIT_USERNAME: ${{ vars.GIT_USERNAME }}
@@ -35,16 +83,16 @@ jobs:
       - name: Running release-it on dry-run with GPG and without SSH
         run: |
           docker run \
-          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
-          -e GIT_DIRECTORY="/app" \
-          -e GIT_EMAIL=${GIT_EMAIL} \
-          -e GIT_USERNAME="${GIT_USERNAME}" \
-          -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
-          -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
-          -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-          -v $PWD:/app \
-          ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run --ci
+            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+            -e GIT_DIRECTORY="/app" \
+            -e GIT_EMAIL=${GIT_EMAIL} \
+            -e GIT_USERNAME="${GIT_USERNAME}" \
+            -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
+            -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+            -v $PWD:/app \
+            ghcr.io/${{ github.repository }}:${{ github.sha }} \
+            release-it --dry-run --ci
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
@@ -55,17 +103,17 @@ jobs:
       - name: Running release-it on dry-run with GPG and SSH
         run: |
           docker run \
-          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
-          -e GIT_DIRECTORY="/app" \
-          -e GIT_EMAIL=${GIT_EMAIL} \
-          -e GIT_USERNAME="${GIT_USERNAME}" \
-          -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
-          -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
-          -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-          -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
-          -v $PWD:/app \
-          ghcr.io/${{ github.repository	}}:${{ github.sha }} \
-          release-it --dry-run --ci
+            -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+            -e GIT_DIRECTORY="/app" \
+            -e GIT_EMAIL=${GIT_EMAIL} \
+            -e GIT_USERNAME="${GIT_USERNAME}" \
+            -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
+            -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+            -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
+            -v $PWD:/app \
+            ghcr.io/${{ github.repository }}:${{ github.sha }} \
+            release-it --dry-run --ci
         env:
           GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
           GIT_EMAIL: ${{ vars.GIT_EMAIL }}
@@ -86,4 +134,3 @@ jobs:
           image_tag: ${{ github.sha }}
           plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-  
