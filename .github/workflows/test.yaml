@@ -45,7 +45,7 @@ jobs:
       IMAGE_TAR_FILE_PATH: ${{ needs.build.outputs.image_tar_file_path }}
 
   tests:
-    needs: security
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Download Docker image artifact
