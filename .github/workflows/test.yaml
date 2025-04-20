@@ -17,20 +17,21 @@ jobs:
         run: docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
 
       - name: Save Docker image to tarball
-        run: docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o image.tar
+        run: docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
 
       - name: Upload image tarball as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: docker-image
-          path: image.tar
+          name: docker-image-${{ github.sha }}
+          path: ${{ github.sha }}.tar
 
   security:
     needs: build
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@a236a236011b532aa0d8ad7022d9e7f1ec0f55d9
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/image-security.yml@4050a248a71d675feef6287cd0a018563b198d9e
     with:
       IMAGE_TAG: ghcr.io/${{ github.repository }}:${{ github.sha }}
-      IMAGE_TAR_ARTIFACT_NAME: docker-image
+      IMAGE_TAR_ARTIFACT_NAME: docker-image-${{ github.sha }}
+      IMAGE_TAR_FILE_PATH: ${{ github.sha }}.tar
 
   tests:
     needs: security
