@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/tests.yml
+    uses: ./.github/workflows/local-test-workflow.yaml
     with:
       GIT_EMAIL: ${{ vars.GIT_EMAIL }}
       GIT_USERNAME: ${{ vars.GIT_USERNAME }}

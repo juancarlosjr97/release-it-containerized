@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    uses: ./.github/workflows/tests.yml
+    uses: ./.github/workflows/local-test-workflow.yaml
     with:
       GIT_EMAIL: ${{ vars.GIT_EMAIL }}
       GIT_USERNAME: ${{ vars.GIT_USERNAME }}
@@ -15,4 +15,3 @@ jobs:
       GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       GPG_PRIVATE_KEY_ID: ${{ secrets.GPG_PRIVATE_KEY_ID }}
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-
