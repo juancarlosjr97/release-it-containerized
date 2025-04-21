@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.65](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.64...0.7.65) (2025-04-21)
+
+### Bug Fixes
+
+* correct workflow name and add comment for circular dependency reference ([fc7727a](https://github.com/juancarlosjr97/release-it-containerized/commit/fc7727a3780dcd5d28ca0019e85006d7d375c6d5)), closes [#152](https://github.com/juancarlosjr97/release-it-containerized/issues/152)
+
 ## [0.7.64](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.63...0.7.64) (2025-04-21)
 
 ### Bug Fixes
