@@ -1,5 +1,5 @@
 ---
-name: Local Template Test Workflow
+name: Local Test Workflow
 on:
   workflow_call:
     inputs:
@@ -59,6 +59,7 @@ jobs:
 
   security:
     needs: build
+    # Due to circular dependency, this project makes a reference to the head branch
     uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@main
     with:
       IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
