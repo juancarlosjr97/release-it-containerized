@@ -1,24 +1,18 @@
 ---
-name: Test
+name: Schedule
 on:
   schedule:
     - cron: '0 */6 * * *'
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-        with:
-          fetch-depth: 0
+  test:
+    uses: ./.github/workflows/tests.yml
+    with:
+      GIT_EMAIL: ${{ vars.GIT_EMAIL }}
+      GIT_USERNAME: ${{ vars.GIT_USERNAME }}
+    secrets:
+      GITHUB_TOKEN_PROJECT: ${{ secrets.PROJECT_GITHUB_TOKEN }}
+      GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      GPG_PRIVATE_KEY_ID: ${{ secrets.GPG_PRIVATE_KEY_ID }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Local Test Workflow
-        uses: ./.github/workflows/local-template-test-workflow.yaml
-        with:
-          GITHUB_TOKEN: ${{ secrets.PROJECT_GITHUB_TOKEN }}
-          GIT_EMAIL: ${{ vars.GIT_EMAIL }}
-          GIT_USERNAME: ${{ vars.GIT_USERNAME }}
-          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
-          GPG_PRIVATE_KEY_ID: ${{ secrets.GPG_PRIVATE_KEY_ID }}
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
