@@ -3,6 +3,18 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.64](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.63...0.7.64) (2025-04-21)
+
+### Bug Fixes
+
+* update reference of internal workflow ([#150](https://github.com/juancarlosjr97/release-it-containerized/issues/150)) ([112ad76](https://github.com/juancarlosjr97/release-it-containerized/commit/112ad76993e68fe2ebf060343138ec1a90dd6da8)), closes [#148](https://github.com/juancarlosjr97/release-it-containerized/issues/148)
+* update reference of internal workflow variables and secrets ([d910a6d](https://github.com/juancarlosjr97/release-it-containerized/commit/d910a6da9d83b9da7778ea4a928e658a3903cade)), closes [#148](https://github.com/juancarlosjr97/release-it-containerized/issues/148)
+
+### Code Refactoring
+
+* add local template test workflow and refactor test workflow to use it ([#149](https://github.com/juancarlosjr97/release-it-containerized/issues/149)) ([699dc94](https://github.com/juancarlosjr97/release-it-containerized/commit/699dc940e2f0cd217cbeb8fdb12199708411b3aa)), closes [#148](https://github.com/juancarlosjr97/release-it-containerized/issues/148)
+* update shared docker security workflow reference to use 'main' branch to avoid circular dependency ([61248e3](https://github.com/juancarlosjr97/release-it-containerized/commit/61248e3367acc7929c09f10dc6c64ec54884f2fe)), closes [#148](https://github.com/juancarlosjr97/release-it-containerized/issues/148)
+
 ## [0.7.63](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.61...0.7.63) (2025-04-21)
 
 ### Chores
