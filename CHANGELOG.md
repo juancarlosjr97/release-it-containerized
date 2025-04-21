@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.63](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.61...0.7.63) (2025-04-21)
+
+### Chores
+
+* **deps:** update juancarlosjr97/github-actions-workflows-to-rule-them-all digest to 626f62b ([#147](https://github.com/juancarlosjr97/release-it-containerized/issues/147)) ([d93beef](https://github.com/juancarlosjr97/release-it-containerized/commit/d93beef693c2a66c7ff11b689ec84dbf1b583e8a))
+
 ## [0.7.62](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.61...0.7.62) (2025-04-21)
 
 ### Chores
