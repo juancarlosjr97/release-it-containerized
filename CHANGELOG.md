@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.67](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.66...0.7.67) (2025-04-24)
+
+### Chores
+
+* **deps:** update node.js to ad1aedb ([4e01210](https://github.com/juancarlosjr97/release-it-containerized/commit/4e012102fb9b94b13813575359da9af3c3fb280d))
+
 ## [0.7.66](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.65...0.7.66) (2025-04-23)
 
 ### Chores
