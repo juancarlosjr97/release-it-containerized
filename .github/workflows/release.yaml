@@ -15,10 +15,12 @@ jobs:
     steps:
       - id: release_options
         name: Release options
+        env:
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
         run: |
           release_options="--git.tagExclude='*[-]*'"
 
-          branch=${{ github.event.workflow_run.head_branch }}
+          branch="$HEAD_BRANCH"
           
           if [ -n "$branch" ] && [ "$branch" = "develop" ]; then
             release_options="--preRelease=beta"
