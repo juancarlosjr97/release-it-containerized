@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.72](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.71...0.7.72) (2025-05-22)
+
+### Chores
+
+* **deps:** update node.js to 9f3ae04 ([#161](https://github.com/juancarlosjr97/release-it-containerized/issues/161)) ([24576fd](https://github.com/juancarlosjr97/release-it-containerized/commit/24576fd286fe62ec42f712c2c55b9cf17830eaca))
+
 ## [0.7.71](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.70...0.7.71) (2025-05-22)
 
 ### Chores
