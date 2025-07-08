@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.75](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.74...0.7.75) (2025-07-08)
+
+### Chores
+
+* **deps:** update node.js to e461a49 ([685f4f3](https://github.com/juancarlosjr97/release-it-containerized/commit/685f4f3691a3ed564f7af3abb34425e2e8b860fa))
+
 ## [0.7.74](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.73...0.7.74) (2025-06-26)
 
 ### Chores
