@@ -10,7 +10,7 @@ ENV CARES_VERSION="1.34.5-r0"
 ENV CURL_VERSION="8.12.1-r1"
 
 # renovate: datasource=repology depName=alpine_3_21/git versioning=loose
-ENV GIT_VERSION="2.47.2-r0"
+ENV GIT_VERSION="2.47.3-r0"
 
 # renovate: datasource=repology depName=alpine_3_21/gnupg versioning=loose
 ENV GNUPG_VERSION="2.4.7-r0"
