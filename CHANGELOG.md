@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.76](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.75...0.7.76) (2025-07-09)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/git to v2.47.3-r0 ([#165](https://github.com/juancarlosjr97/release-it-containerized/issues/165)) ([939cb4d](https://github.com/juancarlosjr97/release-it-containerized/commit/939cb4d5d9f36ec97809d35f12ba4e2528730b5c))
+
 ## [0.7.75](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.74...0.7.75) (2025-07-08)
 
 ### Chores
