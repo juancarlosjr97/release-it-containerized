@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.78](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.77...0.7.78) (2025-07-27)
+
+### Chores
+
+* **deps:** update node.js to v22.17.1 ([#167](https://github.com/juancarlosjr97/release-it-containerized/issues/167)) ([c90d0c2](https://github.com/juancarlosjr97/release-it-containerized/commit/c90d0c20765d04626c24cae7284ab13bbdaf5218))
+
 ## [0.7.77](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.76...0.7.77) (2025-07-10)
 
 ### Chores
