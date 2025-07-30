@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.79](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.78...0.7.79) (2025-07-30)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/sqlite-libs to v3.48.0-r3 ([f25d923](https://github.com/juancarlosjr97/release-it-containerized/commit/f25d923bdb44bd9a3588ed66f7df891614724054))
+
 ## [0.7.78](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.77...0.7.78) (2025-07-27)
 
 ### Chores
