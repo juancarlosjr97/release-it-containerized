@@ -22,7 +22,7 @@ ENV LIBSSL3_VERSION="3.3.4-r0"
 ENV OPENSSH_VERSION="9.9_p2-r0"
 
 # renovate: datasource=repology depName=alpine_3_21/sqlite-libs versioning=loose
-ENV SQLITE_LIBS_VERSION="3.48.0-r2"
+ENV SQLITE_LIBS_VERSION="3.48.0-r3"
 
 RUN apk update && \
     apk add --no-cache \
