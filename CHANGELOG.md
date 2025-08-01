@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.80](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.79...0.7.80) (2025-08-01)
+
+### Chores
+
+* **deps:** update docker/metadata-action action to v5.8.0 ([921e8b1](https://github.com/juancarlosjr97/release-it-containerized/commit/921e8b13ca130841e48fd4d5b3701e9adfb0c9c7))
+
 ## [0.7.79](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.78...0.7.79) (2025-07-30)
 
 ### Chores
