@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.82](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.81...0.7.82) (2025-08-06)
+
+### Chores
+
+* **deps:** update actions/download-artifact action to v5 ([#171](https://github.com/juancarlosjr97/release-it-containerized/issues/171)) ([626feb0](https://github.com/juancarlosjr97/release-it-containerized/commit/626feb07c9a693e7ccdd5acf27381c5c6c359a9d))
+
 ## [0.7.81](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.80...0.7.81) (2025-08-04)
 
 ### Chores
