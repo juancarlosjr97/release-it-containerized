@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.83](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.82...0.7.83) (2025-08-11)
+
+### Chores
+
+* **deps:** update actions/checkout action to v5 ([#172](https://github.com/juancarlosjr97/release-it-containerized/issues/172)) ([0334f70](https://github.com/juancarlosjr97/release-it-containerized/commit/0334f70dab83f63bc61edb28898d6fed1ca642fc))
+
 ## [0.7.82](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.81...0.7.82) (2025-08-06)
 
 ### Chores
