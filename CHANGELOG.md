@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.84](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.83...0.7.84) (2025-08-31)
+
+### Chores
+
+* **deps:** update node.js to v22.19.0 ([6594cf5](https://github.com/juancarlosjr97/release-it-containerized/commit/6594cf5615fe5fdaf1d87af1466defbb1e0471bb))
+
 ## [0.7.83](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.82...0.7.83) (2025-08-11)
 
 ### Chores
