@@ -3,6 +3,8 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.85](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.84...0.7.85) (2025-09-16)
+
 ## [0.7.84](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.83...0.7.84) (2025-08-31)
 
 ### Chores
