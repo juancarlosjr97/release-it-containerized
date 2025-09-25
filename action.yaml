@@ -64,22 +64,28 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: |
-        docker run \
-        -e GITHUB_TOKEN=${GITHUB_TOKEN} \
-        -e GIT_DIRECTORY="/app" \
-        -e GIT_EMAIL=${GIT_EMAIL} \
-        -e GIT_USERNAME="${GIT_USERNAME}" \
-        -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
-        -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
-        -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
-        -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}" \
-        -e SSH_PASSPHRASE="${SSH_PASSPHRASE}" \
-        -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
-        -u root \
-        -v $PWD:/app \
-        ghcr.io/juancarlosjr97/release-it-containerized:${{ inputs.image_tag }} \
-        release-it --ci ${{ inputs.command }}
+    - uses: nick-fields/retry@v3
+      with:
+        timeout_minutes: 15
+        max_attempts: 3
+        retry_wait_seconds: 60
+        shell: bash
+        command: |
+          docker run \
+          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+          -e GIT_DIRECTORY="/app" \
+          -e GIT_EMAIL=${GIT_EMAIL} \
+          -e GIT_USERNAME="${GIT_USERNAME}" \
+          -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
+          -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+          -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
+          -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}" \
+          -e SSH_PASSPHRASE="${SSH_PASSPHRASE}" \
+          -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
+          -u root \
+          -v $PWD:/app \
+          ghcr.io/juancarlosjr97/release-it-containerized:${{ inputs.image_tag }} \
+          release-it --ci ${{ inputs.command }}
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
         GIT_EMAIL: ${{ inputs.git_email }}
@@ -90,4 +96,3 @@ runs:
         RELEASE_IT_VERSION: ${{ inputs.version }}
         SSH_PASSPHRASE: ${{ inputs.ssh_passphrase }}
         SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
-      shell: bash
