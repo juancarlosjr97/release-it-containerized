@@ -37,9 +37,15 @@ jobs:
             type=raw,value=latest,enable=${{ !contains(github.ref, 'beta') }}
 
       - name: Build and push Docker image
-        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
+        uses: nick-fields/retry@v3
         with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          timeout_minutes: 15
+          max_attempts: 3
+          retry_wait_seconds: 60
+          shell: bash
+          command: |
+            docker buildx build \
+              --push \
+              --tag ${{ steps.meta.outputs.tags }} \
+              --label "${{ steps.meta.outputs.labels }}" \
+              .

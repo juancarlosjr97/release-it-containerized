@@ -40,16 +40,26 @@ jobs:
 
       - name: Build the Image
         id: build
-        run: |
-          docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
-          echo "image_reference=ghcr.io/${{ github.repository }}:${{ github.sha }}" >> $GITHUB_OUTPUT
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: |
+            docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
+            echo "image_reference=ghcr.io/${{ github.repository }}:${{ github.sha }}" >> $GITHUB_OUTPUT
 
       - name: Save Docker image to tarball
         id: save
-        run: |
-          docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
-          echo "image_tar_artifact_name=docker-image-${{ github.sha }}" >> $GITHUB_OUTPUT
-          echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 3
+          retry_wait_seconds: 10
+          command: |
+            docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
+            echo "image_tar_artifact_name=docker-image-${{ github.sha }}" >> $GITHUB_OUTPUT
+            echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
 
       - name: Upload image tarball as artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
@@ -82,48 +92,68 @@ jobs:
           path: .
 
       - name: Load Docker image from TAR
-        run: docker load -i ${{ needs.build.outputs.image_tar_file_path }}
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 5
+          max_attempts: 3
+          retry_wait_seconds: 10
+          command: docker load -i ${{ needs.build.outputs.image_tar_file_path }}
 
       - name: Running release-it on dry-run without GPG or SSH
-        run: |
-          docker run \
-            -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
-            -e GIT_DIRECTORY="/app" \
-            -e GIT_EMAIL=${{ inputs.GIT_EMAIL }} \
-            -e GIT_USERNAME="${{ inputs.GIT_USERNAME }}" \
-            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-            -v $PWD:/app \
-            ghcr.io/${{ github.repository }}:${{ github.sha }} \
-            release-it --dry-run --ci
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: |
+            docker run \
+              -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
+              -e GIT_DIRECTORY="/app" \
+              -e GIT_EMAIL=${{ inputs.GIT_EMAIL }} \
+              -e GIT_USERNAME="${{ inputs.GIT_USERNAME }}" \
+              -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+              -v $PWD:/app \
+              ghcr.io/${{ github.repository }}:${{ github.sha }} \
+              release-it --dry-run --ci
 
       - name: Running release-it on dry-run with GPG and without SSH
-        run: |
-          docker run \
-            -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
-            -e GIT_DIRECTORY="/app" \
-            -e GIT_EMAIL=${{ inputs.GIT_EMAIL }} \
-            -e GIT_USERNAME="${{ inputs.GIT_USERNAME }}" \
-            -e GPG_PRIVATE_KEY="${{ secrets.GPG_PRIVATE_KEY }}" \
-            -e GPG_PRIVATE_KEY_ID="${{ secrets.GPG_PRIVATE_KEY_ID }}" \
-            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-            -v $PWD:/app \
-            ghcr.io/${{ github.repository }}:${{ github.sha }} \
-            release-it --dry-run --ci
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: |
+            docker run \
+              -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
+              -e GIT_DIRECTORY="/app" \
+              -e GIT_EMAIL=${{ inputs.GIT_EMAIL }} \
+              -e GIT_USERNAME="${{ inputs.GIT_USERNAME }}" \
+              -e GPG_PRIVATE_KEY="${{ secrets.GPG_PRIVATE_KEY }}" \
+              -e GPG_PRIVATE_KEY_ID="${{ secrets.GPG_PRIVATE_KEY_ID }}" \
+              -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+              -v $PWD:/app \
+              ghcr.io/${{ github.repository }}:${{ github.sha }} \
+              release-it --dry-run --ci
 
       - name: Running release-it on dry-run with GPG and SSH
-        run: |
-          docker run \
-            -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
-            -e GIT_DIRECTORY="/app" \
-            -e GIT_EMAIL=${{ inputs.GIT_EMAIL }} \
-            -e GIT_USERNAME="${{ inputs.GIT_USERNAME }}" \
-            -e GPG_PRIVATE_KEY="${{ secrets.GPG_PRIVATE_KEY }}" \
-            -e GPG_PRIVATE_KEY_ID="${{ secrets.GPG_PRIVATE_KEY_ID }}" \
-            -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-            -e SSH_PRIVATE_KEY="${{ secrets.SSH_PRIVATE_KEY }}" \
-            -v $PWD:/app \
-            ghcr.io/${{ github.repository }}:${{ github.sha }} \
-            release-it --dry-run --ci
+        uses: nick-fields/retry@v3
+        with:
+          timeout_minutes: 10
+          max_attempts: 3
+          retry_wait_seconds: 30
+          command: |
+            docker run \
+              -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
+              -e GIT_DIRECTORY="/app" \
+              -e GIT_EMAIL=${{ inputs.GIT_EMAIL }} \
+              -e GIT_USERNAME="${{ inputs.GIT_USERNAME }}" \
+              -e GPG_PRIVATE_KEY="${{ secrets.GPG_PRIVATE_KEY }}" \
+              -e GPG_PRIVATE_KEY_ID="${{ secrets.GPG_PRIVATE_KEY_ID }}" \
+              -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
+              -e SSH_PRIVATE_KEY="${{ secrets.SSH_PRIVATE_KEY }}" \
+              -v $PWD:/app \
+              ghcr.io/${{ github.repository }}:${{ github.sha }} \
+              release-it --dry-run --ci
 
       - name: Running release-it using GitHub Action
         uses: ./
