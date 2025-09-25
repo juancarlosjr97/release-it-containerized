@@ -39,9 +39,9 @@ jobs:
       - name: Build the Image
         uses: nick-fields/retry@v3
         with:
-          timeout_minutes: 10
+          timeout_minutes: 15
           max_attempts: 3
-          retry_wait_seconds: 30
+          retry_wait_seconds: 60
           command: docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
 
       - name: Running release
