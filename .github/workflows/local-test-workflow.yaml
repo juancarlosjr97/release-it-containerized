@@ -40,7 +40,7 @@ jobs:
 
       - name: Build the Image
         id: build
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3
         with:
           timeout_minutes: 15
           max_attempts: 3
@@ -51,7 +51,7 @@ jobs:
 
       - name: Save Docker image to tarball
         id: save
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3
         with:
           timeout_minutes: 5
           max_attempts: 3
@@ -92,7 +92,7 @@ jobs:
           path: .
 
       - name: Load Docker image from TAR
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3
         with:
           timeout_minutes: 5
           max_attempts: 3
@@ -100,7 +100,7 @@ jobs:
           command: docker load -i ${{ needs.build.outputs.image_tar_file_path }}
 
       - name: Running release-it on dry-run without GPG or SSH
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3
         with:
           timeout_minutes: 10
           max_attempts: 3
@@ -117,7 +117,7 @@ jobs:
               release-it --dry-run --ci
 
       - name: Running release-it on dry-run with GPG and without SSH
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3
         with:
           timeout_minutes: 10
           max_attempts: 3
@@ -136,7 +136,7 @@ jobs:
               release-it --dry-run --ci
 
       - name: Running release-it on dry-run with GPG and SSH
-        uses: nick-fields/retry@v3
+        uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3
         with:
           timeout_minutes: 10
           max_attempts: 3
