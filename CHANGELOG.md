@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.88](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.87...0.7.88) (2025-09-26)
+
+### Chores
+
+* **deps:** pin nick-fields/retry action to ce71cc2 ([8d1a0a2](https://github.com/juancarlosjr97/release-it-containerized/commit/8d1a0a2cace38c1d8615a3e82584a934a33304d8))
+
 ## [0.7.87](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.86...0.7.87) (2025-09-26)
 
 ## [0.7.86](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.85...0.7.86) (2025-09-25)
