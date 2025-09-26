@@ -82,6 +82,12 @@ The container accepts these environment variables:
 - **DO NOT** rely on direct Docker execution for validation in restricted environments
 - Always test changes with actual workflow execution
 
+### AI-Created Pull Requests
+- **REQUIRED**: All pull requests created and edited by AI agents must be labeled for identification
+- Apply appropriate labels to distinguish AI-created PRs from human-created ones
+- This helps with tracking, review processes, and repository management
+- Use labels such as `ai-generated`, `copilot`, or similar to mark AI contributions
+
 ### Release Process
 - Version is managed in `VERSION` file and updated by release-it
 - Conventional commits are used for changelog generation
