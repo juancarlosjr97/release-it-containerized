@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.90](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.89...0.7.90) (2025-09-26)
+
+### Bug Fixes
+
+* revert Docker image build step from retry wrapper to docker/build-push-action ([7b06b2f](https://github.com/juancarlosjr97/release-it-containerized/commit/7b06b2fc427b64f8611e5ac51ccaf87afec1af9a))
+
 ## [0.7.89](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.88...0.7.89) (2025-09-26)
 
 ### Code Style Changes
