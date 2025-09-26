@@ -133,6 +133,9 @@ jobs:
 > [!NOTE]
 > GitHub Actions mandates running containers as root to align with GitHub's requirements. Consequently, when executing a GitHub Action involving containerization, it runs with root privileges. For additional details, refer the official documentation from GitHub [here](https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions).
 
+> [!NOTE]
+> All Docker operations in the GitHub Actions workflows include automatic retry functionality to handle transient network failures, Docker registry unavailability, or other random failures. Operations are retried up to 3 times with exponential backoff delays.
+
 ## Acknowledgment
 
 This project is only possible due to the existence of [release-it](https://github.com/release-it/release-it) and all its contributors for the great work.
