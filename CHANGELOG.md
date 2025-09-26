@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.89](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.88...0.7.89) (2025-09-26)
+
+### Code Style Changes
+
+* cleaning up while line ([2873cdc](https://github.com/juancarlosjr97/release-it-containerized/commit/2873cdc8ee9365a43e0ba49732a96a1e6a7e019e)), closes [#182](https://github.com/juancarlosjr97/release-it-containerized/issues/182)
+
 ## [0.7.88](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.87...0.7.88) (2025-09-26)
 
 ### Chores
