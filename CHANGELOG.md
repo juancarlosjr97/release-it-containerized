@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.93](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.92...0.7.93) (2025-10-01)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/libssl3 to v3.3.5-r0 ([97c4cb9](https://github.com/juancarlosjr97/release-it-containerized/commit/97c4cb9954a5630e43f75dc373744cfafbe17bf8))
+
 ## [0.7.92](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.91...0.7.92) (2025-09-29)
 
 ### Chores
