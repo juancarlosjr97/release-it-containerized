@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.96](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.95...0.7.96) (2025-10-09)
+
+### Chores
+
+* **deps:** update node.js to f40aebd ([#192](https://github.com/juancarlosjr97/release-it-containerized/issues/192)) ([2ab5247](https://github.com/juancarlosjr97/release-it-containerized/commit/2ab52475600681896d5055b9de16bc889804baf4))
+
 ## [0.7.95](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.94...0.7.95) (2025-10-09)
 
 ### Chores
