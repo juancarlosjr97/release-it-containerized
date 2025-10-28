@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.99](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.98...0.7.99) (2025-10-28)
+
+### Chores
+
+* **deps:** update node.js to v24 ([#195](https://github.com/juancarlosjr97/release-it-containerized/issues/195)) ([0adf386](https://github.com/juancarlosjr97/release-it-containerized/commit/0adf386ccd6615a6909f69b6272c31c865a711cc))
+
 ## [0.7.98](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.97...0.7.98) (2025-10-25)
 
 ### Chores
