@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.7.101](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.100...0.7.101) (2025-11-04)
+
+### Chores
+
+* **deps:** update docker/metadata-action action to v5.9.0 ([#198](https://github.com/juancarlosjr97/release-it-containerized/issues/198)) ([32372dc](https://github.com/juancarlosjr97/release-it-containerized/commit/32372dce96897aff72de03fcf2c98f936e4ff122))
+
 ## [0.7.100](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.99...0.7.100) (2025-10-29)
 
 ### Chores
