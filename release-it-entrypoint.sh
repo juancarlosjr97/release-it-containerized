@@ -95,7 +95,7 @@ export NPM_CONFIG_UPDATE_NOTIFIER=false
 # Install specific NPM version if requested
 if [[ -n "${NPM_VERSION}" ]]; then
     echo "Installing NPM version ${NPM_VERSION}..."
-    if npm install --silent --global npm@${NPM_VERSION}; then
+    if npm install --silent --global "npm@${NPM_VERSION}"; then
         echo "NPM version ${NPM_VERSION} installed successfully"
         npm --version
     else
