@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.8.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.101...0.8.0) (2025-11-06)
+
+### Features
+
+* add support for specifying NPM version ([#200](https://github.com/juancarlosjr97/release-it-containerized/issues/200)) ([86d6139](https://github.com/juancarlosjr97/release-it-containerized/commit/86d61392d7a5211e842a8549c142d7998753d9b1))
+
 ## [0.7.101](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.100...0.7.101) (2025-11-04)
 
 ### Chores
