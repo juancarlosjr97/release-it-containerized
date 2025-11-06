@@ -88,6 +88,7 @@ NPM_GLOBAL_DIR=/home/node/.npm-global
 PATH=${NPM_GLOBAL_DIR}/bin:${PATH}
 
 mkdir -p "${NPM_GLOBAL_DIR}"
+
 export NPM_CONFIG_PREFIX="${NPM_GLOBAL_DIR}"
 export NPM_CONFIG_PROGRESS=false
 export NPM_CONFIG_UPDATE_NOTIFIER=false
@@ -95,9 +96,18 @@ export NPM_CONFIG_UPDATE_NOTIFIER=false
 # Install specific NPM version if requested
 if [[ -n "${NPM_VERSION}" ]]; then
     echo "Installing NPM version ${NPM_VERSION}..."
+
+    # Ensure our global npm bin is first in PATH and prefix is set
+    npm config set prefix "${NPM_GLOBAL_DIR}" >/dev/null || true
+
+    # Install requested npm version into the configured prefix
     if npm install --silent --global "npm@${NPM_VERSION}"; then
         echo "NPM version ${NPM_VERSION} installed successfully"
-        npm --version
+
+        # Refresh shell lookup cache
+        if command -v hash &>/dev/null; then
+            hash -r
+        fi
     else
         echo "Error installing NPM version ${NPM_VERSION}"
         exit 1
@@ -105,6 +115,8 @@ if [[ -n "${NPM_VERSION}" ]]; then
 else
     echo "Using default NPM version $(npm --version)"
 fi
+
+echo "NPM version: $(npm --version)"
 
 # Split the plugin list into an installable command 
 IFS=',' read -ra RELEASE_IT_PLUGINS_LIST <<< "${RELEASE_IT_PLUGINS}"
