@@ -30,6 +30,7 @@ The containerized tool accepts the following inputs.
 | GIT_USERNAME           | The Git username that will be identified when running release-it     | false    |
 | GPG_PRIVATE_KEY        | The GPG Private Key                                                  | false    |
 | GPG_PRIVATE_KEY_ID     | The GPG Private Key ID                                               | false    |
+| NPM_VERSION            | Specific NPM version to use. If not specified, uses the default      | false    |
 | RELEASE_IT_PLUGINS     | List of comma separated release plugins to run                       | false    |
 | SSH_PASSPHRASE         | SSH Passphrase associated to the SSH Private Key                     | false    |
 | SSH_PRIVATE_KEY        | The SSH Private key associated to the GIT account running release-it | false    |
@@ -50,6 +51,7 @@ docker run \
     -e GIT_USERNAME="Juan Carlos Blanco Delgado" \
     -e GPG_PRIVATE_KEY="$(cat gpg_private_key.pgp)" \
     -e GPG_PRIVATE_KEY_ID="***" \
+    -e NPM_VERSION="10.8.0" \
     -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
     -e SSH_PASSPHRASE="***" \
     -e SSH_PRIVATE_KEY="$(cat ssh_private_key)" \
@@ -75,6 +77,7 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 | gpg_private_key    | GPG Private Key                                           | false    | ""                                             |
 | gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                             |
 | image_tag          | Image tag used to pass specific version of the action     | false    | `latest`                                       |
+| npm_version        | NPM version to use. If not specified, uses the default    | false    | ""                                             |
 | plugins_list       | List of Plugins to run with release-it as comma separated | false    | ""                                             |
 | ssh_passphrase     | SSH Passphrase                                            | false    | ""                                             |
 | ssh_private_key    | SSH Private Key                                           | false    | ""                                             |
@@ -95,6 +98,7 @@ Add this step in your workflow file
         github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
         gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
         gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
+        npm_version: "10.8.0"
         plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
         ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -125,6 +129,7 @@ jobs:
         github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
         gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
         gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
+        npm_version: "10.8.0"
         plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
         ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
         ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}

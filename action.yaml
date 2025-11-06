@@ -41,6 +41,11 @@ inputs:
     description: Image tag used to pass specific version of the action
     required: false
 
+  npm_version:
+    default: ""
+    description: NPM version to use. If not specified, the default NPM version from the container is used
+    required: false
+
   plugins_list:
     default: ""
     description: List of Plugins to run with Release It as comma separated
@@ -78,6 +83,7 @@ runs:
           -e GIT_USERNAME="${GIT_USERNAME}" \
           -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
           -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+          -e NPM_VERSION="${NPM_VERSION}" \
           -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
           -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}" \
           -e SSH_PASSPHRASE="${SSH_PASSPHRASE}" \
@@ -92,6 +98,7 @@ runs:
         GIT_USERNAME: ${{ inputs.git_username }}
         GPG_PRIVATE_KEY: ${{ inputs.gpg_private_key }}
         GPG_PRIVATE_KEY_ID: ${{ inputs.gpg_private_key_id }}
+        NPM_VERSION: ${{ inputs.npm_version }}
         RELEASE_IT_PLUGINS: ${{ inputs.plugins_list }}
         RELEASE_IT_VERSION: ${{ inputs.version }}
         SSH_PASSPHRASE: ${{ inputs.ssh_passphrase }}
