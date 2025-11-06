@@ -175,7 +175,7 @@ jobs:
           max_attempts: 3
           retry_wait_seconds: 30
           command: |
-            docker run \
+            OUTPUT=$(docker run \
               -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
               -e GIT_DIRECTORY="/app" \
               -e GIT_EMAIL=${{ inputs.GIT_EMAIL }} \
@@ -184,7 +184,19 @@ jobs:
               -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
               -v $PWD:/app \
               ghcr.io/${{ github.repository }}:${{ github.sha }} \
-              release-it --dry-run --ci
+              release-it --dry-run --ci 2>&1)
+            
+            echo "$OUTPUT"
+            
+            # Verify NPM version is 10.8.0
+            if echo "$OUTPUT" | grep -q "NPM version: 10.8.0"; then
+              echo "✅ NPM version verification passed: 10.8.0"
+            else
+              echo "❌ NPM version verification failed: Expected 10.8.0"
+              echo "Output was:"
+              echo "$OUTPUT"
+              exit 1
+            fi
 
       - name: Running release-it using GitHub Action with specific NPM version
         uses: ./
