@@ -95,7 +95,7 @@ Store the token as a repository secret and reference it in your workflow.
 | command            | Command to execute release-it                             | false    | ""                                             |
 | git_email          | Git email to run release-it                               | false    | `${{ github.actor }}`                          |
 | git_username       | Git username to run release-it                            | false    | `${{ github.actor }}@users.noreply.github.com` |
-| github_token       | Github Token to run release-it                            | **true** | -                                              |
+| github_token       | GitHub Token to run release-it                            | **true** | -                                              |
 | gpg_private_key    | GPG Private Key                                           | false    | ""                                             |
 | gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                             |
 | image_tag          | Image tag used to pass specific version of the action     | false    | `latest`                                       |

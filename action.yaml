@@ -22,7 +22,7 @@ inputs:
     required: false
 
   github_token:
-    description: Github Token to run Release It. Must be provided explicitly by the caller workflow, typically using secrets.GITHUB_TOKEN or a custom PAT with appropriate permissions.
+    description: GitHub Token to run Release It. Must be provided explicitly by the caller workflow, typically using secrets.GITHUB_TOKEN or a custom PAT with appropriate permissions.
     required: true
 
   gpg_private_key:
