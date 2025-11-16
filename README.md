@@ -66,6 +66,28 @@ The last line accepts any value, and will be accept any value from release-it CL
 
 The project provides a [GitHub Action](https://github.com/marketplace/actions/github-action-release-it-containerized) to used within a workflow.
 
+#### GitHub Token Requirement
+
+> [!IMPORTANT]
+> The `github_token` input is **required** and must be explicitly provided by the caller workflow. The action does not use `${{ github.token }}` internally to ensure it can be reused across different repositories.
+
+**Why is this required?**
+
+When using this action from another repository, the default `${{ github.token }}` from the caller's context may not have the necessary permissions to:
+- Create tags and releases in the target repository
+- Push commits to the target repository
+- Trigger subsequent workflows
+
+**Token Options:**
+
+1. **Same Repository**: Use `${{ secrets.GITHUB_TOKEN }}` if running within the same repository and default permissions are sufficient.
+2. **Cross-Repository or Enhanced Permissions**: Create a Personal Access Token (PAT) or use a GitHub App token with appropriate permissions:
+   - `contents: write` - for creating commits and tags
+   - `pull-requests: write` - if managing pull requests
+   - `workflows: write` - if triggering other workflows
+
+Store the token as a repository secret and reference it in your workflow.
+
 #### Input Variables
 
 | Field              | Description                                               | Required | Default                                        |
@@ -73,7 +95,7 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 | command            | Command to execute release-it                             | false    | ""                                             |
 | git_email          | Git email to run release-it                               | false    | `${{ github.actor }}`                          |
 | git_username       | Git username to run release-it                            | false    | `${{ github.actor }}@users.noreply.github.com` |
-| github_token       | Github Token to run release-it                            | false    | `${{ github.token }}`                          |
+| github_token       | Github Token to run release-it                            | **true** | -                                              |
 | gpg_private_key    | GPG Private Key                                           | false    | ""                                             |
 | gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                             |
 | image_tag          | Image tag used to pass specific version of the action     | false    | `latest`                                       |
@@ -91,17 +113,18 @@ Add this step in your workflow file
 
 ```yaml
 - name: Running release-it using GitHub Action
-    uses: juancarlosjr97/release-it-containerized:0.2.0
-    with:
-        git_email: ${{ vars.GIT_EMAIL }}
-        git_username: ${{ vars.GIT_USERNAME }}
-        github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
-        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-        gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
-        npm_version: "10.8.0"
-        plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
-        ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+  uses: juancarlosjr97/release-it-containerized:0.2.0
+  with:
+    # Required: Provide an explicit token
+    github_token: ${{ secrets.GITHUB_TOKEN }} # or use a custom PAT: ${{ secrets.RELEASE_TOKEN }}
+    git_email: ${{ vars.GIT_EMAIL }}
+    git_username: ${{ vars.GIT_USERNAME }}
+    gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+    gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
+    npm_version: "10.8.0"
+    plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
+    ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
+    ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
 
 #### Example
@@ -113,7 +136,7 @@ on:
     branches: ["main"]
 
 jobs:
-  test:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -121,19 +144,55 @@ jobs:
         with:
           fetch-depth: 0
 
-- name: Running release-it using GitHub Action
-    uses: juancarlosjr97/release-it-containerized:0.2.0
-    with:
-        git_email: ${{ vars.GIT_EMAIL }}
-        git_username: ${{ vars.GIT_USERNAME }}
-        github_token: ${{ secrets.PROJECT_GITHUB_TOKEN }}
-        gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-        gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
-        npm_version: "10.8.0"
-        plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
-        ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Running release-it using GitHub Action
+        uses: juancarlosjr97/release-it-containerized:0.2.0
+        with:
+          # Required: Provide an explicit token
+          github_token: ${{ secrets.GITHUB_TOKEN }} # or use a custom PAT: ${{ secrets.RELEASE_TOKEN }}
+          git_email: ${{ vars.GIT_EMAIL }}
+          git_username: ${{ vars.GIT_USERNAME }}
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
+          npm_version: "10.8.0"
+          plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
+          ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
+
+#### Cross-Repository Usage Example
+
+When using this action from a different repository (e.g., from `org/repo-a` to release in `org/repo-b`), you'll need a token with appropriate permissions for the target repository:
+
+```yaml
+name: Release in Another Repo
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout target repository
+        uses: actions/checkout@v4
+        with:
+          repository: org/repo-b  # Target repository
+          token: ${{ secrets.RELEASE_TOKEN_FOR_REPO_B }}  # PAT with access to repo-b
+          fetch-depth: 0
+
+      - name: Running release-it using GitHub Action
+        uses: juancarlosjr97/release-it-containerized:0.2.0
+        with:
+          # Use the same token that has write access to the target repository
+          github_token: ${{ secrets.RELEASE_TOKEN_FOR_REPO_B }}
+          git_email: release-bot@example.com
+          git_username: Release Bot
+          plugins_list: "@release-it/conventional-changelog@latest"
+```
+
+> [!NOTE]
+> When using this action across repositories, ensure your token (`RELEASE_TOKEN_FOR_REPO_B` in the example above) has the following permissions for the target repository:
+> - `contents: write` - to create commits, tags, and releases
+> - `workflows: write` - if you need to trigger workflows after release
 
 > [!NOTE]
 > GitHub Actions mandates running containers as root to align with GitHub's requirements. Consequently, when executing a GitHub Action involving containerization, it runs with root privileges. For additional details, refer the official documentation from GitHub [here](https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions).
