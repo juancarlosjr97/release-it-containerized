@@ -3,6 +3,8 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.8.2](///compare/0.8.1...0.8.2) (2025-11-18)
+
 ## [0.8.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.0...0.8.1) (2025-11-13)
 
 ### Chores
