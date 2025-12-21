@@ -3,6 +3,24 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.8.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.2...0.8.3) (2025-12-21)
+
+### Bug Fixes
+
+* pin actions/checkout to v5.0.1 in workflows and update renovate configuration ([#213](https://github.com/juancarlosjr97/release-it-containerized/issues/213)) ([8e847e9](https://github.com/juancarlosjr97/release-it-containerized/commit/8e847e979edddfed15b73ff3572fcf7b953e13c7)), closes [#212](https://github.com/juancarlosjr97/release-it-containerized/issues/212)
+
+### Chores
+
+* **deps:** update actions/checkout action to v6 ([#204](https://github.com/juancarlosjr97/release-it-containerized/issues/204)) ([d7144ab](https://github.com/juancarlosjr97/release-it-containerized/commit/d7144abd487a2bc62a1b521c6cc0db9a5ba47216))
+* **deps:** update actions/checkout digest to 8e8c483 ([#207](https://github.com/juancarlosjr97/release-it-containerized/issues/207)) ([4d45f5f](https://github.com/juancarlosjr97/release-it-containerized/commit/4d45f5f65572fe21ca85b2a80161e86410c9ecef))
+* **deps:** update all dependencies ([#208](https://github.com/juancarlosjr97/release-it-containerized/issues/208)) ([20c8dad](https://github.com/juancarlosjr97/release-it-containerized/commit/20c8dad83fbab815158e462d3759b8d81e8e4ec0))
+* **deps:** update c-ares version to 1.34.6-r0 in Dockerfile ([#210](https://github.com/juancarlosjr97/release-it-containerized/issues/210)) ([84e34ce](https://github.com/juancarlosjr97/release-it-containerized/commit/84e34ce5a37336be74214c829a777968781f6b0e)), closes [#209](https://github.com/juancarlosjr97/release-it-containerized/issues/209)
+* **deps:** update docker/metadata-action action to v5.10.0 ([#206](https://github.com/juancarlosjr97/release-it-containerized/issues/206)) ([3c301f4](https://github.com/juancarlosjr97/release-it-containerized/commit/3c301f455f4763ab1c670c674e0468cc3a96bc4d))
+
+### Documentation
+
+* add contributing guide ([#211](https://github.com/juancarlosjr97/release-it-containerized/issues/211)) ([b6d419c](https://github.com/juancarlosjr97/release-it-containerized/commit/b6d419c75979059b9b7d712a6940a3dc5abcb35d))
+
 ## [0.8.2](///compare/0.8.1...0.8.2) (2025-11-18)
 
 ## [0.8.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.0...0.8.1) (2025-11-13)
