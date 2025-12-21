@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.8.4](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.3...0.8.4) (2025-12-21)
+
+### Chores
+
+* **deps:** pin actions/checkout action to 93cb6ef ([#214](https://github.com/juancarlosjr97/release-it-containerized/issues/214)) ([d43a4b9](https://github.com/juancarlosjr97/release-it-containerized/commit/d43a4b9a19cf150138e06691368ffa6bac064ce7))
+
 ## [0.8.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.2...0.8.3) (2025-12-21)
 
 ### Bug Fixes
