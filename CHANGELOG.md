@@ -21,7 +21,9 @@ This changelog is updated automatically using release-it.
 
 * add contributing guide ([#211](https://github.com/juancarlosjr97/release-it-containerized/issues/211)) ([b6d419c](https://github.com/juancarlosjr97/release-it-containerized/commit/b6d419c75979059b9b7d712a6940a3dc5abcb35d))
 
-## [0.8.2](///compare/0.8.1...0.8.2) (2025-11-18)
+## [0.8.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.1...0.8.2) (2025-11-18)
+
+* **deps:** update actions/checkout digest to 93cb6ef ([#203](https://github.com/juancarlosjr97/release-it-containerized/pull/203)) ([93cb6ef](https://github.com/juancarlosjr97/release-it-containerized/commit/93cb6ef))
 
 ## [0.8.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.0...0.8.1) (2025-11-13)
 
