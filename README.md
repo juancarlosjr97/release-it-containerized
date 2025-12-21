@@ -145,6 +145,16 @@ jobs:
 
 This project is only possible due to the existence of [release-it](https://github.com/release-it/release-it) and all its contributors for the great work.
 
+## Contributing
+
+We welcome contributions! Please see our [Contributing Guide](./CONTRIBUTING.md) for details on:
+
+- How to report bugs
+- How to suggest enhancements
+- Development workflow
+- Commit message conventions
+- Pull request process
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file.
