@@ -34,7 +34,7 @@ jobs:
       image_tar_file_path: ${{ steps.save.outputs.image_tar_file_path }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        uses: actions/checkout@v5.0.1
         with:
           fetch-depth: 0
 
@@ -81,7 +81,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        uses: actions/checkout@v5.0.1
         with:
           fetch-depth: 0
 
