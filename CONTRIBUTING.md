@@ -126,14 +126,38 @@ The subject contains a succinct description of the change:
 - Don't capitalize the first letter
 - No period (.) at the end
 
+#### Issue Reference
+
+**All commits must include a reference to the related issue number** in the commit message body. Add the issue reference on a new line after the subject:
+
+```
+<type>(<scope>): <subject>
+
+#<issue-number>
+```
+
 #### Examples
 
 ```
 feat: add support for specifying NPM version
+
+#24
+
 fix: update openssh to v9.9_p2-r0
+
+#132
+
 docs: add contributing guidelines
+
+#15
+
 chore(deps): update node.js to v24.11.1
+
+#210
+
 ci: update tests on gh to use ci flag
+
+#114
 ```
 
 ## Pull Request Process
