@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.8.5](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.4...0.8.5) (2025-12-22)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.1.5 ([#215](https://github.com/juancarlosjr97/release-it-containerized/issues/215)) ([f0eefc1](https://github.com/juancarlosjr97/release-it-containerized/commit/f0eefc1130d596e02947be280de8386154c3ec2d))
+
 ## [0.8.4](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.3...0.8.4) (2025-12-21)
 
 ### Chores
