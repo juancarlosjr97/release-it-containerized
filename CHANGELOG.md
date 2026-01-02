@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.8.6](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.5...0.8.6) (2026-01-02)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/gnupg to v2.4.9-r0 ([#216](https://github.com/juancarlosjr97/release-it-containerized/issues/216)) ([abf9b99](https://github.com/juancarlosjr97/release-it-containerized/commit/abf9b99d53c35897c93eded69a5ecc90978ccbc4))
+
 ## [0.8.5](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.4...0.8.5) (2025-12-22)
 
 ### Chores
