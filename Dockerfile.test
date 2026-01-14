@@ -1,0 +1,26 @@
+FROM docker.io/library/node:24.13.0-alpine3.23@sha256:0eac57cde57cee750250965f16f5ff30ee2763b1c664321bdd11428ed2bbc3e0
+
+RUN apk add --no-cache \
+    bash \
+    busybox \
+    c-ares \
+    curl \
+    git \
+    gnupg \
+    libssl3 \
+    libtasn1 \
+    openssh \
+    sqlite-libs
+
+# Print installed versions
+RUN apk info bash busybox c-ares curl git gnupg libssl3 libtasn1 openssh sqlite-libs
+
+WORKDIR /app
+
+USER node
+
+COPY --chown=node release-it-entrypoint.sh /usr/local/bin/release-it-containerized
+
+ENTRYPOINT ["release-it-containerized"]
+
+CMD ["sh"]

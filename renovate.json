@@ -12,7 +12,7 @@
             "matchPackageNames": [
                 "docker.io/library/node"
             ],
-            "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-alpine3.21)?$",
+            "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-alpine3.23)?$",
             "versioning": "node"
         },
         {
