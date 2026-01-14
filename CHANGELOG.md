@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [0.8.7](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.6...0.8.7) (2026-01-14)
+
+### Bug Fixes
+
+* update security vulnerabilities ([#218](https://github.com/juancarlosjr97/release-it-containerized/issues/218)) ([22fd1f0](https://github.com/juancarlosjr97/release-it-containerized/commit/22fd1f0f2030f756cf345d16ee0da991781edf07)), closes [#217](https://github.com/juancarlosjr97/release-it-containerized/issues/217) [#217](https://github.com/juancarlosjr97/release-it-containerized/issues/217)
+
 ## [0.8.6](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.5...0.8.6) (2026-01-02)
 
 ### Chores
