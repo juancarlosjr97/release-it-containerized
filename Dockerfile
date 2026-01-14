@@ -3,6 +3,9 @@ FROM docker.io/library/node:24.11.1-alpine3.21@sha256:b8f7c9056af700568c1ce76173
 # renovate: datasource=repology depName=alpine_3_21/bash versioning=loose
 ENV BASH_VERSION="5.2.37-r0"
 
+# renovate: datasource=repology depName=alpine_3_21/busybox versioning=loose
+ENV BUSYBOX_VERSION="1.37.0-r14"
+
 # renovate: datasource=repology depName=alpine_3_21/c-ares versioning=loose
 ENV CARES_VERSION="1.34.6-r0"
 
@@ -27,6 +30,7 @@ ENV SQLITE_LIBS_VERSION="3.48.0-r4"
 RUN apk update && \
     apk add --no-cache \
     bash="${BASH_VERSION}" \
+    busybox="${BUSYBOX_VERSION}" \
     c-ares="${CARES_VERSION}" \
     curl="${CURL_VERSION}" \
     git="${GIT_VERSION}" \
