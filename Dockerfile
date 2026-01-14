@@ -22,13 +22,13 @@ ENV GNUPG_VERSION="2.4.9-r0"
 ENV LIBSSL3_VERSION="3.5.4-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/libtasn1 versioning=loose
-ENV LIBTASN_VERSION="4.19.0-r0"
+ENV LIBTASN_VERSION="4.20.0-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/openssh versioning=loose
-ENV OPENSSH_VERSION="9.9_p2-r0"
+ENV OPENSSH_VERSION="10.2_p1-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/sqlite-libs versioning=loose
-ENV SQLITE_LIBS_VERSION="3.48.0-r0"
+ENV SQLITE_LIBS_VERSION="3.49.2-r1"
 
 RUN apk update && \
     apk add --no-cache \
