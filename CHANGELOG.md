@@ -3,6 +3,16 @@
 This changelog is updated automatically using release-it.
 
 
+## [1.0.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.7...1.0.0) (2026-01-15)
+
+### ⚠ BREAKING CHANGES
+
+* Base image upgraded from Alpine 3.21 to 3.23. Consumers using this as a base image should test compatibility.
+
+### Features
+
+* upgrade to Alpine 3.23 with Node 24.13.0 ([f43d6f8](https://github.com/juancarlosjr97/release-it-containerized/commit/f43d6f87c55f67a8d15a80e6447895dc9fba5bdf))
+
 ## [0.8.7](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.6...0.8.7) (2026-01-14)
 
 ### Bug Fixes
