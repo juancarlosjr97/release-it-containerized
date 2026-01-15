@@ -1,4 +1,4 @@
-FROM docker.io/library/node:24.13.0-alpine3.23@sha256:0eac57cde57cee750250965f16f5ff30ee2763b1c664321bdd11428ed2bbc3e0
+FROM docker.io/library/node:24.13.0-alpine3.23@sha256:931d7d57f8c1fd0e2179dbff7cc7da4c9dd100998bc2b32afc85142d8efbc213
 
 # renovate: datasource=repology depName=alpine_3_23/bash versioning=loose
 ENV BASH_VERSION="5.3.3-r1"
@@ -28,7 +28,7 @@ ENV LIBTASN_VERSION="4.21.0-r0"
 ENV OPENSSH_VERSION="10.2_p1-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/sqlite-libs versioning=loose
-ENV SQLITE_LIBS_VERSION="3.51.1-r0"
+ENV SQLITE_LIBS_VERSION="3.51.2-r0"
 
 RUN apk update && \
     apk add --no-cache \
