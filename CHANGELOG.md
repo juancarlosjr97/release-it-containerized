@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [1.0.3](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.2...1.0.3) (2026-01-28)
+
+### Chores
+
+* **deps:** update node.js to cd6fb7e ([#224](https://github.com/juancarlosjr97/release-it-containerized/issues/224)) ([e4a0fd9](https://github.com/juancarlosjr97/release-it-containerized/commit/e4a0fd9fa876ee5fcdfd6412ab50dedee36af058))
+
 ## [1.0.2](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.1...1.0.2) (2026-01-27)
 
 ### Chores
