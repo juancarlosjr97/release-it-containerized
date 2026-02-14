@@ -34,7 +34,7 @@ jobs:
       image_tar_file_path: ${{ steps.save.outputs.image_tar_file_path }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -81,9 +81,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Download Docker image artifact
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
@@ -185,9 +186,9 @@ jobs:
               -v $PWD:/app \
               ghcr.io/${{ github.repository }}:${{ github.sha }} \
               release-it --dry-run --ci 2>&1)
-            
+
             echo "$OUTPUT"
-            
+
             # Verify NPM version is 10.8.0
             if echo "$OUTPUT" | grep -q "NPM version: 10.8.0"; then
               echo "✅ NPM version verification passed: 10.8.0"

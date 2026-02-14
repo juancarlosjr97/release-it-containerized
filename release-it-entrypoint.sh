@@ -84,7 +84,7 @@ fi
 
 # Configure NPM global settings
 # Adjust the global directory for NPM to a location with full permissions for the node user, set during the image build
-NPM_GLOBAL_DIR=/home/node/.npm-global
+NPM_GLOBAL_DIR=/home/node_release_it_user/.npm-global
 PATH=${NPM_GLOBAL_DIR}/bin:${PATH}
 
 mkdir -p "${NPM_GLOBAL_DIR}"

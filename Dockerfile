@@ -45,9 +45,11 @@ RUN apk update && \
 
 WORKDIR /app
 
-USER node
+RUN adduser -D node_release_it_user
 
-COPY --chown=node release-it-entrypoint.sh /usr/local/bin/release-it-containerized
+USER node_release_it_user
+
+COPY --chown=node_release_it_user release-it-entrypoint.sh /usr/local/bin/release-it-containerized
 
 ENTRYPOINT ["release-it-containerized"]
 
