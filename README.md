@@ -81,10 +81,8 @@ When using this action from another repository, the default `${{ github.token }}
 **Token Options:**
 
 1. **Same Repository**: Use `${{ secrets.GITHUB_TOKEN }}` if running within the same repository and default permissions are sufficient.
-2. **Cross-Repository or Enhanced Permissions**: Create a Personal Access Token (PAT) or use a GitHub App token with appropriate permissions:
-   - `contents: write` - for creating commits and tags
-   - `pull-requests: write` - if managing pull requests
-   - `workflows: write` - if triggering other workflows
+2. **Cross-Repository or Enhanced Permissions**: Create a Personal Access Token (PAT) or use a GitHub App token with the minimum required permission:
+   - `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges (see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents))
 
 Store the token as a repository secret and reference it in your workflow.
 
@@ -190,9 +188,8 @@ jobs:
 ```
 
 > [!NOTE]
-> When using this action across repositories, ensure your token (`RELEASE_TOKEN_FOR_REPO_B` in the example above) has the following permissions for the target repository:
-> - `contents: write` - to create commits, tags, and releases
-> - `workflows: write` - if you need to trigger workflows after release
+> When using this action across repositories, ensure your token (`RELEASE_TOKEN_FOR_REPO_B` in the example above) has the minimum required permission for the target repository:
+> - `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges
 
 > [!NOTE]
 > GitHub Actions mandates running containers as root to align with GitHub's requirements. Consequently, when executing a GitHub Action involving containerization, it runs with root privileges. For additional details, refer the official documentation from GitHub [here](https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions).
