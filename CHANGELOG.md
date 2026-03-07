@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [1.0.10](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.9...1.0.10) (2026-03-07)
+
+### Chores
+
+* set up Copilot instructions and maintenance agent ([#232](https://github.com/juancarlosjr97/release-it-containerized/issues/232)) ([33c2e66](https://github.com/juancarlosjr97/release-it-containerized/commit/33c2e66919f4634378802d636f0214d0d70ccc11))
+
 ## [1.0.9](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.8...1.0.9) (2026-02-27)
 
 ### Chores
