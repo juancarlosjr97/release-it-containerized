@@ -78,13 +78,13 @@ When using this action from another repository, the default `${{ github.token }}
 - Push commits to the target repository
 - Trigger subsequent workflows
 
-**Token Options:**
+**Token:**
 
-1. **Same Repository**: Use a PAT or fine-grained token stored as a repository secret (e.g. `${{ secrets.RELEASE_IT_GITHUB_TOKEN }}`). Note: user-defined secrets cannot start with `GITHUB_`, so `secrets.GITHUB_TOKEN` is not a valid secret name — use a custom secret name instead.
-2. **Cross-Repository or Enhanced Permissions**: Create a Personal Access Token (PAT) or use a GitHub App token with the minimum required permission:
-   - `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges (see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents))
+Create a Personal Access Token (PAT) or use a GitHub App token with the minimum required permission, then store it as a repository secret (e.g. `RELEASE_IT_GITHUB_TOKEN`) and pass it to the action:
+- `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges (see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents))
 
-Store the token as a repository secret and reference it in your workflow.
+> [!NOTE]
+> User-defined secrets cannot start with `GITHUB_`. Use a custom name such as `RELEASE_IT_GITHUB_TOKEN`.
 
 #### Input Variables
 
