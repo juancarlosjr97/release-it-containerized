@@ -80,7 +80,7 @@ When using this action from another repository, the default `${{ github.token }}
 
 **Token Options:**
 
-1. **Same Repository**: Use `${{ secrets.GITHUB_TOKEN }}` if running within the same repository and default permissions are sufficient.
+1. **Same Repository**: Use a PAT or fine-grained token stored as a repository secret (e.g. `${{ secrets.RELEASE_IT_GITHUB_TOKEN }}`). Note: user-defined secrets cannot start with `GITHUB_`, so `secrets.GITHUB_TOKEN` is not a valid secret name — use a custom secret name instead.
 2. **Cross-Repository or Enhanced Permissions**: Create a Personal Access Token (PAT) or use a GitHub App token with the minimum required permission:
    - `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges (see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents))
 
@@ -113,8 +113,8 @@ Add this step in your workflow file
 - name: Running release-it using GitHub Action
   uses: juancarlosjr97/release-it-containerized:0.2.0
   with:
-    # Required: Provide an explicit token
-    github_token: ${{ secrets.GITHUB_TOKEN }} # or use a custom PAT: ${{ secrets.RELEASE_TOKEN }}
+    # Required: Provide a PAT stored as a repository secret
+    github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
     git_email: ${{ vars.GIT_EMAIL }}
     git_username: ${{ vars.GIT_USERNAME }}
     gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -126,6 +126,8 @@ Add this step in your workflow file
 ```
 
 #### Example
+
+This is the common way to use this action — calling it from another repository using a PAT stored as a secret:
 
 ```yaml
 name: Release
@@ -145,8 +147,8 @@ jobs:
       - name: Running release-it using GitHub Action
         uses: juancarlosjr97/release-it-containerized:0.2.0
         with:
-          # Required: Provide an explicit token
-          github_token: ${{ secrets.GITHUB_TOKEN }} # or use a custom PAT: ${{ secrets.RELEASE_TOKEN }}
+          # Required: PAT stored as a repository secret with Contents (read and write) access
+          github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
           git_email: ${{ vars.GIT_EMAIL }}
           git_username: ${{ vars.GIT_USERNAME }}
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
@@ -159,7 +161,7 @@ jobs:
 
 #### Cross-Repository Usage Example
 
-When using this action from a different repository (e.g., from `org/repo-a` to release in `org/repo-b`), you'll need a token with appropriate permissions for the target repository:
+When triggering a release in a repository different from the one running the workflow, pass the PAT that has access to the target repository:
 
 ```yaml
 name: Release in Another Repo
@@ -174,21 +176,21 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: org/repo-b  # Target repository
-          token: ${{ secrets.RELEASE_TOKEN_FOR_REPO_B }}  # PAT with access to repo-b
+          token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}  # PAT with access to repo-b
           fetch-depth: 0
 
       - name: Running release-it using GitHub Action
         uses: juancarlosjr97/release-it-containerized:0.2.0
         with:
           # Use the same token that has write access to the target repository
-          github_token: ${{ secrets.RELEASE_TOKEN_FOR_REPO_B }}
+          github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
           git_email: release-bot@example.com
           git_username: Release Bot
           plugins_list: "@release-it/conventional-changelog@latest"
 ```
 
 > [!NOTE]
-> When using this action across repositories, ensure your token (`RELEASE_TOKEN_FOR_REPO_B` in the example above) has the minimum required permission for the target repository:
+> When using this action across repositories, ensure your token (`RELEASE_IT_GITHUB_TOKEN` in the example above) has the minimum required permission for the target repository:
 > - `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges
 
 > [!NOTE]
