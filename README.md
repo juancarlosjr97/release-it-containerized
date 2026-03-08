@@ -140,7 +140,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        # Note: actions/checkout@v6 breaks git authentication inside Docker containers — see https://github.com/juancarlosjr97/release-it-containerized/issues/212
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           fetch-depth: 0
 
@@ -173,7 +174,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout target repository
-        uses: actions/checkout@v4
+        # Note: actions/checkout@v6 breaks git authentication inside Docker containers — see https://github.com/juancarlosjr97/release-it-containerized/issues/212
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           repository: org/repo-b  # Target repo
           token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}  # PAT with access to repo-b
@@ -184,8 +186,6 @@ jobs:
         with:
           # Use the same token that has write access to the target repository
           github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
-          git_email: release-bot@example.com
-          git_username: Release Bot
           plugins_list: "@release-it/conventional-changelog@latest"
 ```
 
