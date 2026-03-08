@@ -80,7 +80,7 @@ When using this action from another repository, the default `${{ github.token }}
 
 **Token:**
 
-Create a Personal Access Token (PAT) or use a GitHub App token with the minimum required permission, then store it as a repository secret (e.g. `RELEASE_IT_GITHUB_TOKEN`) and pass it to the action:
+Create a Personal Access Token (PAT) with the minimum required permission, then store it as a repository secret (e.g. `RELEASE_IT_GITHUB_TOKEN`) and pass it to the action:
 - `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges (see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents))
 
 > [!NOTE]
