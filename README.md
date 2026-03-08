@@ -175,7 +175,7 @@ jobs:
       - name: Checkout target repository
         uses: actions/checkout@v4
         with:
-          repository: org/repo-b  # Target repository
+          repository: org/repo-b  # Target repo
           token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}  # PAT with access to repo-b
           fetch-depth: 0
 
@@ -190,7 +190,7 @@ jobs:
 ```
 
 > [!NOTE]
-> When using this action across repositories, ensure your token (`RELEASE_IT_GITHUB_TOKEN` in the example above) has the minimum required permission for the target repository:
+> Ensure your token (`RELEASE_IT_GITHUB_TOKEN` in the example above) has the minimum required permission:
 > - `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges
 
 > [!NOTE]
