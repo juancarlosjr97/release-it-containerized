@@ -30,6 +30,9 @@ ENV OPENSSH_VERSION="10.2_p1-r0"
 # renovate: datasource=repology depName=alpine_3_23/sqlite-libs versioning=loose
 ENV SQLITE_LIBS_VERSION="3.51.2-r0"
 
+# renovate: datasource=repology depName=alpine_3_23/zlib versioning=loose
+ENV ZLIB_VERSION="1.3.2-r0"
+
 RUN apk update && \
     apk add --no-cache \
     bash="${BASH_VERSION}" \
@@ -41,7 +44,8 @@ RUN apk update && \
     libssl3="${LIBSSL3_VERSION}" \
     libtasn1="${LIBTASN_VERSION}" \
     openssh="${OPENSSH_VERSION}" \
-    sqlite-libs="${SQLITE_LIBS_VERSION}"
+    sqlite-libs="${SQLITE_LIBS_VERSION}" \
+    zlib="${ZLIB_VERSION}"
 
 WORKDIR /app
 
