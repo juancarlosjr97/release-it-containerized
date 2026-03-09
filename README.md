@@ -5,202 +5,53 @@
 ![GitHub Release](https://img.shields.io/github/v/release/juancarlosjr97/release-it-containerized)
 [![MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://github.com/juancarlosjr97/release-it-containerized/blob/main/LICENSE)
 
-This project is a containerized version of [release-it](https://github.com/release-it/release-it). The purpose of this project is to enable release-it to run in any environment as a standardized container without the need for a Node environment.
-
-This project is simply a wrapper to run as containerization of release-it and execute release-it directly, providing the environment and setup around to run it.
+A containerized version of [release-it](https://github.com/release-it/release-it) that runs in any environment without requiring a Node.js installation. This project is a wrapper providing the environment and setup to execute release-it directly from a container.
 
 > [!NOTE]
-> This project is released using release-it and with this containerized version including pre-releases.
+> This project is released using release-it and this containerized version, including pre-releases.
 
-## Usage
+## How It Works
 
-As this is a containerized solution, it can be used anywhere!
+At runtime the container:
 
-The most important required is that the project has a valid [configuration](https://github.com/release-it/release-it/blob/main/docs/configuration.md) acceptable by [release-it](https://github.com/release-it/release-it).
+1. Configures Git (user, email, remote URL, safe directory)
+2. Imports GPG key and enables signed commits (if provided)
+3. Configures SSH key and starts the SSH agent (if provided)
+4. Installs the requested NPM and release-it version (defaults to `latest`)
+5. Installs any additional release-it plugins from `RELEASE_IT_PLUGINS`
+6. Executes `release-it` with the arguments passed to the container
 
-### Inputs
+The project must include a valid [release-it configuration](https://github.com/release-it/release-it/blob/main/docs/configuration.md) file.
 
-The containerized tool accepts the following inputs.
+## Quick Start
 
-| Environmental Variable | Description                                                          | Required |
-| ---------------------- | -------------------------------------------------------------------- | -------- |
-| GIT_DIRECTORY          | Directory path to make it safe to run git changes                    | false    |
-| GIT_EMAIL              | The Git email that will be identified when running release-it        | false    |
-| GIT_REPOSITORY         | The Git repository of the project to run release-it                  | false    |
-| GIT_USERNAME           | The Git username that will be identified when running release-it     | false    |
-| GPG_PRIVATE_KEY        | The GPG Private Key                                                  | false    |
-| GPG_PRIVATE_KEY_ID     | The GPG Private Key ID                                               | false    |
-| NPM_VERSION            | Specific NPM version to use. If not specified, uses the default      | false    |
-| RELEASE_IT_PLUGINS     | List of comma separated release plugins to run                       | false    |
-| SSH_PASSPHRASE         | SSH Passphrase associated to the SSH Private Key                     | false    |
-| SSH_PRIVATE_KEY        | The SSH Private key associated to the GIT account running release-it | false    |
+### Docker
 
-As the tool runs release-it, you can also pass additional environmental variables, such as `GITHUB_TOKEN` and `GITLAB_TOKEN`, for GitHub and GitLab, respectively.
-
-### Container - Docker
-
-When running from the project, as the directory is passed as a volume to the container, it will inherit the Git configuration set in the project. However, if needed, this configuration can be overridden and set differently.
-
-For example running locally.
-
-```docker
+```bash
 docker run \
-    -e GITHUB_TOKEN="***" \
-    -e GIT_EMAIL="juancarlosjr97@gmail.com" \
-    -e GIT_REPOSITORY="git@github.com:juancarlosjr97/release-it-containerized.git" \
-    -e GIT_USERNAME="Juan Carlos Blanco Delgado" \
-    -e GPG_PRIVATE_KEY="$(cat gpg_private_key.pgp)" \
-    -e GPG_PRIVATE_KEY_ID="***" \
-    -e NPM_VERSION="10.8.0" \
-    -e RELEASE_IT_PLUGINS="@release-it/conventional-changelog@latest,@release-it/bumper@latest" \
-    -e SSH_PASSPHRASE="***" \
-    -e SSH_PRIVATE_KEY="$(cat ssh_private_key)" \
+    -e GITHUB_TOKEN="<token>" \
+    -e GIT_EMAIL="you@example.com" \
+    -e GIT_USERNAME="Your Name" \
     -v $(pwd):/app \
     ghcr.io/juancarlosjr97/release-it-containerized \
     release-it --ci
 ```
 
-The last line accepts any value, and will be accept any value from release-it CLI configuration. For example, it can execute `--dry-run`.
-
 ### GitHub Action
 
-The project provides a [GitHub Action](https://github.com/marketplace/actions/github-action-release-it-containerized) to used within a workflow.
-
-#### GitHub Token Requirement
+```yaml
+- name: Release
+  uses: juancarlosjr97/release-it-containerized@1.0.12
+  with:
+    github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
+```
 
 > [!IMPORTANT]
-> The `github_token` input is **required** and must be explicitly provided by the caller workflow. The action does not use `${{ github.token }}` as this project will not have access to the `${{ github.token }}`.
+> A Personal Access Token (PAT) with `contents: write` must be stored as a repository secret and passed as `github_token`. The default `${{ github.token }}` is not supported.
 
-**Why is this required?**
+## Documentation
 
-When using this action from another repository, the default `${{ github.token }}` from the caller's context may not have the necessary permissions to:
-
-- Create tags and releases in the target repository
-- Push commits to the target repository
-- Trigger subsequent workflows
-
-**Token:**
-
-Create a Personal Access Token (PAT) with the minimum required permission, then store it as a repository secret (e.g. `RELEASE_IT_GITHUB_TOKEN`) and pass it to the action: `contents: write` as Read and Write access to repository contents, commits, branches, downloads, releases, and merges (see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents))
-
-> [!NOTE]
-> User-defined secrets cannot start with `GITHUB_`. Use a custom name such as `RELEASE_IT_GITHUB_TOKEN`.
-
-#### Input Variables
-
-| Field              | Description                                               | Required | Default                                        |
-| ------------------ | --------------------------------------------------------- | -------- | ---------------------------------------------- |
-| command            | Command to execute release-it                             | false    | ""                                             |
-| git_email          | Git email to run release-it                               | false    | `${{ github.actor }}`                          |
-| git_username       | Git username to run release-it                            | false    | `${{ github.actor }}@users.noreply.github.com` |
-| github_token       | GitHub Token to run release-it                            | **true** | -                                              |
-| gpg_private_key    | GPG Private Key                                           | false    | ""                                             |
-| gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                             |
-| image_tag          | Image tag used to pass specific version of the action     | false    | `latest`                                       |
-| npm_version        | NPM version to use. If not specified, uses the default    | false    | ""                                             |
-| plugins_list       | List of Plugins to run with release-it as comma separated | false    | ""                                             |
-| ssh_passphrase     | SSH Passphrase                                            | false    | ""                                             |
-| ssh_private_key    | SSH Private Key                                           | false    | ""                                             |
-| version            | Release It version                                        | false    | `latest`                                       |
-
-The GitHub Action exclusively operates within a CI environment, utilizing the `--ci` option, ensuring a fully automated process devoid of prompts in a non-interactive mode.
-
-#### Workflow
-
-Add this step in your workflow file
-
-Update the tag version of the action and the `plugins_list` to what is needed for the project.
-
-```yaml
-- name: Running release-it Containerized
-  uses: juancarlosjr97/release-it-containerized:1.0.12
-  with:
-    git_email: ${{ vars.GIT_EMAIL }}
-    git_username: ${{ vars.GIT_USERNAME }}
-    github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
-    gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
-    gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-    plugins_list: "@release-it/conventional-changelog,@release-it/bumper"
-    ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-    ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-```
-
-#### Example
-
-This is the common way to use this action using a Personal Access Token stored as a secret:
-
-```yaml
----
-name: Release
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        # Note: actions/checkout@v6 breaks git authentication inside Docker containers — see https://github.com/juancarlosjr97/release-it-containerized/issues/212
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-        with:
-          fetch-depth: 0
-
-      - name: Running release-it using GitHub Action
-        uses: juancarlosjr97/release-it-containerized:1.0.12
-        with:
-          git_email: ${{ vars.GIT_EMAIL }}
-          git_username: ${{ vars.GIT_USERNAME }}
-          # Required: PAT stored as a repository secret with Contents (read and write) access.
-          github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
-          gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          npm_version: "10.8.0"
-          plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
-          ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-```
-
-#### Usage Example
-
-When triggering a release, pass the PAT that has access to the target repository:
-
-```yaml
----
-name: Release
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        # Note: actions/checkout@v6 breaks git authentication inside Docker containers — see https://github.com/juancarlosjr97/release-it-containerized/issues/212
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-        with:
-          token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
-          fetch-depth: 0
-
-      - name: Running release-it using GitHub Action
-        uses: juancarlosjr97/release-it-containerized@1.0.12
-        with:
-          github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
-          plugins_list: "@release-it/conventional-changelog"
-```
-
-> [!NOTE]
-> Ensure your token (`RELEASE_IT_GITHUB_TOKEN` in the example above) has the minimum required permission:
-> - `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges
-
-> [!NOTE]
-> GitHub Actions mandates running containers as root to align with GitHub's requirements. Consequently, when executing a GitHub Action involving containerization, it runs with root privileges. For additional details, refer the official documentation from GitHub [here](https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions).
-
-> [!NOTE]
-> All Docker operations in the GitHub Actions workflows include automatic retry functionality to handle transient network failures, Docker registry unavailability, or other random failures. Operations are retried up to 3 times with exponential backoff delays.
+- [Usage](./docs/USAGE.md) — full input reference, Docker examples, and GitHub Action setup
 
 ## Acknowledgment
 
