@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [1.0.12](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.11...1.0.12) (2026-03-09)
+
+### Bug Fixes
+
+* pin zlib to 1.3.2-r0 to remediate CVE-2026-22184 and CVE-2026-27171 ([#234](https://github.com/juancarlosjr97/release-it-containerized/issues/234)) ([d0a0386](https://github.com/juancarlosjr97/release-it-containerized/commit/d0a03869c2b0dedb93c354ef007c0083773a4cd7)), closes [#233](https://github.com/juancarlosjr97/release-it-containerized/issues/233)
+
 ## [1.0.11](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.10...1.0.11) (2026-03-07)
 
 ### Chores
