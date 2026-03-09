@@ -69,19 +69,19 @@ The project provides a [GitHub Action](https://github.com/marketplace/actions/gi
 #### GitHub Token Requirement
 
 > [!IMPORTANT]
-> The `github_token` input is **required** and must be explicitly provided by the caller workflow. The action does not use `${{ github.token }}` internally to ensure it can be reused across different repositories.
+> The `github_token` input is **required** and must be explicitly provided by the caller workflow. The action does not use `${{ github.token }}` as this project will not have access to the `${{ github.token }}`.
 
 **Why is this required?**
 
 When using this action from another repository, the default `${{ github.token }}` from the caller's context may not have the necessary permissions to:
+
 - Create tags and releases in the target repository
 - Push commits to the target repository
 - Trigger subsequent workflows
 
 **Token:**
 
-Create a Personal Access Token (PAT) with the minimum required permission, then store it as a repository secret (e.g. `RELEASE_IT_GITHUB_TOKEN`) and pass it to the action:
-- `contents: write` - Read and Write access to repository contents, commits, branches, downloads, releases, and merges (see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents))
+Create a Personal Access Token (PAT) with the minimum required permission, then store it as a repository secret (e.g. `RELEASE_IT_GITHUB_TOKEN`) and pass it to the action: `contents: write` as Read and Write access to repository contents, commits, branches, downloads, releases, and merges (see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents))
 
 > [!NOTE]
 > User-defined secrets cannot start with `GITHUB_`. Use a custom name such as `RELEASE_IT_GITHUB_TOKEN`.
@@ -109,31 +109,33 @@ The GitHub Action exclusively operates within a CI environment, utilizing the `-
 
 Add this step in your workflow file
 
+Update the tag version of the action and the `plugins_list` to what is needed for the project.
+
 ```yaml
-- name: Running release-it using GitHub Action
-  uses: juancarlosjr97/release-it-containerized:0.2.0
+- name: Running release-it Containerized
+  uses: juancarlosjr97/release-it-containerized:1.0.12
   with:
-    # Required: Provide a PAT stored as a repository secret
-    github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
     git_email: ${{ vars.GIT_EMAIL }}
     git_username: ${{ vars.GIT_USERNAME }}
-    gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+    github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
     gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
-    npm_version: "10.8.0"
-    plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
+    gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+    plugins_list: "@release-it/conventional-changelog,@release-it/bumper"
     ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
     ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
 
 #### Example
 
-This is the common way to use this action — calling it from another repository using a PAT stored as a secret:
+This is the common way to use this action using a Personal Access Token stored as a secret:
 
 ```yaml
+---
 name: Release
 on:
   push:
-    branches: ["main"]
+    branches:
+      - main
 
 jobs:
   release:
@@ -146,14 +148,14 @@ jobs:
           fetch-depth: 0
 
       - name: Running release-it using GitHub Action
-        uses: juancarlosjr97/release-it-containerized:0.2.0
+        uses: juancarlosjr97/release-it-containerized:1.0.12
         with:
-          # Required: PAT stored as a repository secret with Contents (read and write) access
-          github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
           git_email: ${{ vars.GIT_EMAIL }}
           git_username: ${{ vars.GIT_USERNAME }}
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          # Required: PAT stored as a repository secret with Contents (read and write) access.
+          github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
           gpg_private_key_id: ${{ secrets.GPG_PRIVATE_KEY_ID }}
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
           npm_version: "10.8.0"
           plugins_list: "@release-it/conventional-changelog@latest,@release-it/bumper@latest"
           ssh_passphrase: ${{ secrets.SSH_PASSPHRASE }}
@@ -165,9 +167,12 @@ jobs:
 When triggering a release, pass the PAT that has access to the target repository:
 
 ```yaml
+---
 name: Release
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 jobs:
   release:
@@ -177,16 +182,14 @@ jobs:
         # Note: actions/checkout@v6 breaks git authentication inside Docker containers — see https://github.com/juancarlosjr97/release-it-containerized/issues/212
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
-          repository: org/repo-b  # Target repo
-          token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}  # PAT with access to repo-b
+          token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
           fetch-depth: 0
 
       - name: Running release-it using GitHub Action
-        uses: juancarlosjr97/release-it-containerized:0.2.0
+        uses: juancarlosjr97/release-it-containerized@1.0.12
         with:
-          # Use the same token that has write access to the repository
           github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
-          plugins_list: "@release-it/conventional-changelog@latest"
+          plugins_list: "@release-it/conventional-changelog"
 ```
 
 > [!NOTE]
