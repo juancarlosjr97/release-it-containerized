@@ -160,12 +160,12 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
 ```
 
-#### Cross-Repository Usage Example
+#### Usage Example
 
-When triggering a release in a repository different from the one running the workflow, pass the PAT that has access to the target repository:
+When triggering a release, pass the PAT that has access to the target repository:
 
 ```yaml
-name: Release in Another Repo
+name: Release
 on:
   workflow_dispatch:
 
@@ -173,7 +173,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout target repository
+      - name: Checkout repository
         # Note: actions/checkout@v6 breaks git authentication inside Docker containers — see https://github.com/juancarlosjr97/release-it-containerized/issues/212
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
@@ -184,7 +184,7 @@ jobs:
       - name: Running release-it using GitHub Action
         uses: juancarlosjr97/release-it-containerized:0.2.0
         with:
-          # Use the same token that has write access to the target repository
+          # Use the same token that has write access to the repository
           github_token: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
           plugins_list: "@release-it/conventional-changelog@latest"
 ```
