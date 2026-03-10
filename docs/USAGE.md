@@ -1,6 +1,6 @@
 # Usage
 
-The project must have a valid [release-it configuration](https://github.com/release-it/release-it/blob/main/docs/configuration.md) file. As a containerized solution it can run anywhere — locally via Docker or in CI via the GitHub Action.
+The project must have a valid [release-it configuration][1] file. As a containerized solution it can run anywhere — locally via Docker or in CI via the GitHub Action.
 
 ## Inputs
 
@@ -48,14 +48,14 @@ The last line accepts any value, and will accept any value from release-it CLI c
 
 ## GitHub Action
 
-The project provides a [GitHub Action](https://github.com/marketplace/actions/github-action-release-it-containerized) to use within a workflow. The action always runs with `--ci`, so no interactive prompts are triggered.
+The project provides a [GitHub Action][2] to use within a workflow. The action always runs with `--ci`, so no interactive prompts are triggered.
 
 ### GitHub Token Requirement
 
 > [!IMPORTANT]
 > The `github_token` input is **required** and must be explicitly provided by the caller workflow. The default `${{ github.token }}` is not supported — it may lack permissions to create tags and releases, push commits, or trigger subsequent workflows.
 
-Create a Personal Access Token (PAT) with `contents: write` (Read and Write access to repository contents, commits, branches, downloads, releases, and merges — see [Contents permission](https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents)), store it as a repository secret, and pass it to the action. Use a name such as `RELEASE_IT_GITHUB_TOKEN` — secrets cannot start with `GITHUB_`.
+Create a Personal Access Token (PAT) with `contents: write` (Read and Write access to repository contents, commits, branches, downloads, releases, and merges — see [Contents permission][3]), store it as a repository secret, and pass it to the action. Use a name such as `RELEASE_IT_GITHUB_TOKEN` — secrets cannot start with `GITHUB_`.
 
 ### Input Variables
 
@@ -158,5 +158,10 @@ jobs:
 
 ### Considerations
 
-- **Root execution:** GitHub Actions mandates running containers as root. See the [GitHub documentation](https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions) for details.
+- **Root execution:** GitHub Actions mandates running containers as root. See the [GitHub documentation][4] for details.
 - **Automatic retries:** All Docker operations include retry logic (up to 3 attempts with exponential backoff) to handle transient network or registry failures.
+
+[1]: https://github.com/release-it/release-it/blob/main/docs/configuration.md
+[2]: https://github.com/marketplace/actions/github-action-release-it-containerized
+[3]: https://docs.github.com/en/rest/authentication/permissions-required-for-fine-grained-personal-access-tokens?apiVersion=2022-11-28#repository-permissions-for-contents
+[4]: https://docs.github.com/en/actions/creating-actions/dockerfile-support-for-github-actions
