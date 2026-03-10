@@ -1,6 +1,5 @@
 ---
 name: Package Release
-
 on:
   release:
     types:
