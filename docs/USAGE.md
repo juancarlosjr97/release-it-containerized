@@ -55,15 +55,15 @@ The project provides a [GitHub Action][2] to use within a workflow. The action a
 > [!IMPORTANT]
 > The `github_token` input is **required** and must be explicitly provided by the caller workflow. The default `${{ github.token }}` is not supported — it may lack permissions to create tags and releases, push commits, or trigger subsequent workflows.
 
-Create a Personal Access Token (PAT) with `contents: write` (Read and Write access to repository contents, commits, branches, downloads, releases, and merges — see [Contents permission][3]), store it as a repository secret, and pass it to the action. Use a name such as `RELEASE_IT_GITHUB_TOKEN` — secrets cannot start with `GITHUB_`.
+Create a Personal Access Token (PAT) with `contents: write` (Read and Write access to repository contents, commits, branches, downloads, releases, and merges — see [Contents permission][3]), store it as a repository secret, and pass it to the action. Use a name such as `RELEASE_IT_GITHUB_TOKEN` to avoid reserved prefixes like `GITHUB_` (see GitHub’s docs on [naming secrets](https://docs.github.com/actions/security-guides/using-secrets-in-github-actions#naming-your-secrets)).
 
 ### Input Variables
 
 | Field              | Description                                               | Required | Default                                        |
 | ------------------ | --------------------------------------------------------- | -------- | ---------------------------------------------- |
 | command            | Command to execute release-it                             | false    | ""                                             |
-| git_email          | Git email to run release-it                               | false    | `${{ github.actor }}`                          |
-| git_username       | Git username to run release-it                            | false    | `${{ github.actor }}@users.noreply.github.com` |
+| git_email          | Git email to run release-it                               | false    | `${{ github.actor }}@users.noreply.github.com` |
+| git_username       | Git username to run release-it                            | false    | `${{ github.actor }}`                          |
 | github_token       | GitHub Token to run release-it                            | **true** | -                                              |
 | gpg_private_key    | GPG Private Key                                           | false    | ""                                             |
 | gpg_private_key_id | GPG Private Key ID                                        | false    | ""                                             |
@@ -80,7 +80,7 @@ Add this step in your workflow file. Update the tag version of the action and th
 
 ```yaml
 - name: Running release-it Containerized
-  uses: juancarlosjr97/release-it-containerized:1.0.12
+  uses: juancarlosjr97/release-it-containerized@1.0.12
   with:
     git_email: ${{ vars.GIT_EMAIL }}
     git_username: ${{ vars.GIT_USERNAME }}
@@ -115,7 +115,7 @@ jobs:
           fetch-depth: 0
 
       - name: Running release-it using GitHub Action
-        uses: juancarlosjr97/release-it-containerized:1.0.12
+        uses: juancarlosjr97/release-it-containerized@1.0.12
         with:
           git_email: ${{ vars.GIT_EMAIL }}
           git_username: ${{ vars.GIT_USERNAME }}
