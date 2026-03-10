@@ -2,7 +2,7 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "customManagers:dockerfileVersions",
-        "github>juancarlosjr97/renovate-configuration#0.1.4"
+        "github>juancarlosjr97/renovate-configuration#0.1.5"
     ],
     "packageRules": [
         {
@@ -12,8 +12,15 @@
             "matchPackageNames": [
                 "docker.io/library/node"
             ],
-            "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-alpine3.21)?$",
+            "versionCompatibility": "^(?<version>[^-]+)(?<compatibility>-alpine3.23)?$",
             "versioning": "node"
+        },
+        {
+            "description": "Pin actions/checkout to v5 until container actions support v6 credential storage",
+            "matchPackageNames": [
+                "actions/checkout"
+            ],
+            "allowedVersions": "<6.0.0"
         }
     ]
 }
