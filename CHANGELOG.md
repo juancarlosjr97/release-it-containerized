@@ -3,6 +3,16 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.0.0](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.12...2.0.0) (2026-03-10)
+
+### ⚠ BREAKING CHANGES
+
+* `github_token` is now a required input. Callers relying on the implicit `${{ github.token }}` default must now explicitly pass a PAT with `contents: write` stored as a repository secret (e.g. `secrets.RELEASE_IT_GITHUB_TOKEN`).
+
+### Features
+
+* make github_token input required and restructure documentation ([216379f](https://github.com/juancarlosjr97/release-it-containerized/commit/216379fb2455d5d6038c3ace013efea48f6f239c)), closes [#199](https://github.com/juancarlosjr97/release-it-containerized/issues/199)
+
 ## [1.0.12](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.11...1.0.12) (2026-03-09)
 
 ### Bug Fixes
