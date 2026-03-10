@@ -185,9 +185,9 @@ jobs:
               -v $PWD:/app \
               ghcr.io/${{ github.repository }}:${{ github.sha }} \
               release-it --dry-run --ci 2>&1)
-            
+
             echo "$OUTPUT"
-            
+
             # Verify NPM version is 10.8.0
             if echo "$OUTPUT" | grep -q "NPM version: 10.8.0"; then
               echo "✅ NPM version verification passed: 10.8.0"

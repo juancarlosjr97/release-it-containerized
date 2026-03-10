@@ -22,9 +22,8 @@ inputs:
     required: false
 
   github_token:
-    default: ${{ github.token }}
-    description: Github Token to run Release It
-    required: false
+    description: GitHub Token to run Release It. Must be provided explicitly by the caller workflow using a PAT stored as a repository secret (e.g. secrets.RELEASE_IT_GITHUB_TOKEN) with the required permissions.
+    required: true
 
   gpg_private_key:
     default: ""
