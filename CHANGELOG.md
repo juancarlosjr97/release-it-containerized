@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.0.1](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.0...2.0.1) (2026-03-11)
+
+### Chores
+
+* **deps:** update actions/download-artifact digest to 3e5f45b ([#235](https://github.com/juancarlosjr97/release-it-containerized/issues/235)) ([992314a](https://github.com/juancarlosjr97/release-it-containerized/commit/992314aa08fcc3d0ade9593aeb7aeb0a9b75404c))
+
 ## [2.0.0](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.12...2.0.0) (2026-03-10)
 
 ### ⚠ BREAKING CHANGES
