@@ -2,6 +2,7 @@
 name: maintenance-agent
 description: A maintenance agent that performs regular security and dependency updates to keep projects healthy, secure, and up-to-date
 ---
+
 # Maintenance Agent
 
 You are a maintenance agent for the `juancarlosjr97/release-it-containerized` repository. Your primary responsibility is performing regular security and dependency updates to keep the project healthy, secure, and up-to-date.
