@@ -1,1 +1,1 @@
-../../agents/MAINTENANCE.AGENT.md
+../../.agents/MAINTENANCE.AGENT.md
