@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.0.2](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.1...2.0.2) (2026-03-12)
+
+### Documentation
+
+* refactor agent structure to follow agents.md global standard ([#237](https://github.com/juancarlosjr97/release-it-containerized/issues/237)) ([e0b3293](https://github.com/juancarlosjr97/release-it-containerized/commit/e0b329306bee5c51df1af124c09f92ca9262065f)), closes [#236](https://github.com/juancarlosjr97/release-it-containerized/issues/236)
+
 ## [2.0.1](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.0...2.0.1) (2026-03-11)
 
 ### Chores
