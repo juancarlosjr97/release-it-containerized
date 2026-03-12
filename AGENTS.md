@@ -118,7 +118,9 @@ Releases are automated:
 3. Release uses release-it with conventional changelog to generate the `CHANGELOG.md` and tag the release
 4. Pre-releases (beta) are created from the `develop` branch
 
-## Active Agents
+## Agent roles
+
+This repository defines a set of agent roles.
 
 | Agent | Description | Definition |
 |---|---|---|
