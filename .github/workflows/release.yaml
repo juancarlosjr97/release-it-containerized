@@ -16,13 +16,12 @@ jobs:
       - id: release_options
         name: Release options
         env:
+          # Assigning to HEAD_BRANCH prevents shell injection by treating the input as a literal.
           HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
         run: |
           release_options="--git.tagExclude='*[-]*'"
 
-          branch="$HEAD_BRANCH"
-          
-          if [ -n "$branch" ] && [ "$branch" = "develop" ]; then
+          if [ -n "$HEAD_BRANCH" ] && [ "$HEAD_BRANCH" = "develop" ]; then
             release_options="--preRelease=beta"
           fi
           
