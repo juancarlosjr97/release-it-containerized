@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.0.3](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.2...2.0.3) (2026-03-13)
+
+### Chores
+
+* revert symlink in agents and add maintenance agent metadata ([#239](https://github.com/juancarlosjr97/release-it-containerized/issues/239)) ([011d980](https://github.com/juancarlosjr97/release-it-containerized/commit/011d98020ee980018096a6ce2ea1bca5791c2e5d)), closes [#238](https://github.com/juancarlosjr97/release-it-containerized/issues/238)
+
 ## [2.0.2](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.1...2.0.2) (2026-03-12)
 
 ### Documentation
