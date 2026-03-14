@@ -15,7 +15,7 @@ jobs:
     steps:
       - id: release_options
         name: Release options
-        # Assigning to HEAD_BRANCH prevents shell injection by treating the input as a literal.
+        # Pass HEAD_BRANCH via env to avoid direct interpolation into the shell script; keep "$HEAD_BRANCH" quoted to prevent word-splitting/globbing issues.
         env:
           HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
         run: |
