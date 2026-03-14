@@ -15,12 +15,13 @@ jobs:
     steps:
       - id: release_options
         name: Release options
+        # Pass HEAD_BRANCH via env to avoid direct interpolation into the shell script; keep "$HEAD_BRANCH" quoted to prevent word-splitting/globbing issues.
+        env:
+          HEAD_BRANCH: ${{ github.event.workflow_run.head_branch }}
         run: |
           release_options="--git.tagExclude='*[-]*'"
 
-          branch=${{ github.event.workflow_run.head_branch }}
-
-          if [ -n "$branch" ] && [ "$branch" = "develop" ]; then
+          if [ -n "$HEAD_BRANCH" ] && [ "$HEAD_BRANCH" = "develop" ]; then
             release_options="--preRelease=beta"
           fi
 
