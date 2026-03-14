@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.0.4](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.3...2.0.4) (2026-03-14)
+
+### Bug Fixes
+
+* prevent shell injection via `workflow_run.head_branch` in release workflow ([#241](https://github.com/juancarlosjr97/release-it-containerized/issues/241)) ([3590ba9](https://github.com/juancarlosjr97/release-it-containerized/commit/3590ba93ee48d197e6fc8f989673f5a747d924c9))
+
 ## [2.0.3](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.2...2.0.3) (2026-03-13)
 
 ### Chores
