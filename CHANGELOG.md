@@ -3,6 +3,358 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.0.3](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.2...2.0.3) (2026-03-13)
+
+### Chores
+
+* revert symlink in agents and add maintenance agent metadata ([#239](https://github.com/juancarlosjr97/release-it-containerized/issues/239)) ([011d980](https://github.com/juancarlosjr97/release-it-containerized/commit/011d98020ee980018096a6ce2ea1bca5791c2e5d)), closes [#238](https://github.com/juancarlosjr97/release-it-containerized/issues/238)
+
+## [2.0.2](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.1...2.0.2) (2026-03-12)
+
+### Documentation
+
+* refactor agent structure to follow agents.md global standard ([#237](https://github.com/juancarlosjr97/release-it-containerized/issues/237)) ([e0b3293](https://github.com/juancarlosjr97/release-it-containerized/commit/e0b329306bee5c51df1af124c09f92ca9262065f)), closes [#236](https://github.com/juancarlosjr97/release-it-containerized/issues/236)
+
+## [2.0.1](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.0...2.0.1) (2026-03-11)
+
+### Chores
+
+* **deps:** update actions/download-artifact digest to 3e5f45b ([#235](https://github.com/juancarlosjr97/release-it-containerized/issues/235)) ([992314a](https://github.com/juancarlosjr97/release-it-containerized/commit/992314aa08fcc3d0ade9593aeb7aeb0a9b75404c))
+
+## [2.0.0](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.12...2.0.0) (2026-03-10)
+
+### ⚠ BREAKING CHANGES
+
+* `github_token` is now a required input. Callers relying on the implicit `${{ github.token }}` default must now explicitly pass a PAT with `contents: write` stored as a repository secret (e.g. `secrets.RELEASE_IT_GITHUB_TOKEN`).
+
+### Features
+
+* make github_token input required and restructure documentation ([216379f](https://github.com/juancarlosjr97/release-it-containerized/commit/216379fb2455d5d6038c3ace013efea48f6f239c)), closes [#199](https://github.com/juancarlosjr97/release-it-containerized/issues/199)
+
+## [1.0.12](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.11...1.0.12) (2026-03-09)
+
+### Bug Fixes
+
+* pin zlib to 1.3.2-r0 to remediate CVE-2026-22184 and CVE-2026-27171 ([#234](https://github.com/juancarlosjr97/release-it-containerized/issues/234)) ([d0a0386](https://github.com/juancarlosjr97/release-it-containerized/commit/d0a03869c2b0dedb93c354ef007c0083773a4cd7)), closes [#233](https://github.com/juancarlosjr97/release-it-containerized/issues/233)
+
+## [1.0.11](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.10...1.0.11) (2026-03-07)
+
+### Chores
+
+* **deps:** update all dependencies ([#231](https://github.com/juancarlosjr97/release-it-containerized/issues/231)) ([1132a83](https://github.com/juancarlosjr97/release-it-containerized/commit/1132a837370a59eb93b481eba887ab498624b762))
+
+## [1.0.10](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.9...1.0.10) (2026-03-07)
+
+### Chores
+
+* set up Copilot instructions and maintenance agent ([#232](https://github.com/juancarlosjr97/release-it-containerized/issues/232)) ([33c2e66](https://github.com/juancarlosjr97/release-it-containerized/commit/33c2e66919f4634378802d636f0214d0d70ccc11))
+
+## [1.0.9](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.8...1.0.9) (2026-02-27)
+
+### Chores
+
+* **deps:** update all dependencies ([#230](https://github.com/juancarlosjr97/release-it-containerized/issues/230)) ([f8a903c](https://github.com/juancarlosjr97/release-it-containerized/commit/f8a903cad9c8e2cc248e0520e60bb68f287467dc))
+
+## [1.0.8](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.7...1.0.8) (2026-02-25)
+
+### Chores
+
+* **deps:** update node.js to 7fddd9d ([#229](https://github.com/juancarlosjr97/release-it-containerized/issues/229)) ([ed71d18](https://github.com/juancarlosjr97/release-it-containerized/commit/ed71d180746dffef436a90f6383479d6dab197d5))
+
+## [1.0.7](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.6...1.0.7) (2026-02-25)
+
+### Chores
+
+* **deps:** update node.js to v24.14.0 ([#228](https://github.com/juancarlosjr97/release-it-containerized/issues/228)) ([1e3c79b](https://github.com/juancarlosjr97/release-it-containerized/commit/1e3c79b5ba4e447aff6698a71f837224b0246831))
+
+## [1.0.6](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.5...1.0.6) (2026-02-13)
+
+### Chores
+
+* **deps:** update all dependencies ([#227](https://github.com/juancarlosjr97/release-it-containerized/issues/227)) ([33007e7](https://github.com/juancarlosjr97/release-it-containerized/commit/33007e7c99213cbf0d85a0227e1349e01a8b4606))
+
+## [1.0.5](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.4...1.0.5) (2026-02-11)
+
+### Chores
+
+* **deps:** update docker/build-push-action action to v6.19.1 ([#226](https://github.com/juancarlosjr97/release-it-containerized/issues/226)) ([33e72c2](https://github.com/juancarlosjr97/release-it-containerized/commit/33e72c2db5bc6458ea4732e020620e5dd6e08341))
+
+## [1.0.4](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.3...1.0.4) (2026-01-28)
+
+### Chores
+
+* **deps:** update docker/login-action action to v3.7.0 ([#225](https://github.com/juancarlosjr97/release-it-containerized/issues/225)) ([0c5a01c](https://github.com/juancarlosjr97/release-it-containerized/commit/0c5a01c653cd9e6764f637c819cff176f99c3b5b))
+
+## [1.0.3](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.2...1.0.3) (2026-01-28)
+
+### Chores
+
+* **deps:** update node.js to cd6fb7e ([#224](https://github.com/juancarlosjr97/release-it-containerized/issues/224)) ([e4a0fd9](https://github.com/juancarlosjr97/release-it-containerized/commit/e4a0fd9fa876ee5fcdfd6412ab50dedee36af058))
+
+## [1.0.2](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.1...1.0.2) (2026-01-27)
+
+### Chores
+
+* **deps:** update dependency alpine_3_23/libssl3 to v3.5.5-r0 ([#223](https://github.com/juancarlosjr97/release-it-containerized/issues/223)) ([17715ed](https://github.com/juancarlosjr97/release-it-containerized/commit/17715edcf546fcf41f637505c12b85d538e539a5))
+
+## [1.0.1](https://github.com/juancarlosjr97/release-it-containerized/compare/1.0.0...1.0.1) (2026-01-15)
+
+### Chores
+
+* **deps:** update all dependencies ([#222](https://github.com/juancarlosjr97/release-it-containerized/issues/222)) ([cd9f1f0](https://github.com/juancarlosjr97/release-it-containerized/commit/cd9f1f0709f05844044f7447c4f6a986d661750f))
+
+## [1.0.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.7...1.0.0) (2026-01-15)
+
+### ⚠ BREAKING CHANGES
+
+* Base image upgraded from Alpine 3.21 to 3.23. Consumers using this as a base image should test compatibility.
+
+### Features
+
+* upgrade to Alpine 3.23 with Node 24.13.0 ([f43d6f8](https://github.com/juancarlosjr97/release-it-containerized/commit/f43d6f87c55f67a8d15a80e6447895dc9fba5bdf))
+
+## [0.8.7](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.6...0.8.7) (2026-01-14)
+
+### Bug Fixes
+
+* update security vulnerabilities ([#218](https://github.com/juancarlosjr97/release-it-containerized/issues/218)) ([22fd1f0](https://github.com/juancarlosjr97/release-it-containerized/commit/22fd1f0f2030f756cf345d16ee0da991781edf07)), closes [#217](https://github.com/juancarlosjr97/release-it-containerized/issues/217) [#217](https://github.com/juancarlosjr97/release-it-containerized/issues/217)
+
+## [0.8.6](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.5...0.8.6) (2026-01-02)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/gnupg to v2.4.9-r0 ([#216](https://github.com/juancarlosjr97/release-it-containerized/issues/216)) ([abf9b99](https://github.com/juancarlosjr97/release-it-containerized/commit/abf9b99d53c35897c93eded69a5ecc90978ccbc4))
+
+## [0.8.5](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.4...0.8.5) (2025-12-22)
+
+### Chores
+
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.1.5 ([#215](https://github.com/juancarlosjr97/release-it-containerized/issues/215)) ([f0eefc1](https://github.com/juancarlosjr97/release-it-containerized/commit/f0eefc1130d596e02947be280de8386154c3ec2d))
+
+## [0.8.4](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.3...0.8.4) (2025-12-21)
+
+### Chores
+
+* **deps:** pin actions/checkout action to 93cb6ef ([#214](https://github.com/juancarlosjr97/release-it-containerized/issues/214)) ([d43a4b9](https://github.com/juancarlosjr97/release-it-containerized/commit/d43a4b9a19cf150138e06691368ffa6bac064ce7))
+
+## [0.8.3](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.2...0.8.3) (2025-12-21)
+
+### Bug Fixes
+
+* pin actions/checkout to v5.0.1 in workflows and update renovate configuration ([#213](https://github.com/juancarlosjr97/release-it-containerized/issues/213)) ([8e847e9](https://github.com/juancarlosjr97/release-it-containerized/commit/8e847e979edddfed15b73ff3572fcf7b953e13c7)), closes [#212](https://github.com/juancarlosjr97/release-it-containerized/issues/212)
+
+### Chores
+
+* **deps:** update actions/checkout action to v6 ([#204](https://github.com/juancarlosjr97/release-it-containerized/issues/204)) ([d7144ab](https://github.com/juancarlosjr97/release-it-containerized/commit/d7144abd487a2bc62a1b521c6cc0db9a5ba47216))
+* **deps:** update actions/checkout digest to 8e8c483 ([#207](https://github.com/juancarlosjr97/release-it-containerized/issues/207)) ([4d45f5f](https://github.com/juancarlosjr97/release-it-containerized/commit/4d45f5f65572fe21ca85b2a80161e86410c9ecef))
+* **deps:** update all dependencies ([#208](https://github.com/juancarlosjr97/release-it-containerized/issues/208)) ([20c8dad](https://github.com/juancarlosjr97/release-it-containerized/commit/20c8dad83fbab815158e462d3759b8d81e8e4ec0))
+* **deps:** update c-ares version to 1.34.6-r0 in Dockerfile ([#210](https://github.com/juancarlosjr97/release-it-containerized/issues/210)) ([84e34ce](https://github.com/juancarlosjr97/release-it-containerized/commit/84e34ce5a37336be74214c829a777968781f6b0e)), closes [#209](https://github.com/juancarlosjr97/release-it-containerized/issues/209)
+* **deps:** update docker/metadata-action action to v5.10.0 ([#206](https://github.com/juancarlosjr97/release-it-containerized/issues/206)) ([3c301f4](https://github.com/juancarlosjr97/release-it-containerized/commit/3c301f455f4763ab1c670c674e0468cc3a96bc4d))
+
+### Documentation
+
+* add contributing guide ([#211](https://github.com/juancarlosjr97/release-it-containerized/issues/211)) ([b6d419c](https://github.com/juancarlosjr97/release-it-containerized/commit/b6d419c75979059b9b7d712a6940a3dc5abcb35d))
+
+## [0.8.2](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.1...0.8.2) (2025-11-18)
+
+* **deps:** update actions/checkout digest to 93cb6ef ([#203](https://github.com/juancarlosjr97/release-it-containerized/pull/203)) ([93cb6ef](https://github.com/juancarlosjr97/release-it-containerized/commit/93cb6ef))
+
+## [0.8.1](https://github.com/juancarlosjr97/release-it-containerized/compare/0.8.0...0.8.1) (2025-11-13)
+
+### Chores
+
+* **deps:** update node.js to v24.11.1 ([#201](https://github.com/juancarlosjr97/release-it-containerized/issues/201)) ([9e0942c](https://github.com/juancarlosjr97/release-it-containerized/commit/9e0942cbdd2420de7da295a5f893217ed1541732))
+
+## [0.8.0](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.101...0.8.0) (2025-11-06)
+
+### Features
+
+* add support for specifying NPM version ([#200](https://github.com/juancarlosjr97/release-it-containerized/issues/200)) ([86d6139](https://github.com/juancarlosjr97/release-it-containerized/commit/86d61392d7a5211e842a8549c142d7998753d9b1))
+
+## [0.7.101](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.100...0.7.101) (2025-11-04)
+
+### Chores
+
+* **deps:** update docker/metadata-action action to v5.9.0 ([#198](https://github.com/juancarlosjr97/release-it-containerized/issues/198)) ([32372dc](https://github.com/juancarlosjr97/release-it-containerized/commit/32372dce96897aff72de03fcf2c98f936e4ff122))
+
+## [0.7.100](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.99...0.7.100) (2025-10-29)
+
+### Chores
+
+* **deps:** update node.js to v24.11.0 ([#196](https://github.com/juancarlosjr97/release-it-containerized/issues/196)) ([19e1c6b](https://github.com/juancarlosjr97/release-it-containerized/commit/19e1c6b85dcc3c20d947047f57f17be6110fbc8c))
+
+## [0.7.99](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.98...0.7.99) (2025-10-28)
+
+### Chores
+
+* **deps:** update node.js to v24 ([#195](https://github.com/juancarlosjr97/release-it-containerized/issues/195)) ([0adf386](https://github.com/juancarlosjr97/release-it-containerized/commit/0adf386ccd6615a6909f69b6272c31c865a711cc))
+
+## [0.7.98](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.97...0.7.98) (2025-10-25)
+
+### Chores
+
+* **deps:** update all dependencies ([#194](https://github.com/juancarlosjr97/release-it-containerized/issues/194)) ([2738f3c](https://github.com/juancarlosjr97/release-it-containerized/commit/2738f3c38a154a25909176e11e1b7ccebcd09e32))
+
+## [0.7.97](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.96...0.7.97) (2025-10-23)
+
+### Chores
+
+* **deps:** update node.js to v22.21.0 ([#193](https://github.com/juancarlosjr97/release-it-containerized/issues/193)) ([07b4ef8](https://github.com/juancarlosjr97/release-it-containerized/commit/07b4ef8959c22da9538854526a380a2039a967f0))
+
+## [0.7.96](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.95...0.7.96) (2025-10-09)
+
+### Chores
+
+* **deps:** update node.js to f40aebd ([#192](https://github.com/juancarlosjr97/release-it-containerized/issues/192)) ([2ab5247](https://github.com/juancarlosjr97/release-it-containerized/commit/2ab52475600681896d5055b9de16bc889804baf4))
+
+## [0.7.95](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.94...0.7.95) (2025-10-09)
+
+### Chores
+
+* **deps:** update node.js to 3bbc8aa ([3b4d705](https://github.com/juancarlosjr97/release-it-containerized/commit/3b4d705a36121e5f20918a044813d4e0e0d64199))
+
+## [0.7.94](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.93...0.7.94) (2025-10-02)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/curl to v8.14.1-r2 ([bdf6003](https://github.com/juancarlosjr97/release-it-containerized/commit/bdf600338fde673b9a5e7ac9235c3a09c242cc3c))
+
+## [0.7.93](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.92...0.7.93) (2025-10-01)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/libssl3 to v3.3.5-r0 ([97c4cb9](https://github.com/juancarlosjr97/release-it-containerized/commit/97c4cb9954a5630e43f75dc373744cfafbe17bf8))
+
+## [0.7.92](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.91...0.7.92) (2025-09-29)
+
+### Chores
+
+* **deps:** update docker/login-action action to v3.6.0 ([4f10f08](https://github.com/juancarlosjr97/release-it-containerized/commit/4f10f0841a5357892c6c01f24c7b13e03d9c73db))
+
+## [0.7.91](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.90...0.7.91) (2025-09-26)
+
+### Chores
+
+* **deps:** update docker/build-push-action action to v6.18.0 ([c0be191](https://github.com/juancarlosjr97/release-it-containerized/commit/c0be191e2a110f2da9132354a7828d25e34b19b2))
+
+## [0.7.90](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.89...0.7.90) (2025-09-26)
+
+### Bug Fixes
+
+* revert Docker image build step from retry wrapper to docker/build-push-action ([7b06b2f](https://github.com/juancarlosjr97/release-it-containerized/commit/7b06b2fc427b64f8611e5ac51ccaf87afec1af9a))
+
+## [0.7.89](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.88...0.7.89) (2025-09-26)
+
+### Code Style Changes
+
+* cleaning up while line ([2873cdc](https://github.com/juancarlosjr97/release-it-containerized/commit/2873cdc8ee9365a43e0ba49732a96a1e6a7e019e)), closes [#182](https://github.com/juancarlosjr97/release-it-containerized/issues/182)
+
+## [0.7.88](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.87...0.7.88) (2025-09-26)
+
+### Chores
+
+* **deps:** pin nick-fields/retry action to ce71cc2 ([8d1a0a2](https://github.com/juancarlosjr97/release-it-containerized/commit/8d1a0a2cace38c1d8615a3e82584a934a33304d8))
+
+## [0.7.87](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.86...0.7.87) (2025-09-26)
+
+## [0.7.86](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.85...0.7.86) (2025-09-25)
+
+### Chores
+
+* **deps:** update node.js to v22.20.0 ([2544cb3](https://github.com/juancarlosjr97/release-it-containerized/commit/2544cb3d40e81100dd5ce6846daf724afb54ba40))
+
+## [0.7.85](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.84...0.7.85) (2025-09-16)
+
+## [0.7.84](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.83...0.7.84) (2025-08-31)
+
+### Chores
+
+* **deps:** update node.js to v22.19.0 ([6594cf5](https://github.com/juancarlosjr97/release-it-containerized/commit/6594cf5615fe5fdaf1d87af1466defbb1e0471bb))
+
+## [0.7.83](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.82...0.7.83) (2025-08-11)
+
+### Chores
+
+* **deps:** update actions/checkout action to v5 ([#172](https://github.com/juancarlosjr97/release-it-containerized/issues/172)) ([0334f70](https://github.com/juancarlosjr97/release-it-containerized/commit/0334f70dab83f63bc61edb28898d6fed1ca642fc))
+
+## [0.7.82](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.81...0.7.82) (2025-08-06)
+
+### Chores
+
+* **deps:** update actions/download-artifact action to v5 ([#171](https://github.com/juancarlosjr97/release-it-containerized/issues/171)) ([626feb0](https://github.com/juancarlosjr97/release-it-containerized/commit/626feb07c9a693e7ccdd5acf27381c5c6c359a9d))
+
+## [0.7.81](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.80...0.7.81) (2025-08-04)
+
+### Chores
+
+* **deps:** update all dependencies ([21b7f44](https://github.com/juancarlosjr97/release-it-containerized/commit/21b7f444c802dd97dccc552cdff1fa1aa00bca93))
+
+## [0.7.80](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.79...0.7.80) (2025-08-01)
+
+### Chores
+
+* **deps:** update docker/metadata-action action to v5.8.0 ([921e8b1](https://github.com/juancarlosjr97/release-it-containerized/commit/921e8b13ca130841e48fd4d5b3701e9adfb0c9c7))
+
+## [0.7.79](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.78...0.7.79) (2025-07-30)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/sqlite-libs to v3.48.0-r3 ([f25d923](https://github.com/juancarlosjr97/release-it-containerized/commit/f25d923bdb44bd9a3588ed66f7df891614724054))
+
+## [0.7.78](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.77...0.7.78) (2025-07-27)
+
+### Chores
+
+* **deps:** update node.js to v22.17.1 ([#167](https://github.com/juancarlosjr97/release-it-containerized/issues/167)) ([c90d0c2](https://github.com/juancarlosjr97/release-it-containerized/commit/c90d0c20765d04626c24cae7284ab13bbdaf5218))
+
+## [0.7.77](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.76...0.7.77) (2025-07-10)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/libssl3 to v3.3.4-r0 ([5101d2e](https://github.com/juancarlosjr97/release-it-containerized/commit/5101d2e19dbc69d25842b38dc1dc436b5d60f82f))
+
+## [0.7.76](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.75...0.7.76) (2025-07-09)
+
+### Chores
+
+* **deps:** update dependency alpine_3_21/git to v2.47.3-r0 ([#165](https://github.com/juancarlosjr97/release-it-containerized/issues/165)) ([939cb4d](https://github.com/juancarlosjr97/release-it-containerized/commit/939cb4d5d9f36ec97809d35f12ba4e2528730b5c))
+
+## [0.7.75](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.74...0.7.75) (2025-07-08)
+
+### Chores
+
+* **deps:** update node.js to e461a49 ([685f4f3](https://github.com/juancarlosjr97/release-it-containerized/commit/685f4f3691a3ed564f7af3abb34425e2e8b860fa))
+
+## [0.7.74](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.73...0.7.74) (2025-06-26)
+
+### Chores
+
+* **deps:** update node.js to v22.17.0 ([#163](https://github.com/juancarlosjr97/release-it-containerized/issues/163)) ([8cf71bb](https://github.com/juancarlosjr97/release-it-containerized/commit/8cf71bb1087cb15d63231e321edbf5adb89d0266))
+
+## [0.7.73](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.72...0.7.73) (2025-05-27)
+
+### Chores
+
+* **deps:** update docker/build-push-action action to v6.18.0 ([#162](https://github.com/juancarlosjr97/release-it-containerized/issues/162)) ([fcb62ae](https://github.com/juancarlosjr97/release-it-containerized/commit/fcb62aea40a7444bff8ca47c1a0e2b6d23b39b82))
+
+## [0.7.72](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.71...0.7.72) (2025-05-22)
+
+### Chores
+
+* **deps:** update node.js to 9f3ae04 ([#161](https://github.com/juancarlosjr97/release-it-containerized/issues/161)) ([24576fd](https://github.com/juancarlosjr97/release-it-containerized/commit/24576fd286fe62ec42f712c2c55b9cf17830eaca))
+
+## [0.7.71](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.70...0.7.71) (2025-05-22)
+
+### Chores
+
+* **deps:** update node.js to v22.16.0 ([d8f818a](https://github.com/juancarlosjr97/release-it-containerized/commit/d8f818a42881abde3eb9918285ebab42b59674be))
+
+## [0.7.70](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.69...0.7.70) (2025-05-18)
+
+### Chores
+
+* **deps:** update all dependencies ([47c819e](https://github.com/juancarlosjr97/release-it-containerized/commit/47c819eb1aa82d2ab1c6898fda4b8212de940a69))
+
 ## [0.7.69](https://github.com/juancarlosjr97/release-it-containerized/compare/0.7.68...0.7.69) (2025-05-05)
 
 ### Chores

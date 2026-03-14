@@ -22,9 +22,8 @@ inputs:
     required: false
 
   github_token:
-    default: ${{ github.token }}
-    description: Github Token to run Release It
-    required: false
+    description: GitHub Token to run Release It. Must be provided explicitly by the caller workflow using a PAT stored as a repository secret (e.g. secrets.RELEASE_IT_GITHUB_TOKEN) with the required permissions.
+    required: true
 
   gpg_private_key:
     default: ""
@@ -39,6 +38,11 @@ inputs:
   image_tag:
     default: "latest"
     description: Image tag used to pass specific version of the action
+    required: false
+
+  npm_version:
+    default: ""
+    description: NPM version to use. If not specified, the default NPM version from the container is used
     required: false
 
   plugins_list:
@@ -64,30 +68,37 @@ inputs:
 runs:
   using: composite
   steps:
-    - run: |
-        docker run \
-        -e GITHUB_TOKEN=${GITHUB_TOKEN} \
-        -e GIT_DIRECTORY="/app" \
-        -e GIT_EMAIL=${GIT_EMAIL} \
-        -e GIT_USERNAME="${GIT_USERNAME}" \
-        -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
-        -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
-        -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
-        -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}" \
-        -e SSH_PASSPHRASE="${SSH_PASSPHRASE}" \
-        -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
-        -u root \
-        -v $PWD:/app \
-        ghcr.io/juancarlosjr97/release-it-containerized:${{ inputs.image_tag }} \
-        release-it --ci ${{ inputs.command }}
+    - uses: nick-fields/retry@ce71cc2ab81d554ebbe88c79ab5975992d79ba08 # v3
+      with:
+        timeout_minutes: 15
+        max_attempts: 3
+        retry_wait_seconds: 60
+        shell: bash
+        command: |
+          docker run \
+          -e GITHUB_TOKEN=${GITHUB_TOKEN} \
+          -e GIT_DIRECTORY="/app" \
+          -e GIT_EMAIL=${GIT_EMAIL} \
+          -e GIT_USERNAME="${GIT_USERNAME}" \
+          -e GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY}" \
+          -e GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID}" \
+          -e NPM_VERSION="${NPM_VERSION}" \
+          -e RELEASE_IT_PLUGINS="${RELEASE_IT_PLUGINS}" \
+          -e RELEASE_IT_VERSION="${RELEASE_IT_VERSION}" \
+          -e SSH_PASSPHRASE="${SSH_PASSPHRASE}" \
+          -e SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY}" \
+          -u root \
+          -v $PWD:/app \
+          ghcr.io/juancarlosjr97/release-it-containerized:${{ inputs.image_tag }} \
+          release-it --ci ${{ inputs.command }}
       env:
         GITHUB_TOKEN: ${{ inputs.github_token }}
         GIT_EMAIL: ${{ inputs.git_email }}
         GIT_USERNAME: ${{ inputs.git_username }}
         GPG_PRIVATE_KEY: ${{ inputs.gpg_private_key }}
         GPG_PRIVATE_KEY_ID: ${{ inputs.gpg_private_key_id }}
+        NPM_VERSION: ${{ inputs.npm_version }}
         RELEASE_IT_PLUGINS: ${{ inputs.plugins_list }}
         RELEASE_IT_VERSION: ${{ inputs.version }}
         SSH_PASSPHRASE: ${{ inputs.ssh_passphrase }}
         SSH_PRIVATE_KEY: ${{ inputs.ssh_private_key }}
-      shell: bash
