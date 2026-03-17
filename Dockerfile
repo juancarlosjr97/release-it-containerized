@@ -56,12 +56,12 @@ COPY --chown=node release-it-entrypoint.sh /usr/local/bin/release-it-containeriz
 ARG REPO=https://github.com/juancarlosjr97/release-it-containerized
 ARG VERSION
 
-LABEL org.opencontainers.image.authors="Juan Carlos Blanco Delgado"
-LABEL org.opencontainers.image.description="A containerized version of release-it that runs in any environment without requiring a Node.js installation"
-LABEL org.opencontainers.image.licenses="MIT"
-LABEL org.opencontainers.image.source="${REPO}"
-LABEL org.opencontainers.image.title="Release It Containerized"
-LABEL org.opencontainers.image.version="${VERSION}"
+LABEL org.opencontainers.image.authors="Juan Carlos Blanco Delgado" \
+      org.opencontainers.image.description="A containerized version of release-it that runs in any environment without requiring a Node.js installation" \
+      org.opencontainers.image.licenses="MIT" \
+      org.opencontainers.image.source="${REPO}" \
+      org.opencontainers.image.title="Release It Containerized" \
+      org.opencontainers.image.version="${VERSION}"
 
 ENTRYPOINT ["release-it-containerized"]
 
