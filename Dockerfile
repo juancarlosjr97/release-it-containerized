@@ -54,7 +54,7 @@ USER node
 COPY --chown=node release-it-entrypoint.sh /usr/local/bin/release-it-containerized
 
 ARG REPO=https://github.com/juancarlosjr97/release-it-containerized
-ARG VERSION
+ARG VERSION=dev
 
 LABEL org.opencontainers.image.authors="Juan Carlos Blanco Delgado" \
       org.opencontainers.image.description="A containerized version of release-it that runs in any environment without requiring a Node.js installation" \
