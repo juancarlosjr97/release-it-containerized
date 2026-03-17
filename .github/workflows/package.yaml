@@ -38,6 +38,7 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 # v7.0.0
         with:
+          build-args: VERSION=${{ steps.meta.outputs.version }}
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
