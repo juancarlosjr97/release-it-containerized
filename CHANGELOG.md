@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.0](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.4...2.1.0) (2026-03-17)
+
+### Features
+
+* add OCI image metadata labels to Dockerfile ([#244](https://github.com/juancarlosjr97/release-it-containerized/issues/244)) ([767ed18](https://github.com/juancarlosjr97/release-it-containerized/commit/767ed182f54f6e9fb530f6e4b149e14474f55efd)), closes [#60](https://github.com/juancarlosjr97/release-it-containerized/issues/60)
+
 ## [2.0.4](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.3...2.0.4) (2026-03-14)
 
 ### Bug Fixes
