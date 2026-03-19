@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.1](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.0...2.1.1) (2026-03-19)
+
+### Bug Fixes
+
+* **security:** pin libexpat to 2.7.5-r0 to remediate CVE-2026-32767/32777/32778 ([#246](https://github.com/juancarlosjr97/release-it-containerized/issues/246)) ([82a09a5](https://github.com/juancarlosjr97/release-it-containerized/commit/82a09a5e90ba6c953fd5dc7a55123174dec95e68)), closes [#245](https://github.com/juancarlosjr97/release-it-containerized/issues/245)
+
 ## [2.1.0](https://github.com/juancarlosjr97/release-it-containerized/compare/2.0.4...2.1.0) (2026-03-17)
 
 ### Features
