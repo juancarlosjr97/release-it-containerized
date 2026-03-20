@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.2](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.1...2.1.2) (2026-03-20)
+
+### Chores
+
+* **deps:** update nick-fields/retry action to v4 ([#247](https://github.com/juancarlosjr97/release-it-containerized/issues/247)) ([c326f68](https://github.com/juancarlosjr97/release-it-containerized/commit/c326f68cfc6658d2bfbe4fbde267413daef08b29))
+
 ## [2.1.1](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.0...2.1.1) (2026-03-19)
 
 ### Bug Fixes
