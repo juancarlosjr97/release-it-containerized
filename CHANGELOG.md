@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.4](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.3...2.1.4) (2026-03-27)
+
+### Chores
+
+* **deps:** pin juancarlosjr97/github-actions-workflows-to-rule-them-all action to f998994 ([#249](https://github.com/juancarlosjr97/release-it-containerized/issues/249)) ([69099cf](https://github.com/juancarlosjr97/release-it-containerized/commit/69099cfaea6c4e20ae6b8da278349e5d505482c4))
+
 ## [2.1.3](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.2...2.1.3) (2026-03-26)
 
 ### Chores
