@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.9](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.8...2.1.9) (2026-04-02)
+
+### Chores
+
+* **deps:** update all dependencies ([#254](https://github.com/juancarlosjr97/release-it-containerized/issues/254)) ([cad2210](https://github.com/juancarlosjr97/release-it-containerized/commit/cad2210e483d8b733625025b220e0ff21bdbcda3))
+
 ## [2.1.8](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.7...2.1.8) (2026-04-02)
 
 ### Chores
