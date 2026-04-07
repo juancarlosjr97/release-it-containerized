@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.20](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.19...2.1.20) (2026-04-07)
+
+### Chores
+
+* **deps:** update juancarlosjr97/github-actions-workflows-to-rule-them-all digest to 2f925ed ([#265](https://github.com/juancarlosjr97/release-it-containerized/issues/265)) ([ad46ec7](https://github.com/juancarlosjr97/release-it-containerized/commit/ad46ec78506dd82ffa57a475b60c8a097f685c45))
+
 ## [2.1.19](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.18...2.1.19) (2026-04-07)
 
 ### Chores
