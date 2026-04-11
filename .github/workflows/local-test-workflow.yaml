@@ -62,7 +62,7 @@ jobs:
             echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
 
       - name: Upload image tarball as artifact
-        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: docker-image-${{ github.sha }}
           path: ${{ github.sha }}.tar
@@ -70,7 +70,7 @@ jobs:
   security:
     needs: build
     # Due to circular dependency, this project makes a reference to the head branch
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@3ae5cc6b42986b64723fefc7295acd5ec832428d # main
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@7929d2f5113677c284d24f038e0d4b80d57a5645 # main
     with:
       IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
       IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
