@@ -27,6 +27,12 @@ ENV LIBSSL3_VERSION="3.5.6-r0"
 # renovate: datasource=repology depName=alpine_3_23/libtasn1 versioning=loose
 ENV LIBTASN_VERSION="4.21.0-r0"
 
+# renovate: datasource=repology depName=alpine_3_23/musl versioning=loose
+ENV MUSL_VERSION="1.2.5-r23"
+
+# renovate: datasource=repology depName=alpine_3_23/musl-utils versioning=loose
+ENV MUSL_UTILS_VERSION="1.2.5-r23"
+
 # renovate: datasource=repology depName=alpine_3_23/openssh versioning=loose
 ENV OPENSSH_VERSION="10.2_p1-r0"
 
@@ -47,6 +53,8 @@ RUN apk update && \
     libexpat="${LIBEXPAT_VERSION}" \
     libssl3="${LIBSSL3_VERSION}" \
     libtasn1="${LIBTASN_VERSION}" \
+    musl="${MUSL_VERSION}" \
+    musl-utils="${MUSL_UTILS_VERSION}" \
     openssh="${OPENSSH_VERSION}" \
     sqlite-libs="${SQLITE_LIBS_VERSION}" \
     zlib="${ZLIB_VERSION}"

@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.30](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.29...2.1.30) (2026-04-12)
+
+### Bug Fixes
+
+* **docker:** pin musl packages to patched versions ([4037d98](https://github.com/juancarlosjr97/release-it-containerized/commit/4037d983aee5305c6af448ebb8a8e2a2dfae7970)), closes [#277](https://github.com/juancarlosjr97/release-it-containerized/issues/277)
+
 ## [2.1.29](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.28...2.1.29) (2026-04-11)
 
 ## [2.1.28](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.27...2.1.28) (2026-04-11)
