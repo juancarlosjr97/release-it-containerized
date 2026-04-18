@@ -3,6 +3,8 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.39](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.38...2.1.39) (2026-04-18)
+
 ## [2.1.38](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.37...2.1.38) (2026-04-18)
 
 ## [2.1.37](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.36...2.1.37) (2026-04-17)
