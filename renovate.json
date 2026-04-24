@@ -21,6 +21,46 @@
                 "actions/checkout"
             ],
             "allowedVersions": "<6.0.0"
+        },
+        {
+            "description": "Supply-chain quarantine — digest, pin, pinDigest, and lockFileMaintenance updates are hash-based or lock-file-only changes that carry minimal supply-chain risk, so no minimum age is required.",
+            "matchUpdateTypes": [
+                "digest",
+                "lockFileMaintenance",
+                "pin",
+                "pinDigest"
+            ],
+            "minimumReleaseAge": "0 days"
+        },
+        {
+            "description": "Supply-chain quarantine — patch updates: 3-day hold allows the ecosystem (npm security team, Socket, Snyk, etc.) to detect and pull malicious releases, which are typically caught within 24–72 hours. Vulnerability-driven updates (osvVulnerabilityAlerts) bypass this age gate automatically.",
+            "matchUpdateTypes": [
+                "patch"
+            ],
+            "minimumReleaseAge": "3 days"
+        },
+        {
+            "description": "Supply-chain quarantine — minor updates: 5-day hold for new features; wider API surface warrants slightly more bake time. Vulnerability-driven updates bypass this age gate automatically.",
+            "matchUpdateTypes": [
+                "minor"
+            ],
+            "minimumReleaseAge": "5 days"
+        },
+        {
+            "description": "Supply-chain quarantine — major updates: 7-day hold for breaking-change releases; higher surface area and migration effort justify the longest quarantine. Vulnerability-driven updates bypass this age gate automatically.",
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "minimumReleaseAge": "7 days"
+        },
+        {
+            "description": "Supply-chain quarantine — catch-all for bump, rollback, and replacement update types not covered by the patch/minor/major rules above. A 5-day hold is applied as a conservative default. Vulnerability-driven updates bypass this age gate automatically.",
+            "matchUpdateTypes": [
+                "bump",
+                "replacement",
+                "rollback"
+            ],
+            "minimumReleaseAge": "5 days"
         }
     ]
 }
