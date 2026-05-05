@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.43](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.42...2.1.43) (2026-05-05)
+
+### Bug Fixes
+
+* revert actions/checkout to v5.0.1 and restrict Renovate to v5.x ([#302](https://github.com/juancarlosjr97/release-it-containerized/issues/302)) ([03ced58](https://github.com/juancarlosjr97/release-it-containerized/commit/03ced5807f99ca4f273c41b22740324f4752caf6)), closes [#218](https://github.com/juancarlosjr97/release-it-containerized/issues/218)
+
 ## [2.1.42](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.41...2.1.42) (2026-04-21)
 
 ## [2.1.41](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.40...2.1.41) (2026-04-20)
