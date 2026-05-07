@@ -69,8 +69,8 @@ jobs:
 
   security:
     needs: build
-    # Due to circular dependency, this project makes a reference to the head branch
-    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@83666e8a39d4f6ee243c554e99ad666a1a8366e8 # main
+    # Intentionally pinned to main to avoid circular dependency churn across internal shared-tooling repositories
+    uses: juancarlosjr97/github-actions-workflows-to-rule-them-all/.github/workflows/shared-docker-security.yml@main
     with:
       IMAGE_REFERENCE: ${{ needs.build.outputs.image_reference }}
       IMAGE_TAR_ARTIFACT_NAME: ${{ needs.build.outputs.image_tar_artifact_name }}
