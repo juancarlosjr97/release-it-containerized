@@ -2,7 +2,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "customManagers:dockerfileVersions",
-        "github>juancarlosjr97/renovate-configuration"
+        "github>juancarlosjr97/renovate-configuration",
+        "github>juancarlosjr97/renovate-configuration:presets/internal-tooling-circular"
     ],
     "packageRules": [
         {
@@ -21,16 +22,6 @@
                 "actions/checkout"
             ],
             "allowedVersions": "<6.0.0"
-        },
-        {
-            "description": "Disable updates for internal shared-tooling repositories. These are intentionally pinned to main to prevent circular dependency churn across the tooling ecosystem.",
-            "matchPackageNames": [
-                "juancarlosjr97/pre-commit-to-rule-them-all",
-                "juancarlosjr97/github-actions-workflows-to-rule-them-all",
-                "juancarlosjr97/release-it-containerized",
-                "juancarlosjr97/renovate-configuration"
-            ],
-            "enabled": false
         }
     ]
 }
