@@ -2,7 +2,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "customManagers:dockerfileVersions",
-        "github>juancarlosjr97/renovate-configuration#0.3.3"
+        "github>juancarlosjr97/renovate-configuration#main",
+        "github>juancarlosjr97/renovate-configuration//presets/internal-tooling-circular#main"
     ],
     "packageRules": [
         {
