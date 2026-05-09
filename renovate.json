@@ -2,7 +2,8 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "customManagers:dockerfileVersions",
-        "github>juancarlosjr97/renovate-configuration#0.3.0"
+        "github>juancarlosjr97/renovate-configuration#main",
+        "github>juancarlosjr97/renovate-configuration//presets/internal-tooling-circular#main"
     ],
     "packageRules": [
         {
@@ -21,6 +22,16 @@
                 "actions/checkout"
             ],
             "allowedVersions": "<6.0.0"
+        },
+        {
+            "description": "Internal shared-tooling repositories are always referenced via the main branch and must not be updated by Renovate. See: juancarlosjr97/pre-commit-to-rule-them-all, juancarlosjr97/github-actions-workflows-to-rule-them-all, juancarlosjr97/release-it-containerized, juancarlosjr97/renovate-configuration.",
+            "matchPackageNames": [
+                "juancarlosjr97/github-actions-workflows-to-rule-them-all",
+                "juancarlosjr97/pre-commit-to-rule-them-all",
+                "juancarlosjr97/release-it-containerized",
+                "juancarlosjr97/renovate-configuration"
+            ],
+            "enabled": false
         }
     ]
 }
