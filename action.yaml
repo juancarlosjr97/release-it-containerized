@@ -13,7 +13,7 @@ inputs:
 
   continue_on_error:
     default: "false"
-    description: Mark the GitHub Actions step successful if all retry attempts fail
+    description: Continue workflow execution even if all retry attempts fail
     required: false
 
   git_email:
