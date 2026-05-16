@@ -13,7 +13,7 @@ inputs:
 
   continue_on_error:
     default: "false"
-    description: Whether retry should continue on command errors
+    description: Whether the retry step should be marked as successful after all retry attempts fail
     required: false
 
   git_email:
