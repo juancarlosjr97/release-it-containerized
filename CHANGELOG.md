@@ -3,6 +3,26 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.44](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.43...2.1.44) (2026-05-16)
+
+### Bug Fixes
+
+* **docker,ci:** resolve curl pin conflict and default retry failure behavior across workflows ([#318](https://github.com/juancarlosjr97/release-it-containerized/issues/318)) ([17b3aef](https://github.com/juancarlosjr97/release-it-containerized/commit/17b3aef02b5a0bca3003d24ae9549d14b5a97ffe))
+
+### Chores
+
+* **deps:** update all dependencies ([#304](https://github.com/juancarlosjr97/release-it-containerized/issues/304)) ([631655e](https://github.com/juancarlosjr97/release-it-containerized/commit/631655ed68b31f55c5cd13670f06bf4ec9f6a037))
+* **deps:** update all dependencies ([#305](https://github.com/juancarlosjr97/release-it-containerized/issues/305)) ([f2a583f](https://github.com/juancarlosjr97/release-it-containerized/commit/f2a583f1a82dcad06130ed11858d8221105ab9f7))
+* **deps:** update all dependencies ([#314](https://github.com/juancarlosjr97/release-it-containerized/issues/314)) ([7af424b](https://github.com/juancarlosjr97/release-it-containerized/commit/7af424bbf2c4e6dd167186a9d32a1087348aeec1))
+* **deps:** update all dependencies ([#315](https://github.com/juancarlosjr97/release-it-containerized/issues/315)) ([a476f55](https://github.com/juancarlosjr97/release-it-containerized/commit/a476f556136d5457efa2a6ea77be55f1a088bcd4))
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.4 ([#308](https://github.com/juancarlosjr97/release-it-containerized/issues/308)) ([ac36177](https://github.com/juancarlosjr97/release-it-containerized/commit/ac36177efdae139c6d77fd26ff0705b902c05a6f))
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.5 ([#311](https://github.com/juancarlosjr97/release-it-containerized/issues/311)) ([9e679e6](https://github.com/juancarlosjr97/release-it-containerized/commit/9e679e61b3e29e87f2018848ba4e71decf521f98))
+* **deps:** update dependency juancarlosjr97/renovate-configuration to v0.2.6 ([#313](https://github.com/juancarlosjr97/release-it-containerized/issues/313)) ([ba78b0a](https://github.com/juancarlosjr97/release-it-containerized/commit/ba78b0adebd99bdb1501fb367b0957693dde7b2b))
+* **deps:** update juancarlosjr97/github-actions-workflows-to-rule-them-all digest to 0927dc5 ([#312](https://github.com/juancarlosjr97/release-it-containerized/issues/312)) ([2f1bcf6](https://github.com/juancarlosjr97/release-it-containerized/commit/2f1bcf6c99305285205335e3363e5b995994eb46))
+* **deps:** update juancarlosjr97/github-actions-workflows-to-rule-them-all digest to 83666e8 ([#306](https://github.com/juancarlosjr97/release-it-containerized/issues/306)) ([f593ce0](https://github.com/juancarlosjr97/release-it-containerized/commit/f593ce09ca7e71cc1e0e36f0e6b72f27bebe4157))
+* **deps:** update juancarlosjr97/github-actions-workflows-to-rule-them-all digest to 927604e ([#310](https://github.com/juancarlosjr97/release-it-containerized/issues/310)) ([48b2f8b](https://github.com/juancarlosjr97/release-it-containerized/commit/48b2f8b3344a3814aa498aed73bcadef8cdc42b8))
+* pin internal shared-tooling refs to `main` and suppress Renovate churn ([#316](https://github.com/juancarlosjr97/release-it-containerized/issues/316)) ([f7408c2](https://github.com/juancarlosjr97/release-it-containerized/commit/f7408c2011b64dca396f3d7af9538db99181c5a1))
+
 ## [2.1.43](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.42...2.1.43) (2026-05-05)
 
 ### Bug Fixes
