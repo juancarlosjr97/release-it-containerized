@@ -45,6 +45,7 @@ jobs:
           timeout_minutes: 15
           max_attempts: 3
           retry_wait_seconds: 60
+          continue_on_error: false
           command: |
             docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
             echo "image_reference=ghcr.io/${{ github.repository }}:${{ github.sha }}" >> $GITHUB_OUTPUT
@@ -56,6 +57,7 @@ jobs:
           timeout_minutes: 5
           max_attempts: 3
           retry_wait_seconds: 10
+          continue_on_error: false
           command: |
             docker save ghcr.io/${{ github.repository }}:${{ github.sha }} -o ${{ github.sha }}.tar
             echo "image_tar_artifact_name=docker-image-${{ github.sha }}" >> $GITHUB_OUTPUT
@@ -97,6 +99,7 @@ jobs:
           timeout_minutes: 5
           max_attempts: 3
           retry_wait_seconds: 10
+          continue_on_error: false
           command: docker load -i ${{ needs.build.outputs.image_tar_file_path }}
 
       - name: Running release-it on dry-run without GPG or SSH
@@ -105,6 +108,7 @@ jobs:
           timeout_minutes: 10
           max_attempts: 3
           retry_wait_seconds: 30
+          continue_on_error: false
           command: |
             docker run \
               -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
@@ -122,6 +126,7 @@ jobs:
           timeout_minutes: 10
           max_attempts: 3
           retry_wait_seconds: 30
+          continue_on_error: false
           command: |
             docker run \
               -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
@@ -141,6 +146,7 @@ jobs:
           timeout_minutes: 10
           max_attempts: 3
           retry_wait_seconds: 30
+          continue_on_error: false
           command: |
             docker run \
               -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
@@ -174,6 +180,7 @@ jobs:
           timeout_minutes: 10
           max_attempts: 3
           retry_wait_seconds: 30
+          continue_on_error: false
           command: |
             OUTPUT=$(docker run \
               -e GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN_PROJECT }} \
