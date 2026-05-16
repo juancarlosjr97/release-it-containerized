@@ -62,7 +62,7 @@ Create a Personal Access Token (PAT) with `contents: write` (Read and Write acce
 | Field              | Description                                               | Required | Default                                        |
 | ------------------ | --------------------------------------------------------- | -------- | ---------------------------------------------- |
 | command            | Command to execute release-it                             | false    | ""                                             |
-| continue_on_error  | Whether to mark the step as successful even if all retry attempts fail | false    | false |
+| continue_on_error  | Whether to mark the step as successful even if all retry attempts fail   | false    | false                                          |
 | git_email          | Git email to run release-it                               | false    | `${{ github.actor }}@users.noreply.github.com` |
 | git_username       | Git username to run release-it                            | false    | `${{ github.actor }}`                          |
 | github_token       | GitHub Token to run release-it                            | **true** | -                                              |
