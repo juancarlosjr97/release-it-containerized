@@ -11,6 +11,11 @@ inputs:
     description: Command to execute Release It
     required: false
 
+  continue_on_error:
+    default: "false"
+    description: Continue workflow execution even if all retry attempts fail
+    required: false
+
   git_email:
     default: ${{ github.actor }}
     description: Git email to run Release It
@@ -73,6 +78,7 @@ runs:
         timeout_minutes: 15
         max_attempts: 3
         retry_wait_seconds: 60
+        continue_on_error: ${{ inputs.continue_on_error == 'true' }}
         shell: bash
         command: |
           docker run \

@@ -43,6 +43,7 @@ jobs:
           timeout_minutes: 15
           max_attempts: 3
           retry_wait_seconds: 60
+          continue_on_error: false
           command: docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
 
       - name: Running release
@@ -51,6 +52,7 @@ jobs:
           timeout_minutes: 15
           max_attempts: 3
           retry_wait_seconds: 60
+          continue_on_error: false
           command: |
             docker run \
             -e GITHUB_TOKEN=${GITHUB_TOKEN} \
