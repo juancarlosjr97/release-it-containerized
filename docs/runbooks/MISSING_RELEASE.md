@@ -1,4 +1,4 @@
-# Runbook: Fixing a Missing Release
+# Fixing a Missing Release
 
 Use this runbook when a release is missing one or more of the following:
 
@@ -16,20 +16,22 @@ Use this runbook when a release is missing one or more of the following:
 
 ---
 
-## Step 1 — Verify the vulnerability baseline (optional)
+## Step 1 — Verify the vulnerability baseline
 
-Before pushing, confirm the image is clean:
+Before pushing, the image **must** pass a vulnerability scan. This step is a mandatory gate — do not proceed if HIGH or CRITICAL vulnerabilities are found.
 
 ```bash
 export TRIVY_IMAGE=release-it-containerized:dev
-trivy image $TRIVY_IMAGE
+trivy image --exit-code 1 --severity HIGH,CRITICAL $TRIVY_IMAGE
 ```
 
-Or scan a specific published version:
+If the command exits with code `1`, the image has HIGH or CRITICAL findings and **must not** be pushed. Resolve the vulnerabilities before continuing.
+
+To scan a specific published version:
 
 ```bash
 export TRIVY_IMAGE=ghcr.io/juancarlosjr97/release-it-containerized:<VERSION>
-trivy image $TRIVY_IMAGE
+trivy image --exit-code 1 --severity HIGH,CRITICAL $TRIVY_IMAGE
 ```
 
 ---
@@ -73,12 +75,17 @@ docker push ghcr.io/juancarlosjr97/release-it-containerized:latest
 
 ## Step 6 — Create the GitHub Release
 
+Pin the release to the exact commit that should be released using `--target`:
+
 ```bash
 gh release create <VERSION> \
   --repo juancarlosjr97/release-it-containerized \
+  --target <COMMIT_SHA> \
   --title "<VERSION>" \
   --notes "<CHANGELOG_CONTENT>"
 ```
+
+`<COMMIT_SHA>` is the full SHA of the commit the release corresponds to (e.g. from `git log --oneline`).
 
 `<CHANGELOG_CONTENT>` should be the relevant section from `CHANGELOG.md` for this version.
 
@@ -87,6 +94,7 @@ Example:
 ```bash
 gh release create 2.1.43 \
   --repo juancarlosjr97/release-it-containerized \
+  --target abc1234def5678 \
   --title "2.1.43" \
   --notes "## [2.1.43](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.42...2.1.43) (2026-05-05)
 

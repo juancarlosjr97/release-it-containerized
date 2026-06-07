@@ -24,7 +24,7 @@ Format: `<type>(<optional scope>): <short description>`
 
 Always include the issue number reference on a new line after the subject:
 
-```
+```text
 <type>(<scope>): <subject>
 
 #<issue-number>
@@ -32,7 +32,7 @@ Always include the issue number reference on a new line after the subject:
 
 Examples:
 
-```
+```text
 feat: add support for specifying NPM version
 
 #24
@@ -72,7 +72,7 @@ Never use floating tags like `@v1`, `@latest`, or branch references.
 
 ## File Structure
 
-```
+```text
 .
 ├── Dockerfile                # Main Docker image definition (Alpine + Node.js)
 ├── release-it-entrypoint.sh # Container entrypoint bash script
