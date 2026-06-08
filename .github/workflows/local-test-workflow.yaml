@@ -96,25 +96,13 @@ jobs:
           continue_on_error: false
           command: docker load -i ${{ needs.build.outputs.image_tar_file_path }}
 
-      - name: Install Snyk CLI
-        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4
-        with:
-          timeout_minutes: 5
-          max_attempts: 3
-          retry_wait_seconds: 10
-          continue_on_error: false
-          command: npm install --global snyk@1.1305.1
-
-      - name: Scan Docker image with Snyk CLI
+      - name: Scan Docker image with Snyk Docker Action
+        uses: snyk/actions/docker@9adf32b1121593767fc3c057af55b55db032dc04 # v1.0.0
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4
         with:
-          timeout_minutes: 10
-          max_attempts: 3
-          retry_wait_seconds: 30
-          continue_on_error: false
-          command: snyk container test ${{ needs.build.outputs.image_reference }} --file=Dockerfile --severity-threshold=low --exclude-app-vulns
+          image: ${{ needs.build.outputs.image_reference }}
+          args: --file=Dockerfile --severity-threshold=low --exclude-app-vulns
 
   tests:
     needs: build
