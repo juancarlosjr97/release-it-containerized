@@ -6,6 +6,8 @@ Use this runbook when a release is missing one or more of the following:
 - The `latest` Docker image tag on GHCR
 - A GitHub Release entry
 
+> **Scope:** This runbook covers recreating Docker image tags and the GitHub Release entry. It assumes the Git tag for the version either already exists or will be created implicitly by `gh release create --target`.
+
 ---
 
 ## Prerequisites
@@ -13,10 +15,31 @@ Use this runbook when a release is missing one or more of the following:
 - Docker installed and running locally
 - `gh` CLI authenticated (`gh auth status`)
 - A GitHub PAT with `write:packages` and `repo` scopes stored as `GITHUB_TOKEN`
+- Your GitHub username (referred to as `<GITHUB_USERNAME>` in commands below)
+
+> **Note:** The same `GITHUB_TOKEN` PAT is used for both GHCR authentication (Step 3) and `gh` CLI operations (Step 6). Ensure `gh` uses this token by running `gh auth login --with-token <<< "$GITHUB_TOKEN"` or by having it already configured.
 
 ---
 
-## Step 1 — Verify the vulnerability baseline
+## Step 1 — Checkout the target commit
+
+Ensure you are on the exact commit that should be released:
+
+```bash
+git checkout <COMMIT_SHA>
+```
+
+---
+
+## Step 2 — Build the image locally
+
+```bash
+docker build -t release-it-containerized:dev .
+```
+
+---
+
+## Step 3 — Verify the vulnerability baseline
 
 Before pushing, the image **must** pass a vulnerability scan. This step is a mandatory gate — do not proceed if HIGH or CRITICAL vulnerabilities are found.
 
@@ -27,24 +50,9 @@ trivy image --exit-code 1 --severity HIGH,CRITICAL $TRIVY_IMAGE
 
 If the command exits with code `1`, the image has HIGH or CRITICAL findings and **must not** be pushed. Resolve the vulnerabilities before continuing.
 
-To scan a specific published version:
-
-```bash
-export TRIVY_IMAGE=ghcr.io/juancarlosjr97/release-it-containerized:<VERSION>
-trivy image --exit-code 1 --severity HIGH,CRITICAL $TRIVY_IMAGE
-```
-
 ---
 
-## Step 2 — Build the image locally
-
-```bash
-docker build -t release-it-containerized .
-```
-
----
-
-## Step 3 — Authenticate with GHCR
+## Step 4 — Authenticate with GHCR
 
 ```bash
 echo "$GITHUB_TOKEN" | docker login ghcr.io -u <GITHUB_USERNAME> --password-stdin
@@ -52,30 +60,29 @@ echo "$GITHUB_TOKEN" | docker login ghcr.io -u <GITHUB_USERNAME> --password-stdi
 
 ---
 
-## Step 4 — Tag and push the versioned image
+## Step 5 — Tag and push the versioned image
 
 Replace `<VERSION>` with the release version (e.g. `2.1.43`):
 
 ```bash
-docker tag release-it-containerized ghcr.io/juancarlosjr97/release-it-containerized:<VERSION>
+docker tag release-it-containerized:dev ghcr.io/juancarlosjr97/release-it-containerized:<VERSION>
 docker push ghcr.io/juancarlosjr97/release-it-containerized:<VERSION>
 ```
 
 ---
 
-## Step 5 — Tag and push `latest`
+## Step 6 — Tag and push `latest`
 
 ```bash
-docker pull ghcr.io/juancarlosjr97/release-it-containerized:<VERSION>
-docker tag ghcr.io/juancarlosjr97/release-it-containerized:<VERSION> ghcr.io/juancarlosjr97/release-it-containerized:latest
+docker tag release-it-containerized:dev ghcr.io/juancarlosjr97/release-it-containerized:latest
 docker push ghcr.io/juancarlosjr97/release-it-containerized:latest
 ```
 
 ---
 
-## Step 6 — Create the GitHub Release
+## Step 7 — Create the GitHub Release
 
-Pin the release to the exact commit that should be released using `--target`:
+Pin the release to the exact commit using `--target`. This also creates the Git tag if it does not already exist:
 
 ```bash
 gh release create <VERSION> \
