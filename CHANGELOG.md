@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.46](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.45...2.1.46) (2026-06-08)
+
+### Documentation
+
+* add missing release runbook ([f9d03ab](https://github.com/juancarlosjr97/release-it-containerized/commit/f9d03ab5baca48d37ad374f7308b95aa963b8176)), closes [#319](https://github.com/juancarlosjr97/release-it-containerized/issues/319)
+
 ## [2.1.45](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.44...2.1.45) (2026-05-30)
 
 ### Chores
