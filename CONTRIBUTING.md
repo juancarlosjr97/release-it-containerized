@@ -225,6 +225,8 @@ The project uses GitHub Actions for CI/CD. All tests must pass before a PR can b
 
 This project uses automated releases via release-it and GitHub Actions. Maintainers will handle the release process. The versioning follows [Semantic Versioning](https://semver.org/).
 
+For recovering from a failed or partial release, see the [Missing Release Runbook](./docs/runbooks/MISSING_RELEASE.md).
+
 ## Style Guide
 
 ### Shell Scripts
