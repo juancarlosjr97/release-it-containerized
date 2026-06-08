@@ -18,7 +18,7 @@ Use this runbook when a release is missing one or more of the following:
 - Snyk CLI installed and authenticated with `SNYK_TOKEN`
 - Your GitHub username (referred to as `<GITHUB_USERNAME>` in commands below)
 
-> **Note:** The same `GITHUB_TOKEN` PAT is used for both GHCR authentication (Step 4) and `gh` CLI operations (Step 7). Ensure `gh` uses this token by running `gh auth login --with-token <<< "$GITHUB_TOKEN"` or by having it already configured.
+> **Note:** The same `GITHUB_TOKEN` PAT is used for both GHCR authentication and `gh` CLI operations. Ensure `gh` uses this token by running `gh auth login --with-token <<< "$GITHUB_TOKEN"` or by having it already configured.
 
 ---
 

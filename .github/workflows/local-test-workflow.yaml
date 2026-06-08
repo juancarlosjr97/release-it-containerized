@@ -103,7 +103,7 @@ jobs:
           max_attempts: 3
           retry_wait_seconds: 10
           continue_on_error: false
-          command: npm install --global snyk
+          command: npm install --global snyk@1.1305.1
 
       - name: Scan Docker image with Snyk CLI
         env:
