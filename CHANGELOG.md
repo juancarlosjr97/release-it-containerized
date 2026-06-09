@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.47](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.46...2.1.47) (2026-06-09)
+
+### Code Refactoring
+
+* migrate Renovate extends to `one-renovate-configuration-to-rule-them-all` v0.5.1 ([7382416](https://github.com/juancarlosjr97/release-it-containerized/commit/738241697e37ef84890d458db4214c14d23862e4)), closes [#324](https://github.com/juancarlosjr97/release-it-containerized/issues/324)
+
 ## [2.1.46](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.45...2.1.46) (2026-06-08)
 
 ### Documentation
