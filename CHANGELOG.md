@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.48](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.47...2.1.48) (2026-06-11)
+
+### Bug Fixes
+
+* update libcrypto3 and libssl3 to 3.5.7-r0 to fix CVE-2026-45447 ([#326](https://github.com/juancarlosjr97/release-it-containerized/issues/326)) ([00c8777](https://github.com/juancarlosjr97/release-it-containerized/commit/00c8777997a5dbba84fa48e10dd05ce91b54e33b))
+
 ## [2.1.47](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.46...2.1.47) (2026-06-09)
 
 ### Code Refactoring
