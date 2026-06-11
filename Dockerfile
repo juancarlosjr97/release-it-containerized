@@ -21,8 +21,11 @@ ENV GNUPG_VERSION="2.4.9-r0"
 # renovate: datasource=repology depName=alpine_3_23/libexpat versioning=loose
 ENV LIBEXPAT_VERSION="2.7.5-r0"
 
+# renovate: datasource=repology depName=alpine_3_23/libcrypto3 versioning=loose
+ENV LIBCRYPTO3_VERSION="3.5.7-r0"
+
 # renovate: datasource=repology depName=alpine_3_23/libssl3 versioning=loose
-ENV LIBSSL3_VERSION="3.5.6-r0"
+ENV LIBSSL3_VERSION="3.5.7-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/libtasn1 versioning=loose
 ENV LIBTASN_VERSION="4.21.0-r0"
@@ -51,6 +54,7 @@ RUN apk update && \
     git="${GIT_VERSION}" \
     gnupg="${GNUPG_VERSION}" \
     libexpat="${LIBEXPAT_VERSION}" \
+    libcrypto3="${LIBCRYPTO3_VERSION}" \
     libssl3="${LIBSSL3_VERSION}" \
     libtasn1="${LIBTASN_VERSION}" \
     musl="${MUSL_VERSION}" \
