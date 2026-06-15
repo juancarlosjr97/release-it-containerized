@@ -73,6 +73,7 @@ ARG REPO=https://github.com/juancarlosjr97/release-it-containerized
 ARG VERSION=dev
 
 LABEL org.opencontainers.image.authors="Juan Carlos Blanco Delgado" \
+      org.opencontainers.image.annotations.documentation="https://github.com/opencontainers/image-spec/blob/13cff54902ec9ad6320cbc487a685b66fcd67171/annotations.md" \
       org.opencontainers.image.description="A containerized version of release-it that runs in any environment without requiring a Node.js installation" \
       org.opencontainers.image.licenses="MIT" \
       org.opencontainers.image.source="${REPO}" \
