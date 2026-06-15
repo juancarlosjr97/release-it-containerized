@@ -87,4 +87,4 @@ This project is licensed under the MIT License. See the [LICENSE][7] file.
 [8]: https://github.com/release-it/release-it
 [9]: https://github.com/release-it/release-it/blob/main/docs/configuration.md
 [10]: ./docs/USAGE.md
-[11]: https://github.com/opencontainers/image-spec/blob/13cff54902ec9ad6320cbc487a685b66fcd67171/annotations.md
+[11]: https://github.com/opencontainers/image-spec/blob/v1.1.1/annotations.md

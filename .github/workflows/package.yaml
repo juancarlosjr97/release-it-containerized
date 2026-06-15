@@ -32,7 +32,7 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           annotations: |
-            org.opencontainers.image.annotations.documentation=https://github.com/opencontainers/image-spec/blob/13cff54902ec9ad6320cbc487a685b66fcd67171/annotations.md
+            org.opencontainers.image.annotations.documentation=https://github.com/opencontainers/image-spec/blob/v1.1.1/annotations.md
           tags: |
             type=semver,pattern={{version}}
             type=raw,value=latest,enable=${{ !contains(github.ref, 'beta') }}
