@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.49](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.48...2.1.49) (2026-06-15)
+
+### Continuous Integration
+
+* add OCI annotations documentation reference to image metadata ([#329](https://github.com/juancarlosjr97/release-it-containerized/issues/329)) ([44d3ac8](https://github.com/juancarlosjr97/release-it-containerized/commit/44d3ac86f7a918d94988070f8d46ebf71fc612e0)), closes [#328](https://github.com/juancarlosjr97/release-it-containerized/issues/328)
+
 ## [2.1.48](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.47...2.1.48) (2026-06-11)
 
 ### Bug Fixes
