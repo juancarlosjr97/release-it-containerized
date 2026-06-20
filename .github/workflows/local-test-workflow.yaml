@@ -52,6 +52,7 @@ jobs:
 
       - name: Save Docker image to tarball
         id: save
+        if: steps.build.outputs.image_reference != ''
         uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4
         with:
           timeout_minutes: 5
@@ -64,6 +65,7 @@ jobs:
             echo "image_tar_file_path=${{ github.sha }}.tar" >> $GITHUB_OUTPUT
 
       - name: Upload image tarball as artifact
+        if: steps.save.outputs.image_tar_artifact_name != ''
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7
         with:
           name: docker-image-${{ github.sha }}
