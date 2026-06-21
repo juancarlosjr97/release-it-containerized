@@ -19,7 +19,7 @@ ENV GIT_VERSION="2.52.0-r0"
 ENV GNUPG_VERSION="2.4.9-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/libexpat versioning=loose
-ENV LIBEXPAT_VERSION="2.7.5-r0"
+ENV LIBEXPAT_VERSION="2.8.1-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/libcrypto3 versioning=loose
 ENV LIBCRYPTO3_VERSION="3.5.7-r0"
