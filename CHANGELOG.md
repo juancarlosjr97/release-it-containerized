@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.50](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.49...2.1.50) (2026-06-21)
+
+### Bug Fixes
+
+* resolve libexpat/git package conflict and ensure retry steps exit on failure ([#331](https://github.com/juancarlosjr97/release-it-containerized/issues/331)) ([f6b8161](https://github.com/juancarlosjr97/release-it-containerized/commit/f6b8161c2ebcb2b082a9c6fc9577bddf3307bcaf)), closes [#330](https://github.com/juancarlosjr97/release-it-containerized/issues/330)
+
 ## [2.1.49](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.48...2.1.49) (2026-06-15)
 
 ### Continuous Integration
