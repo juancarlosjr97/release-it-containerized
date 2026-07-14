@@ -3,6 +3,8 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.53](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.52...2.1.53) (2026-07-14)
+
 ## [2.1.52](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.51...2.1.52) (2026-07-13)
 
 ### Chores
