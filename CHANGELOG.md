@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.54](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.53...2.1.54) (2026-07-25)
+
+### Chores
+
+* **deps:** update actions/checkout action to v5.1.0 ([#335](https://github.com/juancarlosjr97/release-it-containerized/issues/335)) ([a5083e4](https://github.com/juancarlosjr97/release-it-containerized/commit/a5083e45a859db41bd85179ab660ab21b223864c))
+
 ## [2.1.53](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.52...2.1.53) (2026-07-14)
 
 ## [2.1.52](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.51...2.1.52) (2026-07-13)
