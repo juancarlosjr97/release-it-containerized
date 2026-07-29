@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.1.56](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.55...2.1.56) (2026-07-29)
+
+### Chores
+
+* **deps:** update docker/login-action action to v4.5.1 ([#337](https://github.com/juancarlosjr97/release-it-containerized/issues/337)) ([590b66a](https://github.com/juancarlosjr97/release-it-containerized/commit/590b66a3019695f890a748900290f552fc2d199b))
+
 ## [2.1.55](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.54...2.1.55) (2026-07-28)
 
 ### Chores
