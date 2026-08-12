@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.0](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.59...2.2.0) (2026-08-12)
+
+### Features
+
+* add version package to execution ([#343](https://github.com/juancarlosjr97/release-it-containerized/issues/343)) ([0874754](https://github.com/juancarlosjr97/release-it-containerized/commit/08747547f6fc8fca0bc812f0de0935b0015b6b0c)), references [#341](https://github.com/juancarlosjr97/release-it-containerized/issues/341)
+
 ## [2.1.59](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.58...2.1.59) (2026-08-09)
 
 ### Chores
