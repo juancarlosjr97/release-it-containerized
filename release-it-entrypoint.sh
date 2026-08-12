@@ -127,6 +127,24 @@ echo "Installing release-it..."
 # shellcheck disable=SC2086 # The variable RELEASE_IT_PLUGINS_SEPARATED is appropriately split to facilitate the installation of plugins.
 npm install --silent --global release-it@${RELEASE_IT_VERSION} ${RELEASE_IT_PLUGINS_SEPARATED}
 
+echo "release-it version: $(release-it --version)"
+
+if [[ -n "${RELEASE_IT_PLUGINS}" ]]; then
+  echo "Plugin versions:"
+  for plugin in "${RELEASE_IT_PLUGINS_LIST[@]}"; do
+    pkg_name=$(echo "$plugin" | sed -E 's/^(@[^/]+\/[^@]+)@.*/\1/; s/^([^@]+)@.*/\1/')
+    if [[ -z "$pkg_name" ]]; then
+      pkg_name="$plugin"
+    fi
+    if npm list -g --depth=0 "$pkg_name" &>/dev/null; then
+      version_line=$(npm list -g --depth=0 "$pkg_name" | grep -F "$pkg_name@" | head -n1 | sed -E 's/.*@([^[:space:]]+).*/\1/')
+      echo "$pkg_name: $version_line"
+    else
+      echo "$pkg_name: not installed"
+    fi
+  done
+fi
+
 # Execute the provided command to release-it
 echo "Executing release-it..."
 exec "$@"
