@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.1](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.0...2.2.1) (2026-08-19)
+
+### Bug Fixes
+
+* **docker:** bump sqlite-libs pin for Alpine 3.23 ([ea1e5e3](https://github.com/juancarlosjr97/release-it-containerized/commit/ea1e5e31c3cea1120fa0dec33dba82dd7a38687d))
+
 ## [2.2.0](https://github.com/juancarlosjr97/release-it-containerized/compare/2.1.59...2.2.0) (2026-08-12)
 
 ### Features
