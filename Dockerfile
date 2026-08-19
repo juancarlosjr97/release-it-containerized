@@ -40,7 +40,7 @@ ENV MUSL_UTILS_VERSION="1.2.5-r23"
 ENV OPENSSH_VERSION="10.2_p1-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/sqlite-libs versioning=loose
-ENV SQLITE_LIBS_VERSION="3.51.2-r0"
+ENV SQLITE_LIBS_VERSION="3.53.4-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/zlib versioning=loose
 ENV ZLIB_VERSION="1.3.2-r0"
