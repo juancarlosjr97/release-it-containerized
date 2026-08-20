@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.2](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.1...2.2.2) (2026-08-20)
+
+### Bug Fixes
+
+* update libexpat to 2.8.3-r0 to resolve Docker build failure ([#348](https://github.com/juancarlosjr97/release-it-containerized/issues/348)) ([b6413d1](https://github.com/juancarlosjr97/release-it-containerized/commit/b6413d16998729318cc1ea015efa9d86932729e2))
+
 ## [2.2.1](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.0...2.2.1) (2026-08-19)
 
 ### Bug Fixes
