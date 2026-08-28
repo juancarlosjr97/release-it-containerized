@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.3](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.2...2.2.3) (2026-08-28)
+
+### Bug Fixes
+
+* update OpenSSL packages to 3.5.8-r0 ([#350](https://github.com/juancarlosjr97/release-it-containerized/issues/350)) ([fc13db4](https://github.com/juancarlosjr97/release-it-containerized/commit/fc13db48e556ecda568d0965d0bb05d9b9fae795)), references [#349](https://github.com/juancarlosjr97/release-it-containerized/issues/349)
+
 ## [2.2.2](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.1...2.2.2) (2026-08-20)
 
 ### Bug Fixes
