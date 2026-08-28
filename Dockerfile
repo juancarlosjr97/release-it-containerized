@@ -22,10 +22,10 @@ ENV GNUPG_VERSION="2.4.9-r0"
 ENV LIBEXPAT_VERSION="2.8.3-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/libcrypto3 versioning=loose
-ENV LIBCRYPTO3_VERSION="3.5.7-r0"
+ENV LIBCRYPTO3_VERSION="3.5.8-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/libssl3 versioning=loose
-ENV LIBSSL3_VERSION="3.5.7-r0"
+ENV LIBSSL3_VERSION="3.5.8-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/libtasn1 versioning=loose
 ENV LIBTASN_VERSION="4.21.0-r0"
