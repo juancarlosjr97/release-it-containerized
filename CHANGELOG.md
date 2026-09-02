@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.4](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.3...2.2.4) (2026-09-02)
+
+### Bug Fixes
+
+* update libexpat pin for Alpine 3.23  [#351](https://github.com/juancarlosjr97/release-it-containerized/issues/351) ([eace509](https://github.com/juancarlosjr97/release-it-containerized/commit/eace5097a28a68d7e5fd7b06b76d1573670e46ba))
+
 ## [2.2.3](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.2...2.2.3) (2026-08-28)
 
 ### Bug Fixes
