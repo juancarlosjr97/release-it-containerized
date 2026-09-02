@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.5](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.4...2.2.5) (2026-09-02)
+
+### Chores
+
+* **deps:** update node.js to v24.20.0 ([#352](https://github.com/juancarlosjr97/release-it-containerized/issues/352)) ([208df62](https://github.com/juancarlosjr97/release-it-containerized/commit/208df629162611aada1a961cabba930972a8ff5e))
+
 ## [2.2.4](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.3...2.2.4) (2026-09-02)
 
 ### Bug Fixes
