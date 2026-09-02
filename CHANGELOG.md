@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.6](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.5...2.2.6) (2026-09-02)
+
+### Chores
+
+* rename maintenance agent files to lowercase for consistency ([#354](https://github.com/juancarlosjr97/release-it-containerized/issues/354)) ([a810684](https://github.com/juancarlosjr97/release-it-containerized/commit/a810684154354f80c033da5769cef60736ed9e72)), references [#353](https://github.com/juancarlosjr97/release-it-containerized/issues/353)
+
 ## [2.2.5](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.4...2.2.5) (2026-09-02)
 
 ### Chores
