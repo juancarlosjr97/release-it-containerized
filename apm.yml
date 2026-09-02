@@ -1,0 +1,13 @@
+name: release-it-containerized
+version: 1.0.0
+description: APM project for release-it-containerized
+author: Juan Carlos Blanco Delgado
+targets:
+  - copilot
+  - kiro
+dependencies:
+  apm:
+    - juancarlosjr97/one-playground-to-rule-them-all
+  mcp: []
+includes: auto
+scripts: {}

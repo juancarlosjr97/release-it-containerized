@@ -1,0 +1,76 @@
+lockfile_version: '1'
+generated_at: '2026-09-02T21:21:16.488700+00:00'
+apm_version: 0.29.0
+dependencies:
+- repo_url: juancarlosjr97/one-playground-to-rule-them-all
+  name: one-playground-to-rule-them-all
+  host: github.com
+  resolved_commit: b2cf2a4a6639448fe4abcdb61bfc672c0caf6966
+  version: 1.0.0
+  package_type: apm_package
+  deployed_files:
+  - .agents/skills/joke-teller
+  - .agents/skills/joke-teller/SKILL.md
+  - .github/agents/rhyme-only.agent.md
+  deployed_file_hashes:
+    .agents/skills/joke-teller/SKILL.md: sha256:a1a7f10310f79dbaef1c79ee0d93fd4849f935b5a384fd288bc47f5e506b083e
+    .github/agents/rhyme-only.agent.md: sha256:db06fdbbc0b04ffa367d31555d8a21cb4d269df7dc4a1b652bd0577cb3d59e52
+  content_hash: sha256:4a4c4e6edd9cbc23d323bae280142fff7a0e3be31d6a4049c9bf034444961469
+deployments:
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/joke-teller
+  runtime: null
+  scope: project
+  owners:
+  - juancarlosjr97/one-playground-to-rule-them-all
+  active_owner: juancarlosjr97/one-playground-to-rule-them-all
+  content_hash: null
+- kind: project-relative
+  target: copilot
+  value: .agents/skills/joke-teller/SKILL.md
+  runtime: null
+  scope: project
+  owners:
+  - juancarlosjr97/one-playground-to-rule-them-all
+  active_owner: juancarlosjr97/one-playground-to-rule-them-all
+  content_hash: sha256:a1a7f10310f79dbaef1c79ee0d93fd4849f935b5a384fd288bc47f5e506b083e
+- kind: project-relative
+  target: copilot
+  value: .github/agents/rhyme-only.agent.md
+  runtime: null
+  scope: project
+  owners:
+  - juancarlosjr97/one-playground-to-rule-them-all
+  active_owner: juancarlosjr97/one-playground-to-rule-them-all
+  content_hash: sha256:db06fdbbc0b04ffa367d31555d8a21cb4d269df7dc4a1b652bd0577cb3d59e52
+- kind: uri
+  target: mcp
+  value: io.github.github/github-mcp-server
+  runtime: copilot
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+- kind: uri
+  target: mcp
+  value: io.github.github/github-mcp-server
+  runtime: kiro
+  scope: project
+  owners:
+  - .
+  active_owner: .
+  content_hash: null
+mcp_servers:
+- io.github.github/github-mcp-server
+mcp_configs:
+  io.github.github/github-mcp-server:
+    name: io.github.github/github-mcp-server
+mcp_target_servers:
+  copilot:
+  - io.github.github/github-mcp-server
+  kiro:
+  - io.github.github/github-mcp-server
+mcp_config_provenance:
+  io.github.github/github-mcp-server: one-playground-to-rule-them-all
