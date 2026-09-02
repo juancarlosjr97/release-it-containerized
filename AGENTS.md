@@ -87,12 +87,12 @@ Never use floating tags like `@v1`, `@latest`, or branch references.
 ├── LICENSE                  # MIT License
 ├── AGENTS.md                # This file
 ├── .agents/                      # Symlinks to .github/agents/ agent files
-│   └── MAINTENANCE.AGENT.md      # → ../.github/agents/MAINTENANCE.AGENT.md
+│   └── maintenance.agent.md      # → ../.github/agents/maintenance.agent.md
 └── .github/
     ├── CODEOWNERS                # Code ownership definitions
     ├── copilot-instructions.md   # Copilot reference (points to this file)
     ├── agents/                   # Agent definition files
-    │   └── MAINTENANCE.AGENT.md  # Maintenance agent instructions
+    │   └── maintenance.agent.md  # Maintenance agent instructions
     └── workflows/                # GitHub Actions workflows
         ├── local-test-workflow.yaml  # Reusable test workflow
         ├── package.yaml              # Docker image packaging/publishing
@@ -126,4 +126,4 @@ This repository defines a set of agent roles.
 
 | Agent | Description | Definition |
 |---|---|---|
-| `maintenance` | Performs regular security and dependency updates | [.github/agents/MAINTENANCE.AGENT.md](.github/agents/MAINTENANCE.AGENT.md) |
+| `maintenance` | Performs regular security and dependency updates | [.github/agents/maintenance.agent.md](.github/agents/maintenance.agent.md) |

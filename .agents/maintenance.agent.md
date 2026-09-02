@@ -1,0 +1,1 @@
+../.github/agents/maintenance.agent.md
