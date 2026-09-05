@@ -71,11 +71,20 @@ COPY --chown=node release-it-entrypoint.sh /usr/local/bin/release-it-containeriz
 
 ARG REPO=https://github.com/juancarlosjr97/release-it-containerized
 ARG VERSION=dev
+ARG BUILD_DATE=unknown
+ARG VCS_REF=unknown
+ARG BASE_NAME=docker.io/library/node:24.19.0-alpine3.23
+ARG BASE_DIGEST=sha256:244cc2b53f46f9e876304391d17682b0ddae9ac33491f4857e25e35a36ba7995
 
 LABEL org.opencontainers.image.authors="Juan Carlos Blanco Delgado" \
       org.opencontainers.image.annotations.documentation="https://github.com/opencontainers/image-spec/blob/v1.1.1/annotations.md" \
+      org.opencontainers.image.base.digest="${BASE_DIGEST}" \
+      org.opencontainers.image.base.name="${BASE_NAME}" \
+      org.opencontainers.image.created="${BUILD_DATE}" \
       org.opencontainers.image.description="A containerized version of release-it that runs in any environment without requiring a Node.js installation" \
+      org.opencontainers.image.documentation="https://github.com/opencontainers/image-spec/blob/v1.1.1/annotations.md" \
       org.opencontainers.image.licenses="MIT" \
+      org.opencontainers.image.revision="${VCS_REF}" \
       org.opencontainers.image.source="${REPO}" \
       org.opencontainers.image.title="Release It Containerized" \
       org.opencontainers.image.version="${VERSION}"
