@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.7](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.6...2.2.7) (2026-09-05)
+
+### Bug Fixes
+
+* unblock `test / build` by updating stale Alpine curl pin in Dockerfile ([#355](https://github.com/juancarlosjr97/release-it-containerized/issues/355)) ([d8cff0e](https://github.com/juancarlosjr97/release-it-containerized/commit/d8cff0ec1f33c9f73309cc17272d62571751a871))
+
 ## [2.2.6](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.5...2.2.6) (2026-09-02)
 
 ### Chores
