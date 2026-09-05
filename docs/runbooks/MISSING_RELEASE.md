@@ -15,9 +15,10 @@ Use this runbook when a release is missing one or more of the following:
 - Docker installed and running locally
 - `gh` CLI authenticated (`gh auth status`)
 - A GitHub PAT with `write:packages` and `repo` scopes stored as `GITHUB_TOKEN`
+- Snyk CLI installed and authenticated with `SNYK_TOKEN`
 - Your GitHub username (referred to as `<GITHUB_USERNAME>` in commands below)
 
-> **Note:** The same `GITHUB_TOKEN` PAT is used for both GHCR authentication (Step 3) and `gh` CLI operations (Step 6). Ensure `gh` uses this token by running `gh auth login --with-token <<< "$GITHUB_TOKEN"` or by having it already configured.
+> **Note:** The same `GITHUB_TOKEN` PAT is used for both GHCR authentication and `gh` CLI operations. Ensure `gh` uses this token by running `gh auth login --with-token <<< "$GITHUB_TOKEN"` or by having it already configured.
 
 ---
 
@@ -41,14 +42,14 @@ docker build -t release-it-containerized:dev .
 
 ## Step 3 — Verify the vulnerability baseline
 
-Before pushing, the image **must** pass a vulnerability scan. This step is a mandatory gate — do not proceed if HIGH or CRITICAL vulnerabilities are found.
+Before pushing, the image **must** pass a vulnerability scan. This step is a mandatory gate — do not proceed if vulnerabilities are found.
 
 ```bash
-export TRIVY_IMAGE=release-it-containerized:dev
-trivy image --exit-code 1 --severity HIGH,CRITICAL $TRIVY_IMAGE
+export SNYK_IMAGE=release-it-containerized:dev
+snyk container test "$SNYK_IMAGE" --file=Dockerfile --severity-threshold=low --exclude-app-vulns
 ```
 
-If the command exits with code `1`, the image has HIGH or CRITICAL findings and **must not** be pushed. Resolve the vulnerabilities before continuing.
+If the command exits with code `1`, the image has vulnerabilities and **must not** be pushed. Resolve the vulnerabilities before continuing.
 
 ---
 
