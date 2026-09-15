@@ -32,7 +32,9 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           annotations: |
-            org.opencontainers.image.annotations.documentation=https://github.com/opencontainers/image-spec/blob/v1.1.1/annotations.md
+            org.opencontainers.image.documentation=https://github.com/opencontainers/image-spec/blob/v1.1.1/annotations.md
+            org.opencontainers.image.base.digest=sha256:244cc2b53f46f9e876304391d17682b0ddae9ac33491f4857e25e35a36ba7995
+            org.opencontainers.image.base.name=docker.io/library/node:24.19.0-alpine3.23
           tags: |
             type=semver,pattern={{version}}
             type=raw,value=latest,enable=${{ !contains(github.ref, 'beta') }}
@@ -40,7 +42,10 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a # v7.3.0
         with:
-          build-args: VERSION=${{ steps.meta.outputs.version }}
+          build-args: |
+            VERSION=${{ steps.meta.outputs.version }}
+            BUILD_DATE=${{ steps.meta.outputs.created }}
+            VCS_REF=${{ github.sha }}
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
