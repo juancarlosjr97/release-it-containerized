@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.10](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.9...2.2.10) (2026-09-23)
+
+### Chores
+
+* **deps:** update node.js to 9ec4a2e ([#358](https://github.com/juancarlosjr97/release-it-containerized/issues/358)) ([2981589](https://github.com/juancarlosjr97/release-it-containerized/commit/29815898c3f5aed73208cc255ec22553c470d793))
+
 ## [2.2.9](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.8...2.2.9) (2026-09-20)
 
 ### Chores
