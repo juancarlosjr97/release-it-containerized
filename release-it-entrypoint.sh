@@ -10,7 +10,7 @@ GPG_PRIVATE_KEY="${GPG_PRIVATE_KEY:-}"
 GPG_PRIVATE_KEY_ID="${GPG_PRIVATE_KEY_ID:-}"
 NPM_VERSION="${NPM_VERSION:-}"
 RELEASE_IT_PLUGINS=${RELEASE_IT_PLUGINS:-}
-RELEASE_IT_VERSION=${RELEASE_IT_VERSION:-latest}
+RELEASE_IT_VERSION=${RELEASE_IT_VERSION:-}
 SSH_PASSPHRASE="${SSH_PASSPHRASE:-}"
 SSH_PRIVATE_KEY="${SSH_PRIVATE_KEY:-}"
 
@@ -125,7 +125,11 @@ RELEASE_IT_PLUGINS_SEPARATED="${RELEASE_IT_PLUGINS_LIST[*]}"
 echo "Installing release-it..."
 # To streamline the installation process, globally install release-it along with any required plugins.
 # shellcheck disable=SC2086 # The variable RELEASE_IT_PLUGINS_SEPARATED is appropriately split to facilitate the installation of plugins.
-npm install --silent --global release-it@${RELEASE_IT_VERSION} ${RELEASE_IT_PLUGINS_SEPARATED}
+if [[ -n "${RELEASE_IT_VERSION}" ]]; then
+    npm install --silent --global "release-it@${RELEASE_IT_VERSION}" ${RELEASE_IT_PLUGINS_SEPARATED}
+else
+    npm install --silent --global release-it ${RELEASE_IT_PLUGINS_SEPARATED}
+fi
 
 echo "release-it version: $(release-it --version)"
 
