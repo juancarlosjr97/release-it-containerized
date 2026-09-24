@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.11](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.10...2.2.11) (2026-09-24)
+
+### Bug Fixes
+
+* update build failure caused by stale Alpine libexpat pin ([#359](https://github.com/juancarlosjr97/release-it-containerized/issues/359)) ([f5224cb](https://github.com/juancarlosjr97/release-it-containerized/commit/f5224cb178efe2a36a1eb4f3a991f534d96a7f11))
+
 ## [2.2.10](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.9...2.2.10) (2026-09-23)
 
 ### Chores
