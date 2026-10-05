@@ -39,6 +39,9 @@ ENV MUSL_UTILS_VERSION="1.2.5-r23"
 # renovate: datasource=repology depName=alpine_3_23/openssh versioning=loose
 ENV OPENSSH_VERSION="10.2_p1-r0"
 
+# renovate: datasource=repology depName=alpine_3_23/pcre2 versioning=loose
+ENV PCRE2_VERSION="10.49-r0"
+
 # renovate: datasource=repology depName=alpine_3_23/sqlite-libs versioning=loose
 ENV SQLITE_LIBS_VERSION="3.53.4-r0"
 
@@ -60,6 +63,7 @@ RUN apk update && \
     musl="${MUSL_VERSION}" \
     musl-utils="${MUSL_UTILS_VERSION}" \
     openssh="${OPENSSH_VERSION}" \
+    pcre2="${PCRE2_VERSION}" \
     sqlite-libs="${SQLITE_LIBS_VERSION}" \
     zlib="${ZLIB_VERSION}"
 
