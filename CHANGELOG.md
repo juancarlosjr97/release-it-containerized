@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.12](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.11...2.2.12) (2026-10-05)
+
+### Bug Fixes
+
+* pin PCRE2 to 10.49-r0 and verify container package versions ([1724626](https://github.com/juancarlosjr97/release-it-containerized/commit/1724626ba1f8ad8e2671a6a5e3decfa16bd3750f)), closes [#360](https://github.com/juancarlosjr97/release-it-containerized/issues/360)
+
 ## [2.2.11](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.10...2.2.11) (2026-09-24)
 
 ### Bug Fixes
