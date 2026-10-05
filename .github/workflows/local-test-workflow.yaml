@@ -104,6 +104,17 @@ jobs:
           continue_on_error: false
           command: docker load -i ${{ needs.build.outputs.image_tar_file_path }}
 
+      - name: Verify fixed PCRE2 and Git package versions
+        run: |
+          docker run --rm --entrypoint sh \
+            ghcr.io/${{ github.repository }}:${{ github.sha }} \
+            -ec '
+              apk list --installed pcre2 git
+              test "$(apk version -t "$PCRE2_VERSION" "10.49-r0")" != "<"
+              test "$(apk version -t "$GIT_VERSION" "2.52.0-r0")" != "<"
+              apk info -e "pcre2=$PCRE2_VERSION" "git=$GIT_VERSION"
+            '
+
       - name: Running release-it on dry-run without GPG or SSH
         uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4
         with:
