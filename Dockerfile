@@ -46,7 +46,7 @@ ENV PCRE2_VERSION="10.49-r0"
 ENV SQLITE_LIBS_VERSION="3.53.4-r0"
 
 # renovate: datasource=repology depName=alpine_3_23/zlib versioning=loose
-ENV ZLIB_VERSION="1.3.2-r0"
+ENV ZLIB_VERSION="1.3.2-r1"
 
 RUN apk update && \
     apk add --no-cache \
