@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.13](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.12...2.2.13) (2026-10-08)
+
+### Chores
+
+* update zlib to address image security scan failure ([#362](https://github.com/juancarlosjr97/release-it-containerized/issues/362)) ([466fde3](https://github.com/juancarlosjr97/release-it-containerized/commit/466fde33e716b130db53726318682765bd1ec0aa))
+
 ## [2.2.12](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.11...2.2.12) (2026-10-05)
 
 ### Bug Fixes
