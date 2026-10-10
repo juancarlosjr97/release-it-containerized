@@ -12,6 +12,7 @@ jobs:
       GIT_USERNAME: ${{ vars.GIT_USERNAME }}
     secrets:
       GITHUB_TOKEN_PROJECT: ${{ secrets.PROJECT_GITHUB_TOKEN }}
+      SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       GPG_PRIVATE_KEY_ID: ${{ secrets.GPG_PRIVATE_KEY_ID }}
       SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
