@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.14](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.13...2.2.14) (2026-10-12)
+
+### Chores
+
+* **deps:** update all dependencies ([#363](https://github.com/juancarlosjr97/release-it-containerized/issues/363)) ([331119b](https://github.com/juancarlosjr97/release-it-containerized/commit/331119b4ad3e595d61947053e8b5e361dfc9d9bb))
+
 ## [2.2.13](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.12...2.2.13) (2026-10-08)
 
 ### Chores
