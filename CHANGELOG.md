@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.15](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.14...2.2.15) (2026-10-19)
+
+### Bug Fixes
+
+* update libexpat pin to restore Docker builds ([#364](https://github.com/juancarlosjr97/release-it-containerized/issues/364)) ([9023f1d](https://github.com/juancarlosjr97/release-it-containerized/commit/9023f1dd4a606d7d39cc960ecc3eed71f2eb0cf4))
+
 ## [2.2.14](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.13...2.2.14) (2026-10-12)
 
 ### Chores
