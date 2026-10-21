@@ -1,70 +1,34 @@
-FROM docker.io/library/node:24.22.0-alpine3.23@sha256:e44c87c7dd212720eb00469aeac89504ca2be77b8f0d6dbffb30665d5fcc59e1
+FROM docker.io/library/node:24.22.0-alpine3.24@sha256:44fce696f38ba8c987c4db89954051000bbd05ffd8d8659ba15ed4a8602e937f
 
-# renovate: datasource=repology depName=alpine_3_23/bash versioning=loose
-ENV BASH_VERSION="5.3.3-r1"
+# renovate: datasource=repology depName=alpine_3_24/bash versioning=loose
+ENV BASH_VERSION="5.3.9-r1"
 
-# renovate: datasource=repology depName=alpine_3_23/busybox versioning=loose
-ENV BUSYBOX_VERSION="1.37.0-r30"
-
-# renovate: datasource=repology depName=alpine_3_23/c-ares versioning=loose
-ENV CARES_VERSION="1.34.8-r0"
-
-# renovate: datasource=repology depName=alpine_3_23/curl versioning=loose
+# renovate: datasource=repology depName=alpine_3_24/curl versioning=loose
 ENV CURL_VERSION="8.22.0-r0"
 
-# renovate: datasource=repology depName=alpine_3_23/git versioning=loose
-ENV GIT_VERSION="2.52.0-r0"
+# renovate: datasource=repology depName=alpine_3_24/git versioning=loose
+ENV GIT_VERSION="2.54.0-r0"
 
-# renovate: datasource=repology depName=alpine_3_23/gnupg versioning=loose
-ENV GNUPG_VERSION="2.4.9-r0"
+# renovate: datasource=repology depName=alpine_3_24/gnupg versioning=loose
+ENV GNUPG_VERSION="2.4.9-r1"
 
-# renovate: datasource=repology depName=alpine_3_23/libexpat versioning=loose
-ENV LIBEXPAT_VERSION="2.9.0-r0"
+# renovate: datasource=repology depName=alpine_3_24/libssl3 versioning=loose
+ENV LIBSSL3_VERSION="3.5.9-r0"
 
-# renovate: datasource=repology depName=alpine_3_23/libcrypto3 versioning=loose
-ENV LIBCRYPTO3_VERSION="3.5.8-r0"
+# renovate: datasource=repology depName=alpine_3_24/openssh versioning=loose
+ENV OPENSSH_VERSION="10.3_p1-r1"
 
-# renovate: datasource=repology depName=alpine_3_23/libssl3 versioning=loose
-ENV LIBSSL3_VERSION="3.5.8-r0"
-
-# renovate: datasource=repology depName=alpine_3_23/libtasn1 versioning=loose
-ENV LIBTASN_VERSION="4.21.0-r0"
-
-# renovate: datasource=repology depName=alpine_3_23/musl versioning=loose
-ENV MUSL_VERSION="1.2.5-r23"
-
-# renovate: datasource=repology depName=alpine_3_23/musl-utils versioning=loose
-ENV MUSL_UTILS_VERSION="1.2.5-r23"
-
-# renovate: datasource=repology depName=alpine_3_23/openssh versioning=loose
-ENV OPENSSH_VERSION="10.2_p1-r0"
-
-# renovate: datasource=repology depName=alpine_3_23/pcre2 versioning=loose
-ENV PCRE2_VERSION="10.49-r0"
-
-# renovate: datasource=repology depName=alpine_3_23/sqlite-libs versioning=loose
-ENV SQLITE_LIBS_VERSION="3.53.4-r0"
-
-# renovate: datasource=repology depName=alpine_3_23/zlib versioning=loose
+# renovate: datasource=repology depName=alpine_3_24/zlib versioning=loose
 ENV ZLIB_VERSION="1.3.2-r1"
 
 RUN apk update && \
     apk add --no-cache \
     bash="${BASH_VERSION}" \
-    busybox="${BUSYBOX_VERSION}" \
-    c-ares="${CARES_VERSION}" \
     curl="${CURL_VERSION}" \
     git="${GIT_VERSION}" \
     gnupg="${GNUPG_VERSION}" \
-    libexpat="${LIBEXPAT_VERSION}" \
-    libcrypto3="${LIBCRYPTO3_VERSION}" \
     libssl3="${LIBSSL3_VERSION}" \
-    libtasn1="${LIBTASN_VERSION}" \
-    musl="${MUSL_VERSION}" \
-    musl-utils="${MUSL_UTILS_VERSION}" \
     openssh="${OPENSSH_VERSION}" \
-    pcre2="${PCRE2_VERSION}" \
-    sqlite-libs="${SQLITE_LIBS_VERSION}" \
     zlib="${ZLIB_VERSION}"
 
 WORKDIR /app
