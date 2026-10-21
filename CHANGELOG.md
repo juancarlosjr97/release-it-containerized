@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.17](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.16...2.2.17) (2026-10-21)
+
+### Chores
+
+* upgrade Docker base image to Alpine 3.24 ([afa65bf](https://github.com/juancarlosjr97/release-it-containerized/commit/afa65bfd43e141f11a4a07b322b29eda801e899e)), references [#366](https://github.com/juancarlosjr97/release-it-containerized/issues/366)
+
 ## [2.2.16](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.15...2.2.16) (2026-10-20)
 
 ### Chores
