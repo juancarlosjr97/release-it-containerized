@@ -51,7 +51,7 @@ chore(deps): update node.js to v24.11.1
 ### Dockerfile
 
 - Always pin package versions using `ENV` variables with the `# renovate:` annotation so Renovate can update them automatically
-- Use the `# renovate: datasource=repology depName=alpine_3_23/<package> versioning=loose` comment format before each `ENV` declaration — update `alpine_3_23` to match the Alpine version in the base image tag when the base image changes
+- Use the `# renovate: datasource=repology depName=alpine_3_24/<package> versioning=loose` comment format before each `ENV` declaration — update `alpine_3_24` to match the Alpine version in the base image tag when the base image changes
 - Keep the Node.js base image pinned by both tag and digest (SHA256)
 - Packages are installed using `apk add --no-cache` with pinned versions
 
