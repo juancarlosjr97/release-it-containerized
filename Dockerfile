@@ -15,6 +15,12 @@ ENV GNUPG_VERSION="2.4.9-r1"
 # renovate: datasource=repology depName=alpine_3_24/libssl3 versioning=loose
 ENV LIBSSL3_VERSION="3.5.9-r0"
 
+# renovate: datasource=repology depName=alpine_3_24/musl versioning=loose
+ENV MUSL_VERSION="1.2.6-r3"
+
+# renovate: datasource=repology depName=alpine_3_24/musl-utils versioning=loose
+ENV MUSL_UTILS_VERSION="1.2.6-r3"
+
 # renovate: datasource=repology depName=alpine_3_24/openssh versioning=loose
 ENV OPENSSH_VERSION="10.3_p1-r1"
 
@@ -28,6 +34,8 @@ RUN apk update && \
     git="${GIT_VERSION}" \
     gnupg="${GNUPG_VERSION}" \
     libssl3="${LIBSSL3_VERSION}" \
+    musl="${MUSL_VERSION}" \
+    musl-utils="${MUSL_UTILS_VERSION}" \
     openssh="${OPENSSH_VERSION}" \
     zlib="${ZLIB_VERSION}"
 
