@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.18](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.17...2.2.18) (2026-10-25)
+
+### Bug Fixes
+
+* patch musl packages causing image security scan failure ([#368](https://github.com/juancarlosjr97/release-it-containerized/issues/368)) ([4301bac](https://github.com/juancarlosjr97/release-it-containerized/commit/4301bace759236f26efb711449cbbd4b4f4e4781))
+
 ## [2.2.17](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.16...2.2.17) (2026-10-21)
 
 ### Chores
