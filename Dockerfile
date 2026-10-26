@@ -4,7 +4,7 @@ FROM docker.io/library/node:24.22.0-alpine3.24@sha256:44fce696f38ba8c987c4db8995
 ENV BASH_VERSION="5.3.9-r1"
 
 # renovate: datasource=repology depName=alpine_3_24/curl versioning=loose
-ENV CURL_VERSION="8.22.0-r0"
+ENV CURL_VERSION="8.23.0-r0"
 
 # renovate: datasource=repology depName=alpine_3_24/git versioning=loose
 ENV GIT_VERSION="2.54.0-r0"
