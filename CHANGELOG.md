@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.19](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.18...2.2.19) (2026-10-26)
+
+### Bug Fixes
+
+* update stale curl pin blocking Docker builds ([#369](https://github.com/juancarlosjr97/release-it-containerized/issues/369)) ([ee2ffeb](https://github.com/juancarlosjr97/release-it-containerized/commit/ee2ffeb434368b2a81467a06de57c7785fb65c8d))
+
 ## [2.2.18](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.17...2.2.18) (2026-10-25)
 
 ### Bug Fixes
