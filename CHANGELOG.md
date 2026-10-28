@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.21](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.20...2.2.21) (2026-10-28)
+
+### Chores
+
+* **deps:** update node.js to v26 ([#372](https://github.com/juancarlosjr97/release-it-containerized/issues/372)) ([4b208f1](https://github.com/juancarlosjr97/release-it-containerized/commit/4b208f1cd2811660a2326dbca598736c390dc43a))
+
 ## [2.2.20](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.19...2.2.20) (2026-10-26)
 
 ### Chores
