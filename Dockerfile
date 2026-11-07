@@ -22,7 +22,7 @@ ENV MUSL_VERSION="1.2.6-r3"
 ENV MUSL_UTILS_VERSION="1.2.6-r3"
 
 # renovate: datasource=repology depName=alpine_3_24/openssh versioning=loose
-ENV OPENSSH_VERSION="10.3_p1-r1"
+ENV OPENSSH_VERSION="10.3_p1-r2"
 
 # renovate: datasource=repology depName=alpine_3_24/zlib versioning=loose
 ENV ZLIB_VERSION="1.3.2-r1"
