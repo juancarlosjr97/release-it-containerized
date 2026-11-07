@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.23](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.22...2.2.23) (2026-11-07)
+
+### Chores
+
+* update stale OpenSSH package pin ([#374](https://github.com/juancarlosjr97/release-it-containerized/issues/374)) ([b000064](https://github.com/juancarlosjr97/release-it-containerized/commit/b0000641d56e1d323b5f126b9ef5d20b95036b2b))
+
 ## [2.2.22](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.21...2.2.22) (2026-11-03)
 
 ### Chores
