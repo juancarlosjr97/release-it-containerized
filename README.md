@@ -52,7 +52,7 @@ docker run \
 ## Documentation
 
 - [Usage][10] — full input reference, Docker examples, and GitHub Action setup
-- OCI annotation `org.opencontainers.image.annotations.documentation` points to the [OCI annotations specification][11] to help tooling and metadata consumers interpret standard annotation keys.
+- OCI annotation `org.opencontainers.image.documentation` points to the [OCI annotations specification][11] to help tooling and metadata consumers interpret standard annotation keys.
 
 ## Acknowledgment
 
