@@ -51,6 +51,34 @@ jobs:
             docker build --tag ghcr.io/${{ github.repository }}:${{ github.sha }} .
             echo "image_reference=ghcr.io/${{ github.repository }}:${{ github.sha }}" >> $GITHUB_OUTPUT
 
+      - name: Validate OCI image labels
+        uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4
+        with:
+          timeout_minutes: 5
+          max_attempts: 3
+          retry_wait_seconds: 10
+          continue_on_error: false
+          command: |
+            set -e
+            IMAGE_REFERENCE="ghcr.io/${{ github.repository }}:${{ github.sha }}"
+
+            required_labels=(
+              "org.opencontainers.image.created"
+              "org.opencontainers.image.revision"
+              "org.opencontainers.image.documentation"
+              "org.opencontainers.image.base.digest"
+              "org.opencontainers.image.base.name"
+            )
+
+            for label in "${required_labels[@]}"; do
+              value=$(docker inspect --format "{{ index .Config.Labels \"$label\" }}" "$IMAGE_REFERENCE")
+              if [ -z "$value" ] || [ "$value" = "<no value>" ]; then
+                echo "❌ Missing required OCI label: $label"
+                exit 1
+              fi
+              echo "✅ $label=$value"
+            done
+
       - name: Save Docker image to tarball
         id: save
         uses: nick-fields/retry@ad984534de44a9489a53aefd81eb77f87c70dc60 # v4
