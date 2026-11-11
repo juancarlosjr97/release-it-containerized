@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.25](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.24...2.2.25) (2026-11-11)
+
+### Bug Fixes
+
+* update Alpine git package pin ([#377](https://github.com/juancarlosjr97/release-it-containerized/issues/377)) ([0fdee2f](https://github.com/juancarlosjr97/release-it-containerized/commit/0fdee2fed9376021342d674b8e138172d5b090ce))
+
 ## [2.2.24](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.23...2.2.24) (2026-11-10)
 
 ### Chores
