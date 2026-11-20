@@ -3,6 +3,12 @@
 This changelog is updated automatically using release-it.
 
 
+## [2.2.27](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.26...2.2.27) (2026-11-20)
+
+### Bug Fixes
+
+* update Alpine OpenSSL package ([f206154](https://github.com/juancarlosjr97/release-it-containerized/commit/f2061540a6d3b21b702541b9ccb4286b0f2b3952))
+
 ## [2.2.26](https://github.com/juancarlosjr97/release-it-containerized/compare/2.2.25...2.2.26) (2026-11-17)
 
 ### Chores
