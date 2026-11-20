@@ -13,7 +13,7 @@ ENV GIT_VERSION="2.54.1-r0"
 ENV GNUPG_VERSION="2.4.9-r1"
 
 # renovate: datasource=repology depName=alpine_3_24/libssl3 versioning=loose
-ENV LIBSSL3_VERSION="3.5.9-r0"
+ENV LIBSSL3_VERSION="3.5.9-r1"
 
 # renovate: datasource=repology depName=alpine_3_24/musl versioning=loose
 ENV MUSL_VERSION="1.2.6-r3"
