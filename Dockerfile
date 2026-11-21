@@ -39,6 +39,9 @@ RUN apk update && \
     openssh="${OPENSSH_VERSION}" \
     zlib="${ZLIB_VERSION}"
 
+# renovate: datasource=npm depName=release-it versioning=npm
+ENV RELEASE_IT_VERSION="21.0.2"
+
 WORKDIR /app
 
 USER node

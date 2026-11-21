@@ -66,8 +66,8 @@ inputs:
     required: false
 
   version:
-    default: "latest"
-    description: Release It version
+    default: ""
+    description: Release It version to install. If not specified, the default version pinned in the container image is used
     required: false
 
 runs:
